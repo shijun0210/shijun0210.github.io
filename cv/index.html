@@ -1,0 +1,640 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Jason1910 | Jason1910</title><meta name="author" content="Jun Shi"><meta name="copyright" content="Jun Shi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="page {       background: white;       display: block;       margin: 0 auto;       margin-bottom: 0.5cm;       position: relative;     }      page[size&#x3D;&quot;A4&quot;] {       width: 21cm;       heig">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jason1910">
+<meta property="og:url" content="http://shijun0210.top/cv/index.html">
+<meta property="og:site_name" content="Jason1910">
+<meta property="og:description" content="page {       background: white;       display: block;       margin: 0 auto;       margin-bottom: 0.5cm;       position: relative;     }      page[size&#x3D;&quot;A4&quot;] {       width: 21cm;       heig">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shijun0210.top/img/avatar.jpg">
+<meta property="article:published_time" content="2026-05-20T02:17:40.347Z">
+<meta property="article:modified_time" content="2026-05-20T02:17:40.347Z">
+<meta property="article:author" content="Jun Shi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shijun0210.top/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shijun0210.top/cv/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Jason1910',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Jason1910</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><!DOCTYPE html>
+<html lang="en">
+
+<!-- 简历主题 -->
+<div class="main">
+  <style>
+    page {
+      background: white;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 0.5cm;
+      position: relative;
+    }
+
+    page[size="A4"] {
+      width: 21cm;
+      height: 29.7cm;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    .resume {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+
+    .leftPanel {
+      width: 30%;
+      background-color: #181F26;
+      padding: 0.5cm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .leftPanel h2 {
+      color: white;
+    }
+
+    .rightPanel {
+      width: 70%;
+      padding: 0.5cm;
+    }
+
+    .details {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item {
+      padding-bottom: 0.5cm;
+      padding-top: 0.5cm;
+    }
+
+    .item h2 {
+      margin-top: 0;
+    }
+
+    .bottomLineSeperator {
+      border-bottom: 0.05cm solid white;
+    }
+
+    .leftPanel .smallText,
+    .leftPanel .smallText,
+    .leftPanel .smallText span,
+    .leftPanel .smallText p,
+    .smallText a {
+      font-size: 14px;
+    }
+
+    .smallText,
+    .smallText span,
+    .smallText p,
+    .smallText a {
+      font-family: 'Source Sans Pro', sans-serif;
+      text-align: left;
+    }
+
+    .contactIcon {
+      width: 0.5cm;
+      text-align: center;
+    }
+
+    .leftPanel,
+    .leftPanel a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .skill {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .yearsOfExperience {
+      width: 1.6cm;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .alignleft {
+      text-align: left !important;
+      width: 1cm;
+    }
+
+    .alignright {
+      text-align: right !important;
+      width: 0.6cm;
+      margin-right: 0.1cm
+    }
+
+    .bolded {
+      font-weight: bold;
+    }
+
+    .white {
+      color: white;
+    }
+
+    h1 {
+      font-family: 'Julius Sans One', sans-serif;
+    }
+
+    h3 {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .workExperience>ul>li ul {
+      padding-left: 0.5cm;
+      list-style-type: disc;
+    }
+
+    .workExperience>ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .workExperience>ul>li {
+      position: relative;
+      margin: 0;
+      padding-bottom: 0.5cm;
+      padding-left: 0.5cm;
+    }
+
+    .workExperience>ul>li:before {
+      background-color: #181F26;
+      width: 0.05cm;
+      content: '';
+      position: absolute;
+      top: 0.1cm;
+      bottom: -0.2cm;
+      /* change this after border removal */
+      left: 0.05cm;
+    }
+
+    .workExperience>ul>li::after {
+      content: '';
+      position: absolute;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23484444' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      left: -0.09cm;
+      top: 0;
+      width: 0.35cm;
+      height: 0.35cm;
+    }
+
+    .jobPosition {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .jobPosition span,
+    .projectName span {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+  </style>
+
+  <!-- 一张A4纸的简历 -->
+  <!-- <page size="A4"> -->
+    <div class="resume">
+      <!-- 左面板 -->
+      <div class="leftPanel">
+        <!-- 照片 -->
+        <img src="/img/photo.jpg" alt="photo" style="width: 4cm;height: 4cm;margin-bottom: 0.7cm; border-radius: 50%;
+      border: 0.5cm solid white;object-fit: cover;object-position: 50% 50%;">
+
+        <div class="details">
+          <!-- 个人通讯 -->
+          <div class="item bottomLineSeperator">
+            <h2>
+              联系方式
+            </h2>
+            <div class="smallText">
+              <p>
+                <i class="fa fa-phone contactIcon" aria-hidden="true"></i>
+                (+86) 13260540210
+              </p>
+              <p>
+                <i class="fa fa-envelope contactIcon" aria-hidden="true"></i>
+                shijun0210@foxmail.com
+                </a>
+              </p>
+              <p>
+                <i class="fa fa-map-marker contactIcon" aria-hidden="true"></i>
+                武汉, 湖北
+              </p>
+            </div>
+          </div>
+          <!-- 教育 -->
+          <div class="item">
+            <h2>
+              教育
+            </h2>
+            <div class="smallText">
+              <p class="bolded white">
+                2023年9月 - 2025年6月
+              </p>
+              <p class="bolded white">
+                利物浦大学
+              </p>
+              <p class="bolded white">
+                社会网络计算硕士
+              </p>
+              <p>
+                <br>
+              </p>
+            </div>
+
+            <div class="smallText">
+              <p class="bolded white">
+                2020年9月 - 2021年6月
+              </p>
+              <p class="bolded white">
+                香港浸会大学
+              </p>
+              <p class="bolded white">
+                传播学硕士
+              </p>
+              <p>
+                <br>
+              </p>
+            </div>
+
+            <div class="smallText">
+              <p class="bolded white">
+                2015年9月 - 2016年6月
+              </p>
+              <p class="bolded white">
+                俄罗斯远东联邦大学
+              </p>
+              <p class="bolded white">
+                俄语交换生
+              </p>
+              <p>
+                <br>
+              </p>
+            </div>
+          
+            <div class="smallText">
+              <p class="bolded white">
+                2012年9月 - 2018年6月
+              </p>
+              <p class="bolded white">
+                北京外国语大学
+              </p>
+              <p class="bolded white">
+                俄语语言文学学士
+              </p>
+              <p>
+                <br>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="rightPanel">
+        <div>
+          <h1>
+            石君
+          </h1>
+          <div class="smallText">
+            <h3>
+              咨询顾问（业务架构/数据架构）
+            </h3>
+          </div>
+        </div>
+
+        <div>
+          <h2>
+            兴趣
+          </h2>
+          <div class="smallText">
+            <p>
+              管理信息系统; 创新扩散; 社会网络分析
+            </p>
+          </div>
+        </div>
+        <div>
+          <h2>
+            技能
+          </h2>
+          <div class="smallText">
+              职业证书: CDGA 数据治理工程师, TOGAF 架构师基础认证;<br>
+              数据分析: Python & R 线性/非线性回归, 社会网络分析, 机器学习等;<br>
+              其他技能:  PHP, JS, BPMN, 调研访谈, 扎根理论等
+          </div>
+        </div>
+
+        <!-- 工作经历 -->
+        <div class="workExperience">
+          <h2>
+            工作经历
+          </h2>
+          <ul>
+              <li>
+              <div class="jobPosition">
+                <span class="bolded">
+                  高级顾问
+                </span>
+                <span>
+                  2026年3月 - 至今
+                </span>
+              </div>
+              <div class="projectName bolded">
+                <span>
+                  安永 | 武汉
+                </span>
+              </div>
+              <span>
+                数字化转型咨询：前期访谈调研，梳理数字化痛点与需求，整理关键发现，以及业务流程图/卡片与企业架构规划。项目经历包括：
+              </span>
+              <ul>
+                <li>
+                  厦门某制造业国企数字化转型顶设项目，LTC域调研、痛点需求分析、L1-L3业务流程梳理及业务架构规划；
+                </li>
+              </ul>
+              </li>
+
+            <li>
+              <div class="jobPosition">
+                <span class="bolded">
+                  品牌经理
+                </span>
+                <span>
+                  2021年7月 - 2023年6月
+                </span>
+              </div>
+              <div class="projectName bolded">
+                <span>
+                  恒达钧策商务咨询 | 武汉
+                </span>
+              </div>
+              <ul>
+                <li>
+                  咨询项目后台：跟进品牌理论并产出品牌模型，包括品牌定位、品牌资产、品牌人格、品牌关系等，为咨询业务提供相关理论框架；
+                  根据业务目标搜集/整理相关信息，并产出行业分析、对标分析等报告。
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="jobPosition">
+                <span class="bolded">
+                  教育垂类运营
+                </span>
+                <span>
+                  2019年9月 - 2020年6月
+                </span>
+              </div>
+              <div class="projectName bolded">
+                <span>
+                  快手 | 北京
+                </span>
+              </div>
+              <ul>
+                <li>拉新与投放：教育合作机构的拉新，帮助已入驻合作机构账号冷启动、流量投放以及内容优化。</li>
+                <li>业务流程优化：通过中台对已投账号进行数据分析，根据投放账号的数据指标（如ROI、扶持周期、涨粉曲线等）进行流量投放的标准化流程设计。</li>
+              </ul>
+            </li>
+            <li>
+              <div class="jobPosition">
+                <span class="bolded">
+                  项目管培
+                </span>
+                <span>
+                  2018年9月 - 2019年5月
+                </span>
+              </div>
+              <div class="projectName bolded">
+                <span>
+                  六律科技 | 北京
+                </span>
+              </div>
+              <ul>
+                <li>外呼项目管理：外呼职场管理，协调企业内部资源以满足移动外呼业务需求；项目业务报表 & 成本收益报表制作。</li>
+                <li>业务流程优化：梳理业务流程、项目指标、报表关键字段及计算逻辑等；对接技术部门，实现报表标准化与自动化输出。</li>
+              </ul>
+            </li>
+            <li>
+              <div class="jobPosition">
+                <span class="bolded">
+                  初级顾问
+                </span>
+                <span>
+                  2018年2月 - 2018年8月
+                </span>
+              </div>
+              <div class="projectName bolded">
+                <span>
+                  思创客品牌咨询 | 北京
+                </span>
+              </div>
+              <ul>
+                <li>品牌咨询：参与好未来品牌旗下摩比STEM & 大海教育两个项目，主要工作为品牌定位、对标分析、竞品传播策略与年度传播方案规划等。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  <!-- </page> -->
+</div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun Shi</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="Created 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/17/hello-world/" title="Hello World">Hello World</a><time datetime="2026-05-17T05:17:36.912Z" title="Created 2026-05-17 13:17:36">2026-05-17</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86/" style="font-size: 1.1em; color: #999">数据治理</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              May 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-05-20T11:28:50.528Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun Shi</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

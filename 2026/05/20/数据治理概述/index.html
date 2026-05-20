@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据治理概述 | Jason1910</title><meta name="author" content="Jun Shi"><meta name="copyright" content="Jun Shi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据分类    按数据对象分类    参考数据    参考数据是指对其他数据进行分类和规范的数据，如国家、地区、货币、计量单位等产业通用的数据及各产业特色基础配置数据。为了简化，有的企业称这类数据为配置型主数据，也有的企业称这类数据为通用基础类数据。它是相对稳定、静态的数据，基本上不会变化，往往通过系统配置文件给予规范并固化在信息管理系统中。   主数据    主数据是指满足跨部门业务协同需要的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据治理概述">
+<meta property="og:url" content="http://shijun0210.top/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:site_name" content="Jason1910">
+<meta property="og:description" content="数据分类    按数据对象分类    参考数据    参考数据是指对其他数据进行分类和规范的数据，如国家、地区、货币、计量单位等产业通用的数据及各产业特色基础配置数据。为了简化，有的企业称这类数据为配置型主数据，也有的企业称这类数据为通用基础类数据。它是相对稳定、静态的数据，基本上不会变化，往往通过系统配置文件给予规范并固化在信息管理系统中。   主数据    主数据是指满足跨部门业务协同需要的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shijun0210.top/img/avatar.jpg">
+<meta property="article:published_time" content="2026-05-20T11:04:00.000Z">
+<meta property="article:modified_time" content="2026-05-20T11:08:10.169Z">
+<meta property="article:author" content="Jun Shi">
+<meta property="article:tag" content="数据治理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shijun0210.top/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "数据治理概述",
+  "url": "http://shijun0210.top/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/",
+  "image": "http://shijun0210.top/img/avatar.jpg",
+  "datePublished": "2026-05-20T11:04:00.000Z",
+  "dateModified": "2026-05-20T11:08:10.169Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun Shi",
+      "url": "http://shijun0210.top/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shijun0210.top/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据治理概述',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Jason1910</span></a><a class="nav-page-title" href="/"><span class="site-name">数据治理概述</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">数据治理概述</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-05-20T11:04:00.000Z" title="Created 2026-05-20 19:04:00">2026-05-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-20T11:08:10.169Z" title="Updated 2026-05-20 19:08:10">2026-05-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><ul>
+<li><p>数据分类  </p>
+<ul>
+<li><p>按数据对象分类  </p>
+<ul>
+<li><p>参考数据  </p>
+<ul>
+<li>参考数据是指对其他数据进行分类和规范的数据，如国家、地区、货币、计量单位等产业通用的数据及各产业特色基础配置数据。为了简化，有的企业称这类数据为配置型主数据，也有的企业称这类数据为通用基础类数据。它是相对稳定、静态的数据，基本上不会变化，往往通过系统配置文件给予规范并固化在信息管理系统中。</li>
+</ul>
+</li>
+<li><p>主数据  </p>
+<ul>
+<li>主数据是指满足跨部门业务协同需要的、反映核心业务实体状态属性的基础信息。主数据是用来描述企业核心业务实体的数据，是企业核心业务对象、交易业务的执行主体，是在整个价值链上被重复或共享应用于多个业务流程、跨越多个业务部门和系统、高价值的基础数据，也是各业务应用和各系统之间进行数据交互的基础。从业务角度看，主数据是相对固定、变化缓慢的，但它是企业信息系统的神经中枢，是业务运行和决策分析的基础，如供应商、客户、企业组织机构和员工、产品、客户、供应商、物料等主数据</li>
+</ul>
+</li>
+<li><p>业务活动数据  </p>
+<ul>
+<li>业务活动数据（又称交易数据）是指在业务活动过程中产生的数据，是企业日常经营活动的直接体现，也是围绕主数据实体产生的业务行为和结果型数据，如采购订单、销售订单、发票、会计凭证等数据。业务活动数据存在于联机事务处理系统中（OLTP系统），具有瞬间生成和动态的特点。</li>
+</ul>
+</li>
+<li><p>分析数据  </p>
+<ul>
+<li>分析数据（又称统计数据、报表数据或指标数据等）是组织在经营分析过程中衡量某一个目标或事物的数据，一般由指标名称、时间和数值等组成。</li>
+</ul>
+</li>
+<li><p>时序数据  </p>
+<ul>
+<li>时序数据是指时间序列数据。它是按时间顺序记录的数据列，在同一个数据列中的各个数据必须是同口径的，要求具有可比性。在工业企业中，实时数据是时序数据的一种，如设备运行监测类数据、安全类监测数据、环境监测类数据。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>按存储形式划分  </p>
+<ul>
+<li><p>结构化数据  </p>
+<ul>
+<li>结构化数据是指数据元素之间具有统一且确定关系的数据。它由明确定义的数据类型组成。结构化数据的一般特点是数据以行为单位，一行数据表示一个实体的信息，每一行数据的属性是相同的。结构化数据的分析更为便利，且存在成熟的分析工具。</li>
+</ul>
+</li>
+<li><p>非结构化数据  </p>
+<ul>
+<li>非结构化数据是指数据元素之间没有统一和确定关系的数据。它是具有内部结构，但不通过预定义的数据模型或模式进行结构化的数据，如各种格式的图片、视频等。非结构化数据占企业全部数据的80%以上，但直接分析非结构化数据得有很强的专业性。</li>
+</ul>
+</li>
+<li><p>半结构化数据  </p>
+<ul>
+<li>半结构化数据是指数据元素之间的关系介于结构化数据和非结构数据之间的数据。它是非关系模型的、有基本固定结构模式的数据，例如日志文件、XML文档、JSON文档、E-mail等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>按数据库的类型划分  </p>
+<ul>
+<li><p>关系型数据库  </p>
+<ul>
+<li>关系型数据库是采用关系数据模型的数据库系统。关系数据模型实际上是表示各类实体及其之间联系的由行和列构成的二维表结构。一个关系数据数据库由多个二维表组成。表中的每一行为一个元组（或称一个记录），每一列为一个属性。属性的取值范围被称为域。对关系型数据库进行操作通常采用结构化查询语言（SQL）。</li>
+</ul>
+</li>
+<li><p>非关系型数据库  </p>
+<ul>
+<li>非关系型数据库是对不同于传统的关系数据库的数据库管理系统的统称。和关系型数据库相比，两者存在许多显著的不同点，其中最重要的是非关系型数据库使用NoSQL而不使用SQL作为查询语言。其数据存储可以不需要固定的表格模式，也经常会避免使用SQL的JOIN操作，一般有水平可扩展性的特征。</li>
+</ul>
+</li>
+<li><p>图数据库  </p>
+<ul>
+<li>图数据库是以图结构来表示和存储信息的数据库。</li>
+</ul>
+</li>
+<li><p>时序数据库  </p>
+<ul>
+<li>时序数据库是指时间序列数据。它是按时间顺序记录的数据列，在同一个数据列中的各个数据必须是同口径的，要求具有可比性。时序数据可以是时期数，也可以是时点数。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据治理的顶层架构  </p>
+<ul>
+<li><p>五域模型，即管控域、过程域、治理域、技术域、价值域。企业在开展数据治理之前，首先要基于企业战略和IT战略制定数据治理的战略目标，在明确战略目标的基础上再细化“五域模型”内容。  </p>
+<ul>
+<li>五域模型图<img src="/source/img/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%EF%BC%9A%E5%B7%A5%E4%B8%9A%E4%BC%81%E4%B8%9A%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B%E4%B9%8B%E9%81%93/1.%E4%BA%94%E5%9F%9F%E6%A8%A1%E5%9E%8B%E5%9B%BE.png"></li>
+</ul>
+</li>
+<li><p>管控域  </p>
+<ul>
+<li>在数据治理战略指导下制定企业数据治理组织，明确组织的责、权、利、岗位编制及技能要求。</li>
+</ul>
+</li>
+<li><p>治理域  </p>
+<ul>
+<li>数据治理的主体，明确数据治理的对象和目标。根据数据资产的构成，企业数据治理又分为主数据治理、交易数据治理和数据指标治理。</li>
+</ul>
+</li>
+<li><p>技术域  </p>
+<ul>
+<li>数据治理的支撑手段，提供数据治理所需的数据架构、治理工具平台，包括元数据管理、主数据管理、数据指标管理、数据模型管理、数据质量管理、数据安全管理等功能模块。</li>
+</ul>
+</li>
+<li><p>过程域  </p>
+<ul>
+<li>数据治理的方法论。数据治理过程包括评估与分析、规划与设计、实施的PDCA循环。在评估与分析阶段，要评价现有数据治理的成熟度、风险及合规性，业务对数据治理的需求。在规划和设计阶段，要明确数据治理的目标和任务，制定数据治理的相关制度和流程，设计数据标准、数据模型、数据架构及数据治理的实施路径。在实施阶段，要制定数据治理的相关制度、流程细节，选择合适的数据治理工具并通过定制化开发来满足数据治理要求。</li>
+</ul>
+</li>
+<li><p>价值域  </p>
+<ul>
+<li>数据治理的目标就是通过对数据资产的管控，挖掘数据资产的价值，并通过数据的流动、共享、交易，实现数据资产的变现。具体包括以下3个方面：（1）数据价值：对数据价值进行财务建模及数据价值评估的过程。（2）数据共享：通过实现信息整合和分发机制，支持跨业务、跨部门、跨行业、跨企业的信息流通和共享。（3）数据变现：通过数据的共享和交易，将数据转变成财务意义上的资产。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据治理步骤  </p>
+<ul>
+<li><p>战略  </p>
+<ul>
+<li>企业数据战略一般根据IT战略的制定而制定，随着IT战略的修订而修订，由企业的信息化负责人及业务负责人共同主导制定。</li>
+</ul>
+</li>
+<li><p>组织  </p>
+<ul>
+<li>数据治理的组织建设一般包括组织架构设计、部门职责、人员编制、岗位职责及能力要求、绩效管理等内容。</li>
+</ul>
+</li>
+<li><p>制度  </p>
+<ul>
+<li>企业的数据治理制度通常根据企业的IT制度的总体框架和指导原则制定，往往包含数据质量管理、数据标准管理、数据安全管理、数据绩效管理等制度，以及元数据管理、主数据管理、交易数据管理、数据指标管理等办法及若干指导手册。</li>
+</ul>
+</li>
+<li><p>流程  </p>
+<ul>
+<li>数据治理流程主要包括从数据的生产、存储、处理、使用、共享、销毁全生命周期过程中所遵循的活动步骤，以及元数据管理、主数据管理、数据指标管理等流程。</li>
+</ul>
+</li>
+<li><p>绩效  </p>
+<ul>
+<li>数据绩效管理包括数据管理指标、数据认责机制、数据考核标准、数据管理的奖惩机制，以及绩效管理过程的一系列活动集合。</li>
+</ul>
+</li>
+<li><p>标准  </p>
+<ul>
+<li>数据标准一般分为元数据标准、主数据标准、交易数据标准、数据指标标准、数据分类标准、数据编码标准、数据集成标准等内容。数据标准管理是规范数据标准的内容、程序和方法的活动，分为标准制定、标准实施和控制、标准修订等。</li>
+</ul>
+</li>
+<li><p>工具  </p>
+<ul>
+<li>数据治理管理工具包括数据架构工具、元数据管理工具、数据指标管理工具、主数据管理工具、时序数据管理工具、数据交换与服务工具、质量管理工具和安全管理工具等。</li>
+</ul>
+</li>
+<li><p>价值：数据价值、数据共享、数据变现</p>
+</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://shijun0210.top">Jun Shi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://shijun0210.top/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/">http://shijun0210.top/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86/">数据治理</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/05/17/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Hello World</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun Shi</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="Created 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/17/hello-world/" title="Hello World">Hello World</a><time datetime="2026-05-17T05:17:36.912Z" title="Created 2026-05-17 13:17:36">2026-05-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun Shi</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
