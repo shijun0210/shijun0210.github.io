@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>《模型思维：数学模型结构大模型黑箱》10 | shijun0210</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="系统动力学模型任何一个系统动力学模型都由源、汇、存量和流量组成。源 source 产生存量；存量 stock 是某个变量的数量或水平；流量描述了存量水平的变化；汇 sink 能够捕获来自存量的流量输出；汇和源是不包含在模型中的过程的“占位符”​；存量水平会根据源和流量随时间推移而变化。 例如，在一个关于游乐园的系统动力学模型中，公园中的人（一个存量）的人数会随着人们的到来（一个源）而增加，而增加的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《模型思维：数学模型结构大模型黑箱》10">
+<meta property="og:url" content="http://shijun0210.github.io/2025/04/29/2023-2025/25-4/25-4-29%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B10/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:description" content="系统动力学模型任何一个系统动力学模型都由源、汇、存量和流量组成。源 source 产生存量；存量 stock 是某个变量的数量或水平；流量描述了存量水平的变化；汇 sink 能够捕获来自存量的流量输出；汇和源是不包含在模型中的过程的“占位符”​；存量水平会根据源和流量随时间推移而变化。 例如，在一个关于游乐园的系统动力学模型中，公园中的人（一个存量）的人数会随着人们的到来（一个源）而增加，而增加的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2025-04-29T00:49:59.000Z">
+<meta property="article:modified_time" content="2026-05-03T10:42:37.604Z">
+<meta property="article:author" content="Jun">
+<meta property="article:tag" content="基于阈值的模型">
+<meta property="article:tag" content="系统动力学模型">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shijun0210.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "《模型思维：数学模型结构大模型黑箱》10",
+  "url": "http://shijun0210.github.io/2025/04/29/2023-2025/25-4/25-4-29%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B10/",
+  "image": "http://shijun0210.github.io/img/avatar.jpg",
+  "datePublished": "2025-04-29T00:49:59.000Z",
+  "dateModified": "2026-05-03T10:42:37.604Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun",
+      "url": "http://shijun0210.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shijun0210.github.io/2025/04/29/2023-2025/25-4/25-4-29%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B10/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《模型思维：数学模型结构大模型黑箱》10',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a><a class="nav-page-title" href="/"><span class="site-name">《模型思维：数学模型结构大模型黑箱》10</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">《模型思维：数学模型结构大模型黑箱》10</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-04-29T00:49:59.000Z" title="Created 2025-04-29 08:49:59">2025-04-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-03T10:42:37.604Z" title="Updated 2026-05-03 18:42:37">2026-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/2023-2025/">2023-2025</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/2023-2025/25-4/">25-4</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="系统动力学模型"><a href="#系统动力学模型" class="headerlink" title="系统动力学模型"></a>系统动力学模型</h1><p>任何一个系统动力学模型都由源、汇、存量和流量组成。<br>源 source 产生存量；<br>存量 stock 是某个变量的数量或水平；<br>流量描述了存量水平的变化；<br>汇 sink 能够捕获来自存量的流量输出；<br>汇和源是不包含在模型中的过程的“占位符”​；<br>存量水平会根据源和流量随时间推移而变化。</p>
+<p>例如，在一个关于游乐园的系统动力学模型中，公园中的人（一个存量）的人数会随着人们的到来（一个源）而增加，而增加的速度可能又取决于其他参数，例如天气状况、广告投入和门票价格等。</p>
+<p>使用系统动力学模型，我们通常可以确定复杂性的原因。当系统既包括正反馈又包括负反馈时，就会产生复杂性。</p>
+<p>这些模型可以将流量和存量水平表示为数学函数。我们可以校准这些定量模型，以便解释过去的存量值、预测未来值，同时估计干预措施的影响。然后，我们就可以利用这些模型解释、预测和指导行动。这些模型也可以是定性的，可以用加号或减号标记每个箭头以表明内在逻辑。</p>
+<h2 id="捕食者-猎物模型"><a href="#捕食者-猎物模型" class="headerlink" title="捕食者-猎物模型"></a>捕食者-猎物模型</h2><h3 id="洛特卡-沃尔泰拉方程-Lotka-Volterra-equation"><a href="#洛特卡-沃尔泰拉方程-Lotka-Volterra-equation" class="headerlink" title="洛特卡-沃尔泰拉方程 (Lotka-Volterra equation)"></a>洛特卡-沃尔泰拉方程 (Lotka-Volterra equation)</h3><p>假设一个生态系统由H只野兔和F只狐狸构成。野兔的数量以g的速度增长，狐狸的数量则以d的速度减少。当野兔和狐狸相遇时，野兔以a的速度死亡，狐狸以b的速度增长。根据这些假设，可以给出如下微分方程组：<br>$$<br>\dot H&#x3D;gH-aFH；\dot F&#x3D;bFH-dF<br>$$<br>从这个微分方程组可以推导出两个均衡，一个是灭绝均衡，即 F&#x3D;H&#x3D;0；一个是内点均衡，即 F&#x3D;g&#x2F;a和H&#x3D;d&#x2F;b给出。</p>
+<p>这两个微分方程分别描述了野兔和狐狸的数量随时间而发生的变化。当方程等于零时，野兔和狐狸的数量不再改变，系统处于均衡状态。</p>
+<p>第一个均衡，即灭绝均衡(extinction equilibrium)，是说野兔和狐狸都不复存在。因此，这个模型预测，在一定条件下，捕食者-猎物这种关系会导致两个物种同时灭绝。</p>
+<p>第二个均衡是内点均衡(interior equilibrium)。在内点均衡中，狐狸和野兔的数量均为正。在这种均衡状态下，狐狸的数量随野兔的增长速度而增加，但是如果狐狸和野兔之间的每次相遇都会导致野兔种群规模以更快的速度减少的话，狐狸的数量就会减少。</p>
+<p>对方程的模拟会产生滞后循环(lagged cycles)。首先，其中一个物种变得“人口众多”​，然后，它的数量开始减少，另一个物种的数量开始增加。</p>
+<h2 id="系统动力学模型的应用"><a href="#系统动力学模型的应用" class="headerlink" title="系统动力学模型的应用"></a>系统动力学模型的应用</h2><p>系统动力学模型既可以包括正反馈回路，也可以包括负反馈回路。<br>正反馈回路会导致良性循环；负反馈回路可以帮助我们预测恶性循环。</p>
+<p>WORLD3模型</p>
+<blockquote>
+<p>[!NOTE] 小结<br>与马尔可夫模型的不同之处在于，在这里速度是可以调整适应的（它起到了转移概率的作用）​。因此，这种模型不一定会达到均衡。我们必须运行模型才能看清楚会发生什么。此外，因为不必求解结果，所以也不用担心假设的易处理性。<br>构建一个有用的系统动力学模型的“艺术”体现在，既要包括足够多的细节来揭示我们的直觉哪里行不通，但是也不能包括过多的细节，以至于会创造一个像现实世界一样混乱的泥淖。最有用的系统动力学模型都位于那个边界上。这些模型可以揭示出意想不到的效应，并有助于更好地采取政策行动。<br>我们并不一定随时都会考虑到间接影响，也就是各种正反馈和负反馈。模型恰恰能帮助我们更清晰、更深入地进行思考。</p>
+</blockquote>
+<hr>
+<h1 id="基于阈值的模型"><a href="#基于阈值的模型" class="headerlink" title="基于阈值的模型"></a>基于阈值的模型</h1><p>当外部变量超过或低于特定的阈值时，人们的行为所发生的变化，就是基于阈值的行为（变化）​。</p>
+<h2 id="Riot-Model-Granovetter"><a href="#Riot-Model-Granovetter" class="headerlink" title="Riot Model - Granovetter"></a>Riot Model - Granovetter</h2><p>$$<br>假设有N个人（用i来索引）​，每一个人都有一个 riot \ threshold，记为T(i)\in {0,1,\dots,N}<br>$$<br>$$<br>在一开始，T(i)&#x3D;0的那些人都会参与骚乱。令R(t)等于在时间t参与骚乱的人的数量。<br>$$<br>$$<br>在时间t上，如果T(i)&lt;R(t-1)，那么第i个人就会参加骚乱。<br>$$</p>
+<p>这个模型表明，<strong>阈值的总体分布</strong>是非常重要的，而不仅仅只有阈值的均值才重要。<br>因此它也说明，要预测哪些社会活动将会成功有很大的困难。这个模型还可以指导行动，它可以告诉那些希望发动社会活动的人们：要取得成功，除了组织一个核心革命团体之外，还需要“发动群众”​，也就是“创建”一个愿意加入他们的群体。</p>
+<p>骚乱模型还可以扩展到用来分析互联网初创企业。这些初创企业能够创造出新的买家和卖家市场。要想创造一个新的市场，初创企业必须创造一群买家和一群卖家。这些网站要想取得成功，必须先“创建”出这样两个群体，而且必须保证这两个群体以大致相同的速度增长，否则，卖家或买家将无法找到匹配的另一方。</p>
+<h2 id="谢林派对模型-Schelling’s-party-model"><a href="#谢林派对模型-Schelling’s-party-model" class="headerlink" title="谢林派对模型 (Schelling’s party model)"></a>谢林派对模型 (Schelling’s party model)</h2><p>N个人参加一个派对，每个人都有一个可观察的类型A或B。每个人随机选择两个房间中的一个。在每个时刻，每个人都有p的概率走到另一个房间去。第i个人的宽容阈值为Ti。对于这个人，如果他所属的类型的人在当前房间内所有人当中所占的比例低于这个阈值，他就离开这个房间。</p>
+<p>在这个模型中，多样化阈值产生了两种不同的影响：它们使隔离更容易发生，同时又使完全隔离的可能性降低，因为非常宽容的人在任何一个房间都不会觉得有问题。</p>
+<p>这个模型可以用来解释不同职业之间的性别比例差异，例如为什么会有更多的女性担任护士，更多的男性担任推销员。<br>旋转门模型(revolving-door model)</p>
+<h2 id="谢林隔离模型-Shelling’s-Segregation-Model"><a href="#谢林隔离模型-Shelling’s-Segregation-Model" class="headerlink" title="谢林隔离模型(Shelling’s Segregation Model)"></a>谢林隔离模型(Shelling’s Segregation Model)</h2><p>有N个人，每个人都属于类型A或类型B，随机排列在一个 M×M 的棋盘上。棋盘上还有部分空间未被占用。第i个人的宽容阈值为Ti。对于这个人，如果他所在方格的8个相邻方格中同一类型的人所占的百分比低于他的阈值，就会重新定位到一个随机的新方格上。</p>
+<p>如果个体的平均阈值接近50%，这个模型会产生地域性的隔离。</p>
+<p>即使是宽容的人，也会产生隔离的居住模式，这就是托马斯·谢林的开创性名著《微观动机与宏观行为》一书最根本的洞见。</p>
+<h2 id="乒乓球模型"><a href="#乒乓球模型" class="headerlink" title="乒乓球模型"></a>乒乓球模型</h2><p>规模为N的种群中的每一个实体随机采取一个初始行动，或者为正(+1)，或者为负(-1)。系统的初始状态S0设置为零。系统的所有未来状态St则等于平均行动再加上一个随机变量，即：<br>$$<br>S_{t}&#x3D;\frac{\begin{matrix}\sum_{i&#x3D;1}^N A_{i}(t)\end{matrix}}{N}+S_{t-1}+\xi_{t}<br>$$<br>每个实体i都有一个响应阈值(response threshold)Ti&gt;0，它从[0,RANGE]中均匀抽取出来。如果状态的绝对值大小｜St｜小于它的阈值，该实体就采取与以前相同的行动，否则，就采取减少状态绝对值大小的行动。即：<br>$$<br>如果|S_{t}|\leq T_{i}，那么A_{i}(t+1)&#x3D;A_{i}(t)，否则A_{i}(t+1)&#x3D;-signS_{i}(t)<br>$$<br>$$<br>其中，\xi_{t}从{-1,+1}中随机抽取出来的。<br>$$<br>乒乓球模型有多种应用。人们可能会将时间和资源分配给多个慈善项目。如果某个慈善项目得到了太多的关注或金钱，人们就会开始向其他项目捐钱以保证平衡。</p>
+<h2 id="模型粒度"><a href="#模型粒度" class="headerlink" title="模型粒度"></a>模型粒度</h2><p>模型不是以描述准确性为标准来评分的。<br>请一定要记住统计学大师乔治·博克斯的格言：所有模型都是错的。</p>
+<p>在研究社会系统的时候，则可能并不存在理想粒度水平。我们可能需要在多个粒度水平上分别进行探索。通过构建多个模型，每个模型都有不同的粒度水平，然后进行跨模型对话。</p>
+<p>更精细的粒度不一定更好，有的模型可能过于注重细节。我们能够理解更细粒度的模型，也可以从相对粗糙的模型中获益。通过比较不同模型的预测、解释之间的差异，我们可以看清楚假设如何影响结果，也可以看清楚假设的条件性。许多模型不仅在各自包含的变量方面存在差异，而且在何种粒度上分解变量也理所当然地有所不同。</p>
+<h2 id="算法混乱"><a href="#算法混乱" class="headerlink" title="算法混乱"></a>算法混乱</h2><p>假设，持有该资产的每个人都有一个“崩溃阈值”(crash threshold)。如果资产价格在某一天的下跌幅度超过了崩溃阈值，投资者就会出售资产，将资金从市场中撤走。这个规则可以捕获趋势交易者或噪声交易者的行为。</p>
+<p>假设，人们还有一个“便宜货阈值”(bargain threshold)，如果价格低于这个阈值，人们就会买入这种金融资产。在这里，投资者是基于价值而非趋势行事。当价格急剧下跌时，便宜货阈值会产生负反馈。买家急于以便宜的价格买入，导致价格停止下跌。</p>
+<p>案例：2010年5月6日下午的闪电崩盘。在三分钟内，道琼斯工业平均指数就下跌了5%。这个闪电崩盘是算法交易的结果。由于现代金融市场的高度复杂性和交易的极高速度，没有人确切知道在闪电崩盘期间究竟发生了什么。但是我们确实知道，有一个庞大的共同基金发出了一个超级大卖单，将超过40亿美元的股票期货倾销到了市场上，而市场上则充斥着各种各样试图利用有利交易的高频交易算法。这种高频算法能够感知价格趋势并开始以极快的速度执行交易，对此，我们可以想象一个有极高速度的骚乱模型。</p>
+<p>这就产生了一个“有毒”的市场，交易者担心大型机构投资者知道他们不知道的东西，因此他们退出了市场。鉴于市场行为异常，许多算法停止了交易；但是其他算法则继续销售，然后就发生了闪电崩盘，所有这一切都在几分钟内完成。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io">Jun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io/2025/04/29/2023-2025/25-4/25-4-29%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B10/">http://shijun0210.github.io/2025/04/29/2023-2025/25-4/25-4-29%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B10/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E5%9E%8B/">系统动力学模型</a><a class="post-meta__tags" href="/tags/%E5%9F%BA%E4%BA%8E%E9%98%88%E5%80%BC%E7%9A%84%E6%A8%A1%E5%9E%8B/">基于阈值的模型</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/04/28/2023-2025/25-4/25-4-28%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B9/" title="《模型思维：数学模型结构大模型黑箱》9"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">《模型思维：数学模型结构大模型黑箱》9</div></div><div class="info-2"><div class="info-item-1">李雅普诺夫函数与均衡核心观念：如果能够为模型构建一个李雅普诺夫函数，那么模型必定会达到均衡。 $$给定一个离散时间动态系统，它的转移规则由x_{t+1}&#x3D;G(x_{t})组成。$$$$对于实值函数F(x_{t})，如果对于所有的x_{t}，都有F(x_{t})≥M，而且存在一个A&gt;0，那么$$$$有F(x_{t+1})\leq F(x_{t})-A，如果G(x_{t})\ne x_{t}，如果对于G,F是一个李雅普诺夫函数，$$$$那么从任何x0开始，必定存在一个t^，使G(x_{t^})&#x3D;x_{t^*}，即该系统会在有限时间内达到均衡$$ 逐底竞争博弈 (Race to the Bottom Game)有N个博弈参与者，每个博弈参与者在每个时期都要提出一个支持水平，其取值范围为{0,1, …， 100}。提出了最接近平均支持水平2&#x2F;3的博弈参与者可以获得那个期间的奖励。 局部多数模型我们将局部多数模型中的李雅普诺夫函数定义为总体中的总不一致性(total...</div></div></div></a><a class="pagination-related" href="/2025/04/30/2023-2025/25-4/25-4-30%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B11/" title="《模型思维：数学模型结构大模型黑箱》11"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">《模型思维：数学模型结构大模型黑箱》11</div></div><div class="info-2"><div class="info-item-1">突发：GMAT考试，接下来每天早上专注度高的时间将用来准备GMAT考试。下午看书，晚上自由发挥。  空间竞争模型与享受竞争模型空间竞争模型 (spatial competition model)$$备选项包括N个空间属性：\vec a&#x3D;(a_{1},a_{2},\dots,a_{N})$$$$做出选择的个体的理想点：\vec x&#x3D;(x_{1},x_{2},\dots,x_{N})$$个体选择了备选项后得到的收益（效用）等于：$$\pi(\vec x,\vec...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">系统动力学模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%95%E9%A3%9F%E8%80%85-%E7%8C%8E%E7%89%A9%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">捕食者-猎物模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%9B%E7%89%B9%E5%8D%A1-%E6%B2%83%E5%B0%94%E6%B3%B0%E6%8B%89%E6%96%B9%E7%A8%8B-Lotka-Volterra-equation"><span class="toc-number">1.1.1.</span> <span class="toc-text">洛特卡-沃尔泰拉方程 (Lotka-Volterra equation)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">系统动力学模型的应用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E9%98%88%E5%80%BC%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">基于阈值的模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Riot-Model-Granovetter"><span class="toc-number">2.1.</span> <span class="toc-text">Riot Model - Granovetter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%A2%E6%9E%97%E6%B4%BE%E5%AF%B9%E6%A8%A1%E5%9E%8B-Schelling%E2%80%99s-party-model"><span class="toc-number">2.2.</span> <span class="toc-text">谢林派对模型 (Schelling’s party model)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%A2%E6%9E%97%E9%9A%94%E7%A6%BB%E6%A8%A1%E5%9E%8B-Shelling%E2%80%99s-Segregation-Model"><span class="toc-number">2.3.</span> <span class="toc-text">谢林隔离模型(Shelling’s Segregation Model)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%92%E4%B9%93%E7%90%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.4.</span> <span class="toc-text">乒乓球模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E7%B2%92%E5%BA%A6"><span class="toc-number">2.5.</span> <span class="toc-text">模型粒度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%B7%B7%E4%B9%B1"><span class="toc-number">2.6.</span> <span class="toc-text">算法混乱</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="Created 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/2023-2025/25-8/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="25-8-3">25-8-3</a><time datetime="2025-08-03T13:18:39.000Z" title="Created 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/2023-2025/25-7/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="25-7-28">25-7-28</a><time datetime="2025-07-28T02:25:16.000Z" title="Created 2025-07-28 10:25:16">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/12/2023-2025/25-5/25-5-12%20%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%80%9D%E8%80%83/" title="25-5-12">25-5-12</a><time datetime="2025-05-12T03:22:56.000Z" title="Created 2025-05-12 11:22:56">2025-05-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/11/2023-2025/25-5/25-5-11%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B19/" title="《模型思维：数学模型结构大模型黑箱》19">《模型思维：数学模型结构大模型黑箱》19</a><time datetime="2025-05-11T03:30:32.000Z" title="Created 2025-05-11 11:30:32">2025-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>《模型思维：数学模型结构大模型黑箱》17 | shijun0210</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Learning ModelsIndividual Learning: Reinforcement（权重）In reinforcement learning, an individual chooses actions based on the weights of those actions. Actions with a lot of weight are chosen more often">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《模型思维：数学模型结构大模型黑箱》17">
+<meta property="og:url" content="http://shijun0210.github.io/2025/05/08/2023-2025/25-5/25-5-8%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B17/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:description" content="Learning ModelsIndividual Learning: Reinforcement（权重）In reinforcement learning, an individual chooses actions based on the weights of those actions. Actions with a lot of weight are chosen more often">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2025-05-08T02:26:40.000Z">
+<meta property="article:modified_time" content="2026-05-03T10:42:38.785Z">
+<meta property="article:author" content="Jun">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shijun0210.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "《模型思维：数学模型结构大模型黑箱》17",
+  "url": "http://shijun0210.github.io/2025/05/08/2023-2025/25-5/25-5-8%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B17/",
+  "image": "http://shijun0210.github.io/img/avatar.jpg",
+  "datePublished": "2025-05-08T02:26:40.000Z",
+  "dateModified": "2026-05-03T10:42:38.785Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun",
+      "url": "http://shijun0210.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shijun0210.github.io/2025/05/08/2023-2025/25-5/25-5-8%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B17/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《模型思维：数学模型结构大模型黑箱》17',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a><a class="nav-page-title" href="/"><span class="site-name">《模型思维：数学模型结构大模型黑箱》17</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">《模型思维：数学模型结构大模型黑箱》17</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-08T02:26:40.000Z" title="Created 2025-05-08 10:26:40">2025-05-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-03T10:42:38.785Z" title="Updated 2026-05-03 18:42:38">2026-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/2023-2025/">2023-2025</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/2023-2025/25-5/">25-5</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Learning-Models"><a href="#Learning-Models" class="headerlink" title="Learning Models"></a>Learning Models</h1><h2 id="Individual-Learning-Reinforcement"><a href="#Individual-Learning-Reinforcement" class="headerlink" title="Individual Learning: Reinforcement"></a>Individual Learning: Reinforcement</h2><p>（权重）In reinforcement learning, an individual chooses actions based on the weights of those actions. Actions with a lot of weight are chosen more often than actions with little weight.</p>
+<p>（奖励）The weight assigned to an action depends on the reward (payoff) that a person has received from taking that action in the past. This reinforcement of high-reward payoffs leads to better actions being taken.</p>
+<p>（问题）The question we explore is whether reinforcement learning converges to only choosing the alternative with the highest reward.</p>
+<p>（奖励数值化与记忆机制）At first, it may seem that to choose the most rewarding alternative is a trivial task. If the rewards are expressed in numerical form, such as money or time, we would expect people to choose the best. If rewards do not take numerical form, which is generally the case, people must rely on memory. </p>
+<p>Edward Thorndike<br>（重复）law of effect - Repetition of an activity builds neurological pathways that induce that same behavior in the future.<br>（惊喜）surprise principle - more surprising rewards, rewards that far exceeded past or expected outcomes, produced faster learning in people.</p>
+<p>（预期）In our reinforcement learning model, the weight assigned to a chosen alternative is adjusted based on how much the reward from that alternative exceeds our expectations (our aspiration level). This construction embeds both the law of effect (we take actions that produce higher rewards more often) and the surprise principle (the amount of weight we add to a choice depends on how much its reward exceeds the aspiration level).</p>
+<h3 id="A-Reinforcement-Learning-Model"><a href="#A-Reinforcement-Learning-Model" class="headerlink" title="A Reinforcement Learning Model"></a>A Reinforcement Learning Model</h3><p>A collection of alternatives {A, B, C, D,…, N} have <strong>associated</strong> rewards {π(A), π(B), π(C), π(D),…,π(N)} and a set of strictly positive weights {w(A), w(B), w(C), w(D),…,w(N)}. The probability of choosing K is as follows:<br>$$<br>P(K)&#x3D;\frac{w(K)}{w(A)+w(B)+w(C)+\dots+w(N)}<br>$$<br>$$<br>After\ choosing\ K, w(K)\ increases\ by\ γ · P(K) · (π(K)− A),<br>$$<br>$$<br>where\ γ &gt; 0\ equals\ the\ rate\ of\ adjustment\ and\ A&lt;max_{K} π(K)\ equals\ the\ aspiration\ level.<br>$$</p>
+<p>γ - rate of adjustment<br>A - aspiration level</p>
+<p>（收敛时间）Even with a <em>low aspiration level</em>, the alternatives with the highest rewards increase in weight the fastest, so the best alternative wins out in the long run. However, the time required for convergence on the best alternative may be long. It will also be true that as we <em>add more alternatives</em>, time to convergence also increases.</p>
+<p>（动态参数）To avoid these complications, we can build in <strong>endogenous aspirations</strong>. We emend the model so that the aspiration level adjusts over time by setting it equal to the average reward.</p>
+<p>In the <strong>learning-the-best-alternative framework</strong>, reinforcement learning with the aspiration level set equal to the average earned reward (eventually) almost always selects the best alternative.</p>
+<h2 id="Social-Learning-Replicator-Dynamics"><a href="#Social-Learning-Replicator-Dynamics" class="headerlink" title="Social Learning: Replicator Dynamics"></a>Social Learning: Replicator Dynamics</h2><p>（观察与模仿）Reinforcement learning assumes an individual acting in isolation. Social learning models assume that individuals see the actions and rewards of others. This can speed the rate of learning.</p>
+<p>（奖励与从众）Replicator Dynamics, assumes that the probability of taking an action depends on the product of its reward and its popularity. We can think of the former as a <strong>reward effect</strong> and the latter as a <strong>conformity effect</strong>.</p>
+<p>（行动与概率分布）Most often replicator dynamics models assume an infinite population. We can then characterize the actions taken as a probability distribution across the various alternatives. In the standard construction, time advances in discrete steps so that we can capture learning by changes in the probability distribution.</p>
+<h3 id="Replicator-Dynamics"><a href="#Replicator-Dynamics" class="headerlink" title="Replicator Dynamics"></a>Replicator Dynamics</h3><p>A collection of alternatives {A, B, C, D,…, N} have associated rewards {π(A), π(B), π(C), π(D),…, π(N)}. The actions of a population at time t can be written as a probability distribution across the N alternatives:<br>$$<br>(P_{t}(A), P_{t}(B),\dots,P_{t}(N)).<br>$$<br>The probability distribution changes according to the replicator equation:<br>$$<br>P_{t+1}(K)&#x3D;P_{t}(K)\times(\frac{\pi(K)}{\bar{\pi_{t}}}),where\ \bar{\pi_{t}}\ equals\ the\ average\ reward\ in\ period\ t.<br>$$</p>
+<p>As noted above, replicator dynamics includes a conformity effect (more popular alternatives are, more likely to be copied) as well as a reward effect. In the long run, the reward effect dominates, because high-reward alternatives always grow in proportion to lower-reward alternatives.</p>
+<p>（路径依赖）In replicator dynamics, the average reward performs a function similar to that of the aspiration level in reinforcement learning when the aspiration level adjusts to equal the average reward. The only difference is that in replicator dynamics, we calculate the average reward for a population. In reinforcement learning, the aspiration level equals an individual’s average reward. That distinction matters insofar as a population provides a larger sample. Thus, replicator dynamics produce less <strong>path dependence</strong> than reinforcement learning.</p>
+<p>（初始信息完备）In our construction of replicator dynamics, we assume that every alternative exists in the initial population. Given that the highest-reward alternative always has a higher-than-average reward and its proportion increases in every period,(eventually) replicator dynamics converge to the entire population choosing the best alternative.7 Thus, in a setting of learning the best alternative, both individual and social learning converge to the alternative with the highest reward.That will not be true in games.</p>
+<p>In learning the best from a finite set of alternatives, replicator dynamics with an infinite population converges to the entire population choosing the best alternative.</p>
+<h2 id="Learning-in-Games"><a href="#Learning-in-Games" class="headerlink" title="Learning in Games"></a>Learning in Games</h2><p>in a game, a player’s payoff depends both on her own action and on the actions of the other players. The payoff from a given action, such as cooperating in the Prisoners’ Dilemma, could be high in one period and low in the next depending on the action of the other player.</p>
+<h3 id="The-Generous-Spiteful-Game"><a href="#The-Generous-Spiteful-Game" class="headerlink" title="The Generous&#x2F;Spiteful Game"></a>The Generous&#x2F;Spiteful Game</h3><p>（绝对or相对）The Generous&#x2F;Spiteful Game, builds on a much-analyzed question about human behavior: Do we care more about our absolute or relative payoffs?</p>
+<p>⚠️：和我的毕业论文思路非常相似</p>
+<p>（国际政治中的新自由主义&amp;新现实主义）A similar tension exists in foreign affairs. Neoliberals believe that countries want to maximize absolute payoffs measured by military power, economic prosperity, and domestic stability. Another camp, known as neorealists, believes that countries value relative payoffs. A country would rather have a lower absolute payoff but be stronger than its enemies. Kenneth Waltz, a neorealist, wrote at the height of the Cold War, “<em>The first concern of states is not to maximize power but to maintain their positions in the system</em>.“</p>
+<p>Each of N players chooses to be generous G or spiteful S.<br>$$<br>Payoff(G,N_{G})&#x3D;1+2\times N_{G}<br>$$<br>$$<br>Payoff(S,N_{G})&#x3D;2+2\times N_{G}<br>$$<br>If we apply reinforcement learning in the Generous&#x2F;Spiteful Game, the players learn to be generous.<br>If we apply replicator dynamics, the population learns to be spiteful.</p>
+<p>（个体-绝对 vs 社会-相对）These findings highlight a key difference between individual and social learning. Individual learning leads people to choose the better action, so people learn a dominant action if one exists. Social learning leads people to choose actions that perform well relative to other actions.</p>
+<p>“if people learn individually, they learn to act more generously than if they learn socially.”</p>
+<hr>
+<p>5.9 end</p>
+<p>又白瞎了一天，卸载steam，老石啊老石，不能”明日复明日“了！！！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io">Jun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io/2025/05/08/2023-2025/25-5/25-5-8%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B17/">http://shijun0210.github.io/2025/05/08/2023-2025/25-5/25-5-8%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B17/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/05/07/2023-2025/25-5/25-5-7%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B16/" title="《模型思维：数学模型结构大模型黑箱》16"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">《模型思维：数学模型结构大模型黑箱》16</div></div><div class="info-2"><div class="info-item-1">信号模型离散信号模型一个规模为N的种群由S个强这类型的个体和W个弱者类型的个体组成；这两种类型的个体发送信号的成本分别为c和C，且c&lt;C。种群中所有发送信号的成员平均分配B的收益(B&gt;0)。这个模型有三种可能的结果：混同 (pooling) (C&lt;B&#x2F;N)：两种类型的个体都发送信号。分离 (separating) (c&lt;B&#x2F;S，且B&#x2F;S+1&lt;C)：只有“强者”类型的个体发送信号。部分混同...</div></div></div></a><a class="pagination-related" href="/2025/05/10/2023-2025/25-5/25-5-10%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B18/" title="《模型思维：数学模型结构大模型黑箱》18"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">《模型思维：数学模型结构大模型黑箱》18</div></div><div class="info-2"><div class="info-item-1">Multi-Armed Bandit Problems（不确定+最优备选）we add uncertainty to the problem of learning the best alternative to create a class of models known as multi-armed bandit problems. In bandit problems, rewards from alternatives are distributions rather than fixed amounts.  Bernoulli Bandit Problemsa subclass of bandit problems in which each alternative has a fixed probability of producing a successful outcome. （未知概率）Each of a collection of alternatives {A, B, C, D,…, N} has an unknown probability of...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Learning-Models"><span class="toc-number">1.</span> <span class="toc-text">Learning Models</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Individual-Learning-Reinforcement"><span class="toc-number">1.1.</span> <span class="toc-text">Individual Learning: Reinforcement</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Reinforcement-Learning-Model"><span class="toc-number">1.1.1.</span> <span class="toc-text">A Reinforcement Learning Model</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Social-Learning-Replicator-Dynamics"><span class="toc-number">1.2.</span> <span class="toc-text">Social Learning: Replicator Dynamics</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Replicator-Dynamics"><span class="toc-number">1.2.1.</span> <span class="toc-text">Replicator Dynamics</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Learning-in-Games"><span class="toc-number">1.3.</span> <span class="toc-text">Learning in Games</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Generous-Spiteful-Game"><span class="toc-number">1.3.1.</span> <span class="toc-text">The Generous&#x2F;Spiteful Game</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="Created 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/2023-2025/25-8/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="25-8-3">25-8-3</a><time datetime="2025-08-03T13:18:39.000Z" title="Created 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/2023-2025/25-7/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="25-7-28">25-7-28</a><time datetime="2025-07-28T02:25:16.000Z" title="Created 2025-07-28 10:25:16">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/12/2023-2025/25-5/25-5-12%20%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%80%9D%E8%80%83/" title="25-5-12">25-5-12</a><time datetime="2025-05-12T03:22:56.000Z" title="Created 2025-05-12 11:22:56">2025-05-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/11/2023-2025/25-5/25-5-11%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B19/" title="《模型思维：数学模型结构大模型黑箱》19">《模型思维：数学模型结构大模型黑箱》19</a><time datetime="2025-05-11T03:30:32.000Z" title="Created 2025-05-11 11:30:32">2025-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

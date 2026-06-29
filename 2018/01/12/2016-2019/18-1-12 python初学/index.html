@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>python初学 | shijun0210</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python语言程序设计CAP 计算机的概念，功能性和可编程性 一、程序设计语言  程序设计语言，也叫编程语言，是计算机能够理解和识别操作的一种交互体系。  最好的程序设计语言是人类的自然语言。但自然语言不能够作为计算机程序设计语言：1）存在表达歧义；2）文学色彩浓厚  程序设计语言的种类  1）机器语言：01代码，CPU认识的语言。例：2+3运算 1101001000111011 2）汇编语言：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python初学">
+<meta property="og:url" content="http://shijun0210.github.io/2018/01/12/2016-2019/18-1-12%20python%E5%88%9D%E5%AD%A6/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:description" content="Python语言程序设计CAP 计算机的概念，功能性和可编程性 一、程序设计语言  程序设计语言，也叫编程语言，是计算机能够理解和识别操作的一种交互体系。  最好的程序设计语言是人类的自然语言。但自然语言不能够作为计算机程序设计语言：1）存在表达歧义；2）文学色彩浓厚  程序设计语言的种类  1）机器语言：01代码，CPU认识的语言。例：2+3运算 1101001000111011 2）汇编语言：">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2018-01-11T23:20:19.000Z">
+<meta property="article:modified_time" content="2026-05-03T10:25:13.360Z">
+<meta property="article:author" content="Jun">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shijun0210.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "python初学",
+  "url": "http://shijun0210.github.io/2018/01/12/2016-2019/18-1-12%20python%E5%88%9D%E5%AD%A6/",
+  "image": "http://shijun0210.github.io/img/avatar.jpg",
+  "datePublished": "2018-01-11T23:20:19.000Z",
+  "dateModified": "2026-05-03T10:25:13.360Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun",
+      "url": "http://shijun0210.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shijun0210.github.io/2018/01/12/2016-2019/18-1-12%20python%E5%88%9D%E5%AD%A6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python初学',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a><a class="nav-page-title" href="/"><span class="site-name">python初学</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">python初学</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2018-01-11T23:20:19.000Z" title="Created 2018-01-12 07:20:19">2018-01-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-03T10:25:13.360Z" title="Updated 2026-05-03 18:25:13">2026-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/2016-2019/">2016-2019</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>Python语言程序设计CAP</p>
+<p>计算机的概念，功能性和可编程性</p>
+<p>一、程序设计语言</p>
+<ol>
+<li>程序设计语言，也叫编程语言，是计算机能够理解和识别操作的一种交互体系。</li>
+</ol>
+<p>最好的程序设计语言是人类的自然语言。但自然语言不能够作为计算机程序设计语言：1）存在表达歧义；2）文学色彩浓厚</p>
+<ol start="2">
+<li>程序设计语言的种类</li>
+</ol>
+<p>1）机器语言：01代码，CPU认识的语言。例：2+3运算 1101001000111011</p>
+<p>2）汇编语言：在机器语言上增加了人类可读的助记符。例：2+3运算 and 2, 3, result</p>
+<p>3）高级语言：向自然语言靠近的语言，又分为编译和解释语言。 例：2+3运算 result&#x3D;2+3</p>
+<p>4）编译：将高级语言源代码转换成目标代码（机器语言），程序便可执行。</p>
+<p>高级语言源代码——编译器——机器语言代码——（输入——程序执行——输出）</p>
+<p>5）解释：将源代码逐条转化成目标代码同时逐条运行，每次运行程序都需要源代码和解释器。</p>
+<p>高级语言源代码（输入）——解释器——输出</p>
+<p>6）编译和解释对比</p>
+<p>编译的好处：目标代码执行速度更快；目标代码在相同操作系统上使用灵活</p>
+<p>解释的好处：便于维护源代码；良好的可移植性</p>
+<p>编译执行的编程语言叫做静态语言，如C，Java语言等</p>
+<p>解释执行的编程语言叫做脚本语言，如PHP，JavaScript等。Python语言是典型的脚本语言。</p>
+<ol start="3">
+<li>python语言</li>
+</ol>
+<p>python语言是通用语言，脚本语言，开源语言，跨平台语言，多模型语言</p>
+<p>开发环境配置</p>
+<p>二、程序的基本编写方法</p>
+<p>IPO模式 Input Process Output</p>
+<p>问题的计算特性：现实生活中的问题——抽象出可计算部分——计算特性——（输入——处理——输出）</p>
+<p>程序编写的步骤：</p>
+<p>1）分析问题：分析问题的可计算部分</p>
+<p>2）确定问题：将计算部分划分为确定的IPO三部分</p>
+<p>3）设计算法：完成计算部分的核心处理方法</p>
+<p>4）编写程序：实现整个程序</p>
+<p>5）调试测试：使程序在各种情况下都能够正确运行</p>
+<p>6）升级维护：使程序长期正确运行，适应需求的微小变化</p>
+<p>温度转换程序实例</p>
+<p>问题：如何利用python程序进行摄氏度和华氏度的转化</p>
+<p>步骤一：分析问题的计算部分，摄氏度和华氏度的转换方程式</p>
+<p>步骤二：确定功能，使用IPO方法进一步分析</p>
+<p>（输入：华氏或摄氏温度值、温度标识——处理：温度转换算法——输出：华氏或摄氏温度值、温度标识）</p>
+<p>F表示华氏度，82F表示华氏度82度；C表示摄氏度，28C表示摄氏度28度</p>
+<p>步骤三：设计算法</p>
+<p>根据华氏和摄氏温度定义，单位刻度对应温度关系的转化公式：</p>
+<p>C&#x3D;(F-32)&#x2F;1.8；F&#x3D;Cx1.8+32</p>
+<p>步骤四：编写程序</p>
+<p>步骤五：调试、运行程序</p>
+<p>在系统命令行上通过如下命令执行程序：C:\python TempConvert.py</p>
+<p>或者：使用IDLE打开上述文件，按F5运行（推荐）</p>
+<p>步骤六：升级维护</p>
+<p>三、Python程序元素分析</p>
+<ol>
+<li>Python语法元素</li>
+</ol>
+<p>注释、输入、缩进、输出、变量、分支、常量、循环、表达式</p>
+<p>缩进：1个缩进&#x3D;4个空格，是用以在Python中表明代码之间的层次关系；是表明程序框架的唯一手段</p>
+<p>温度转换程序分析：</p>
+<p>第一行是注释语句 # TempConvert.py</p>
+<p>注释是程序员在代码中加入的辅助说明信息，它不能被计算机执行，也不受语法约束，可以在里面写入任何内容。一般来说，注释用来帮助程序员记录程序设计方法，辅助程序阅读。</p>
+<p>注释的两种方法：</p>
+<p>1）单行注释已#开头</p>
+<p>2）多行注释以’’’开头和结尾</p>
+<p>程序中出现的 val、f、c被称为变量</p>
+<p>变量是程序中最常使用，能够表示值得一个名称。变量所表示得值是可以变化的。</p>
+<p>命名 指给程序中自定义元素关联名字的过程，命名需要保证在程序中，名字具有唯一性。命名需要符合如下规则：</p>
+<p>命名规则使用大小写字母、数字和下划线的组合，但首字母只能是大小写或下划线，不能使用空格。中文等非字母符号也可以作为名字。合法命名的标识符，例：python_is_good、<em>it_is_a_question</em>、python语言等。</p>
+<p>注：Python有33个保留字，用户定义变量的时候不能和保留字相同。</p>
+<p> and as assert break class continue def del elif else escept finally for from globall if import in is lambda nonlocal not or pass raise return try while with yield True False None</p>
+<p>第二行是输入函数的表达式 val&#x3D;input(“temperature(ex:32C):”)</p>
+<p>表达式指程序中产生或计算新数据值的一行代码。Python语言的33个保留字或者操作符可以产生符合语法的表达式。</p>
+<p>如，&gt;&gt;&gt;x&#x3D;25，表示将数字25赋值给变量x</p>
+<p>空格的使用：表示缩进关系的空格不能改变，空格不能将一个命名分割。除这两条外，程序中可以任意使用空格增加程序可读性。</p>
+<p>输入函数：input()函数从控制台获得用户输入。使用方法如下：&lt;变量&gt;&#x3D;input(&lt;提示性文字&gt;)，获得的用户输入以字符串形式保存在&lt;变量&gt;中。字符串是一种数据类型，用来记录文本的信息。</p>
+<p>例：如果val&#x3D;”28C”，则val[-1]表示最后一个字符”C”，前两个字符组成的子串可以用val[0:2]表示，它表示一个从[0,2)的区间。由于约定用户输入的最后一个字符串是C或者F，之前是数字，所以通过val[0:-1]来获取除最后一个字符外的字符串。</p>
+<p>第三行if语句是分支语句 if val[-1] in [‘C’,’c’]:</p>
+<p>分支语句用来根据判断条件选择程序执行的不同路径。基本过程如下：</p>
+<p>if &lt;条件1成立&gt;</p>
+<p>  &lt;表达式组1&gt;</p>
+<p>elif &lt;条件2成立&gt;</p>
+<p>   &lt;表达式组2&gt;</p>
+<p>……</p>
+<p>elif &lt;条件N-1成立&gt;</p>
+<p>   &lt;表达式组N-1&gt;</p>
+<p>else:</p>
+<p>&lt;表达式组N&gt;</p>
+<p>保留字in是一个二元关系操作，用来判断左侧内容是否在右侧的集合中。</p>
+<p>赋值语句：使用等号给变量赋值 f&#x3D;1.8 x float(input_str[0:-1]) + 32</p>
+<p>同步赋值语句:同时给多个变量赋值(先运算右侧N个表 达式，然后同时将表达式结果赋给左侧)，如&lt;变量1&gt;,…,&lt;变量N&gt;&#x3D;&lt;表达式1&gt;,…,&lt;表达式N&gt;</p>
+<p>输出函数：print()函数用来输出字符信息，或以字符形式输 出变量。<br>print()函数可以输出各种类型变量的值。<br>print()函数通过%来选择要输出的变量。</p>
+<p>实例：用户输入两个数字，计算它们的平均数，并输出 平均数</p>
+<p>num1&#x3D;input(“The first number is”)</p>
+<p>num2&#x3D;input(“The second number is”)</p>
+<p>avg_num&#x3D;(float(num1)+float(num2))&#x2F;2</p>
+<p>print(“The average number is %f” % avg_num)</p>
+<p>循环语句：控制程序运行，根据判断条件或计数条件确定 一段程序的运行次数</p>
+<p>计数循环，基本过程如下</p>
+<p>for i in range (&lt;计数值&gt;):</p>
+<p>&lt;表达式1&gt;</p>
+<p> 例如，使某段程序连续运行10次</p>
+<p>for i in range (10):</p>
+<p>&lt;源代码&gt;</p>
+<p>其中，变量i是用于计数</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io">Jun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io/2018/01/12/2016-2019/18-1-12%20python%E5%88%9D%E5%AD%A6/">http://shijun0210.github.io/2018/01/12/2016-2019/18-1-12%20python%E5%88%9D%E5%AD%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2017/01/01/2016-2019/17%20%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6-%E7%AC%94%E8%AE%B0-%E6%84%9F%E8%A7%89%E4%B8%8E%E8%A7%86%E8%A7%89/" title="感觉与视觉"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">感觉与视觉</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2018/03/01/2016-2019/18-3%20%E7%89%B9%E5%8A%B3%E7%89%B9%E8%90%A5%E9%94%80%E5%8D%81%E8%A6%81-%E7%AC%94%E8%AE%B0/" title="特劳特营销十要-笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">特劳特营销十要-笔记</div></div><div class="info-2"><div class="info-item-1">一、营销的本质 1. 营销的本质是什么？ 营销就是对思想、产品及劳务进行设计、定价、促销及分销的计划和实施的过程，从而产生满足个人和组织目标的交换。换句话说，营销就是要确定为了销售产品和提供服务以获得利润都需要做哪些事情。 营销工作的职责是发现新理念并将其用语言描述出来，同时将其融入完善的营销战略中，然后释放出它的能量。 2. 预算的基本原则 第一步，根据每种产品的营销生命周期制定市场营销计划。 第二步，评估产品机会。 第三步，安排广告工作——花足够的钱把你的故事讲给目标市场听。 第四步，资金不足时应该立刻停止。将各个项目按照获利可能性和工作有效性排出优先次序，从高往低开始分配㔍。当资金达到极限时，就必须将多余的项目舍弃。 实施好的概念胜过拥有好的概念。——罗伯特...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="Created 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/2023-2025/25-8/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="25-8-3">25-8-3</a><time datetime="2025-08-03T13:18:39.000Z" title="Created 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/2023-2025/25-7/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="25-7-28">25-7-28</a><time datetime="2025-07-28T02:25:16.000Z" title="Created 2025-07-28 10:25:16">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/12/2023-2025/25-5/25-5-12%20%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%80%9D%E8%80%83/" title="25-5-12">25-5-12</a><time datetime="2025-05-12T03:22:56.000Z" title="Created 2025-05-12 11:22:56">2025-05-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/11/2023-2025/25-5/25-5-11%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B19/" title="《模型思维：数学模型结构大模型黑箱》19">《模型思维：数学模型结构大模型黑箱》19</a><time datetime="2025-05-11T03:30:32.000Z" title="Created 2025-05-11 11:30:32">2025-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

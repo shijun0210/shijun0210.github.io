@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据思维-笔记 | shijun0210</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、数据可视化	最基础的数据可视化方法就是统计图。一个好的统计图应该满足四个标准：准确、有效、简洁、美观。	1）准确是统计图最基本的要求，即要使用正确的统计图去描述不同类型的数据。比如，	对于离散型变量（性别、职业等），可以画饼图或者柱状图；	对于连续性变量（年龄、工资等），可以画直方图或箱线图；	对于时间序列变量（GDP，CPI等），可以画折线图。	2）有效是让统计图能够清晰地展示数据，支撑观点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据思维-笔记">
+<meta property="og:url" content="http://shijun0210.github.io/2020/10/03/2020-2021/20-10-3%20%E6%95%B0%E6%8D%AE%E6%80%9D%E7%BB%B4-%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:description" content="一、数据可视化	最基础的数据可视化方法就是统计图。一个好的统计图应该满足四个标准：准确、有效、简洁、美观。	1）准确是统计图最基本的要求，即要使用正确的统计图去描述不同类型的数据。比如，	对于离散型变量（性别、职业等），可以画饼图或者柱状图；	对于连续性变量（年龄、工资等），可以画直方图或箱线图；	对于时间序列变量（GDP，CPI等），可以画折线图。	2）有效是让统计图能够清晰地展示数据，支撑观点">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2020-10-03T11:47:19.000Z">
+<meta property="article:modified_time" content="2026-05-03T10:25:22.844Z">
+<meta property="article:author" content="Jun">
+<meta property="article:tag" content="goodnotes">
+<meta property="article:tag" content="回归分析">
+<meta property="article:tag" content="数据">
+<meta property="article:tag" content="数据可视化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shijun0210.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "数据思维-笔记",
+  "url": "http://shijun0210.github.io/2020/10/03/2020-2021/20-10-3%20%E6%95%B0%E6%8D%AE%E6%80%9D%E7%BB%B4-%E7%AC%94%E8%AE%B0/",
+  "image": "http://shijun0210.github.io/img/avatar.jpg",
+  "datePublished": "2020-10-03T11:47:19.000Z",
+  "dateModified": "2026-05-03T10:25:22.844Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun",
+      "url": "http://shijun0210.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shijun0210.github.io/2020/10/03/2020-2021/20-10-3%20%E6%95%B0%E6%8D%AE%E6%80%9D%E7%BB%B4-%E7%AC%94%E8%AE%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据思维-笔记',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a><a class="nav-page-title" href="/"><span class="site-name">数据思维-笔记</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">数据思维-笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-10-03T11:47:19.000Z" title="Created 2020-10-03 19:47:19">2020-10-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-03T10:25:22.844Z" title="Updated 2026-05-03 18:25:22">2026-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/2020-2021/">2020-2021</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>一、数据可视化<br>	最基础的数据可视化方法就是统计图。一个好的统计图应该满足四个标准：准确、有效、简洁、美观。<br>	1）准确是统计图最基本的要求，即要使用正确的统计图去描述不同类型的数据。比如，<br>	对于离散型变量（性别、职业等），可以画饼图或者柱状图；<br>	对于连续性变量（年龄、工资等），可以画直方图或箱线图；<br>	对于时间序列变量（GDP，CPI等），可以画折线图。<br>	2）有效是让统计图能够清晰地展示数据，支撑观点。<br>	3）简洁：在画图阶段，过于技术的细节，如果一句话说不清，就不要展示。<br>	4）美观</p>
+<p>1. 柱状图<br>	柱状图是针对离散型数据（比如性别）所作的统计图。每根柱子代表一个类别（男性或女性），柱子的高度是这个类别的频数（男性或女性有多少人），有时也是百分比。<br>	<br>	Ps：柱状图的柱子最好不要超过10根；柱子之间要留出空隙；柱子从高到低排序<br>	<br>	一个完整的统计图包含以下要素或注意事项：<br>	1）要有图表题，一般在图的下方，标题要简洁明了。<br>	2）报告中的统计图要有标号。横轴和纵轴要标注清楚（如横轴：性别；纵轴：频数）。如果有单位的话，需要注明。<br>	3）图的标题、横轴、纵轴等，出现的文字要统一和准确。<br>	4）图的比例要协调，别太胖或太瘦，太高或太矮。<br>	5）图的内容要正确、简明，避免出现不必要的标签、背景灯。<br>	6）注意图的配色。<br>	7）画完图要有适当的评述，尤其是在报告里。<br>	8）不是所有的数据描述都要通过画图来完成。</p>
+<pre><code>堆积柱状图：
+堆积柱状图和柱状图的本质一样，都是在展示频数。只不过简单的柱状图只涉及一个离散型变量（比如性别），而堆积柱状图涉及两个离散型变量（比如性别和职称）。
+1）堆积柱状图也可以展示一个离散型变量和一个连续型变量，甚至两个连续型变量，前提是将连续型变量离散化，比如将年龄分成若干离散区间。
+2）采用堆积展示的手段，不太适合在柱子上标注出交叉频数，会显得混乱。
+注意：首先，不要每个统计变量都展示一遍，均值、中位数、方差、标准差，一个变量画出好几个柱状图展示不同的统计量。要展示读者最关心的，或者最能讲出故事的那些统计量，做到少而精。其次，要注意视觉上产生的错觉，避免接受错误信息。
+</code></pre>
+<p>2. 饼图<br>	饼图和柱状图一样，都是针对离散型数据的统计图。柱状图多用于展示频数，饼图多用于展示频率（也就是比例）。<br>	<br>	注意：<br>	1）若因变量取值比较少，信息量有限，建议直接写成一句话。<br>	2）若饼的块数过多的时候，有两种改进方法：一种是将比例不到5%的，归为一类，叫作其他。可以在饼的下方写个注释或者在行文中提及“其他”都包括什么。另一种是画条形图。由于平时写报告的纸张，纵向较长，所以条形图比柱状图更适合展示类别数较多的离散型变量。<br>	3）饼的标签一般只标注百分比，很少标注频数或者两者都标注。建议在饼的旁边对应着标注类别+比例。<br>	4）当饼图太丑时，可以巧妙使用复合饼图。<br>	5）饼的配色，建议面积大的区块用浅色，面积小的用深色。</p>
+<p>3. 直方图<br>	直方图最大的用处是观察数据分布的形态，了解数据的取值范围。关于数据分布，主要分为对称、右偏和左偏三种。</p>
+<p>4. 折线图<br>	三种常见的数据类型：<br>	1）横截面数据：是指在某一个时加点上，在多个对象上采集到的数据。<br>	2）时间序列数据：是指在一些时间点上，针对某个对象采集的数据，反映事物随时间的变化。<br>	3）面板数据：是指在多个时间点上，对于同一批对象采集的数据。<br>	<br>	这里重点介绍时间序列数据。时间序列数据的典型特征是带有时间标签，因此折线图的横轴是时间（顺序不能乱），纵轴是某一指标取值。将每个时间点上采集到的指标取值标在图上，相邻的两个点用直线连接起来，就形成了折线图。<br>	<br>	折线图有三大特点：<br>	1）看趋势。指标随着时间的变化，呈现递增、递减还是持平的趋势。<br>	2）看周期。指标的取值是否呈现一定的周期规律。<br>	3）看突发事件。指标的取值是否因为某个事件的发生，出现波峰或者波谷。<br>	<br>	另外，折线图也可以用来对比多个指标的变化，也就是一张图里有多条折线。</p>
+<p>5. 散点图<br>	散点图是用于展示两个（连续型）变量的一种常用统计图。用来解读两个变量的相关关系，一般有正线性相关、负线性相关、非线性相关与不相关。需要注意的是，相关关系不等于因果关系，人们渴求因果关系，但常用的许多统计工具探求的只是相关关系。<br>	<br>	从散点图上，还能发现一些“异常”的信息，也就是“离群点”。<br>	<br>	当数据有多个连续型变量时，可以两两画散点图，形成散点图“矩阵”。<br>	<br>	如果数据中有很多连续型变量，散点图矩阵会让人抓不到重点。这时可以两两计算相关系数。但如果把相关系数的数值展示成矩阵，并不直观。在此，可以将相关系数矩阵可视化。</p>
+<p>6. 箱线图 boxplot<br>	箱线图是一种针对连续型变量的统计图。箱线图的三个基本要素：<br>	1）箱子的中间一条线，是数据的中位数，代表了样本数据的平均水平。<br>	2）箱子的上下限，分别是数据的上四分位数和下四分位数，意味着包含50%的数据。因此，箱子的高度在一定程度上反映了数据的波动程度。<br>	3）在箱子的上方和下方，又各有一条线。有时代表最大或最小值；有时会有一些点“冒出去”。如果点冒出去，应理解为“异常值”。<br>	<br>	箱线图的用法是，配合定性变量画分组箱线图，作比较。如果只有一个定量变量，很少用一个箱线图去展示其分布，更多选择直方图。</p>
+<p>7. 茎叶图<br>	茎叶图可以同时展示原始数据和分布的形状，图形由“茎”和“叶”两部分组成。通常以数据的高位数字作为树茎，低位数字作为树叶。</p>
+<p>二、回归分析<br>回归分析主要包括五类：线性回归、0-1回归、定序回归、计数回归以及生存回归。</p>
+<p>1. 线性回归<br>	线性回归，更严格地说是普通线性回归，其主要特征是：因变量Y必须是连续型数据，而对解释性变量X没有太多要求。主要应用于股票投资、客户终身价值、医疗健康等领域。</p>
+<p>2. 0-1回归<br>	0-1回归就是因变量Y是0-1型数据的回归分析模型。0-1型数据是指只有两个可能取值的数据类型，例如性别等。<br>	<br>	0-1型的因变量最常见的分析方式包括逻辑回归Logistic Regression &amp; 概率单位回归 Probit Regression。相关的重要应用很多，比如互联网征信、个性化推荐、社交好友推荐等。</p>
+<p>3. 定序回归<br>	定序回归就是因变量Y为定序数据的回归分析模型。定序数据就是关乎顺序的数据，但是又没有具体的数值意义，例如喜好程度等。这类数据没有数值意义，不能做任何代数运算，且顺序很重要。<br>	<br>	定序回归常见的应用场景有：各种关于消费者偏好的市场调研（李克特1<del>5点量表）；豆瓣上对电影的打分评级（1</del>5分）；电商平台上对商品或商家的满意程度（1~5颗星）等等。</p>
+<p>4. 计数回归<br>	如果因变量Y是一个计数数据，那么对应的回归分析模型就是计数回归。计数数据，就是数数的数据——非负的整数。例如各家庭孩子、宠物的数量等。<br>	<br>	常见的应用有：客户关系管理中，一个经典的FRM模型，其中这个F，就是frequency，指的是一定时间内客户到访的次数；医学研究中，一个癌症病人体内肿瘤的个数；社会研究中，一对夫妻最后选择生育孩子的个数等。</p>
+<p>5. 生存回归<br>	生存回归是生存数据回归的简称，即因变量Y为生存数据的回归分析模型。其中生存数据就是刻画一个现象或个体存续生存了多久，也就是常说的生存时间。为此需要清晰定义：什么是“出生”？什么是“死亡”？<br>	<br>	以人的自然出生为“出生”，以人的自然死亡为“死亡”，就定义了一个人的寿命，这就是一个典型的生存数据，该数据对寿险精算非常重要；以一个电子产品第一次使用为“出生”，最后报废为“死亡”，就定义了产品的使用寿命；以一个消费者的注册成为会员为“出生”，到某天流失不再登录为“死亡”，就定义了一个消费者的生命周期；以一个企业的工商注册为“出生”，破产注销为“死亡”，就刻画了企业的生存时间；以一个创业团队获得A轮融资为“出生”，创业板上市为“死亡”，就刻画了风险投资回报的周期。<br>	<br>	生存数据大多为截断的数据censored data，例如年龄60+等。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io">Jun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io/2020/10/03/2020-2021/20-10-3%20%E6%95%B0%E6%8D%AE%E6%80%9D%E7%BB%B4-%E7%AC%94%E8%AE%B0/">http://shijun0210.github.io/2020/10/03/2020-2021/20-10-3%20%E6%95%B0%E6%8D%AE%E6%80%9D%E7%BB%B4-%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE/">数据</a><a class="post-meta__tags" href="/tags/goodnotes/">goodnotes</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">数据可视化</a><a class="post-meta__tags" href="/tags/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">回归分析</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2020/10/02/2020-2021/20-10-2%20%E7%AC%A6%E5%8F%B7%E4%BA%92%E5%8A%A8%E7%90%86%E8%AE%BA/" title="符号互动理论"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">符号互动理论</div></div><div class="info-2"><div class="info-item-1">米德 (G. Mead) 通常被认为是符号互动论 (Symbolic Interactionism) 的开创者。他提出了人类社会组织基础的原则，是包括他人参与在内的交流原则。这一原则要求他人在自我中出现，他人参与自我，通过他人而达到自我意识。[1] 其中，交流的核心元素在于符号。米德认为自我是结合“主我”与“客我”的一个持续过程，由此而引申出的是“镜中自我”的概念——通过扮演他人的角色而产生的精神形象，以及“概化他人”的概念——一个人基于社群预期和反应形成的关于他（她）的自我的混合意象。[2] 1937年，布鲁默（H....</div></div></div></a><a class="pagination-related" href="/2020/10/20/2020-2021/20-10-20%20RP%20%E9%97%AE%E9%A2%98%E7%9A%84%E6%8F%90%E5%87%BA/" title="RP 问题的提出"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">RP 问题的提出</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2021/06/30/2020-2021/21%20Malaya%20RP/" title="Malaya RP"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-30</div><div class="info-item-2">Malaya RP</div></div><div class="info-2"><div class="info-item-1"> The purpose of Internet usage as a moderator in the relationship between Internet usage and social justice perceptions: a comparative study of China and Malaysia BackgroundIn the age of post-pandemic Covid-19, people are spending more and more time on the Internet. The number of Chinese Internet users has reached 989 million (70.6% of the total population), and the average daily time of Internet usage has reached 3.7 hours. In Malaysia, there are about 28.7 million Internet users (88.7% of...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="Created 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/2023-2025/25-8/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="25-8-3">25-8-3</a><time datetime="2025-08-03T13:18:39.000Z" title="Created 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/2023-2025/25-7/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="25-7-28">25-7-28</a><time datetime="2025-07-28T02:25:16.000Z" title="Created 2025-07-28 10:25:16">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/12/2023-2025/25-5/25-5-12%20%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%80%9D%E8%80%83/" title="25-5-12">25-5-12</a><time datetime="2025-05-12T03:22:56.000Z" title="Created 2025-05-12 11:22:56">2025-05-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/11/2023-2025/25-5/25-5-11%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B19/" title="《模型思维：数学模型结构大模型黑箱》19">《模型思维：数学模型结构大模型黑箱》19</a><time datetime="2025-05-11T03:30:32.000Z" title="Created 2025-05-11 11:30:32">2025-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

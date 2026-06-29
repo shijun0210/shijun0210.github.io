@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>研究方法笔记-郭中实 | shijun0210</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="因果关系的三个（必要和充分）条件： 1）时序性 temporal sequence 因一定要发生在果之前 2）共异性 co-variance 因的变化一定带来果的变化 3）非伪性 non-spuriousness 果的所有变化全部来自因 几乎所有社会科学研究都输在第三点上 常见的误区： 1）共因： 冰淇淋销量与溺亡关系——共因：炎热的天气； 家长暴力导致子女暴力——共因：暴力基因（2011年，Pl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="研究方法笔记-郭中实">
+<meta property="og:url" content="http://shijun0210.github.io/2020/11/18/2020-2021/20-11-18%20%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%83%AD%E4%B8%AD%E5%AE%9E/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:description" content="因果关系的三个（必要和充分）条件： 1）时序性 temporal sequence 因一定要发生在果之前 2）共异性 co-variance 因的变化一定带来果的变化 3）非伪性 non-spuriousness 果的所有变化全部来自因 几乎所有社会科学研究都输在第三点上 常见的误区： 1）共因： 冰淇淋销量与溺亡关系——共因：炎热的天气； 家长暴力导致子女暴力——共因：暴力基因（2011年，Pl">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2020-11-18T09:34:55.000Z">
+<meta property="article:modified_time" content="2026-05-03T10:25:26.850Z">
+<meta property="article:author" content="Jun">
+<meta property="article:tag" content="uic">
+<meta property="article:tag" content="研究方法">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shijun0210.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "研究方法笔记-郭中实",
+  "url": "http://shijun0210.github.io/2020/11/18/2020-2021/20-11-18%20%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%83%AD%E4%B8%AD%E5%AE%9E/",
+  "image": "http://shijun0210.github.io/img/avatar.jpg",
+  "datePublished": "2020-11-18T09:34:55.000Z",
+  "dateModified": "2026-05-03T10:25:26.850Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun",
+      "url": "http://shijun0210.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shijun0210.github.io/2020/11/18/2020-2021/20-11-18%20%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%83%AD%E4%B8%AD%E5%AE%9E/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '研究方法笔记-郭中实',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a><a class="nav-page-title" href="/"><span class="site-name">研究方法笔记-郭中实</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">研究方法笔记-郭中实</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-11-18T09:34:55.000Z" title="Created 2020-11-18 17:34:55">2020-11-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-03T10:25:26.850Z" title="Updated 2026-05-03 18:25:26">2026-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/2020-2021/">2020-2021</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>因果关系的三个（必要和充分）条件：</p>
+<p>1）时序性 temporal sequence 因一定要发生在果之前</p>
+<p>2）共异性 co-variance 因的变化一定带来果的变化</p>
+<p>3）非伪性 non-spuriousness 果的所有变化全部来自因</p>
+<p>几乎所有社会科学研究都输在第三点上</p>
+<p>常见的误区：</p>
+<p>1）共因：</p>
+<p>冰淇淋销量与溺亡关系——共因：炎热的天气；</p>
+<p>家长暴力导致子女暴力——共因：暴力基因（2011年，Plain brain）</p>
+<p>2）潜因：</p>
+<p>善良心肠导致施舍行为——潜因：虚荣心</p>
+<p>3）中介：</p>
+<p>抽烟导致肺病——中介：尼古丁&#x2F;焦油</p>
+<p>（中介变量含在自变量里）</p>
+<p>4）调节&#x2F;条件变量</p>
+<p>（调节变量在自变量之外，和自变量共同影响因变量，两个变量互为调节变量，哪个是主变量，哪个是调节变量由研究目的决定）</p>
+<p>由于共因、潜因、中介、调节变量的数量接近无穷，所以任何因果关系都是不（可能）完整的。</p>
+<p>非因果关系：相关关系</p>
+<p>在相关关系中，我们只知道两个变量之间的共异关系，但不知因果。相关关系往往带有欺骗性</p>
+<p>符号：r（rxy &#x3D; -0.36）</p>
+<p>关系：两个连续变量（方向和强度）</p>
+<p>关系系数：-1.0 和 +1.0 之间（-1.0，0，+1.0 均为理论值，现实生活中没有）</p>
+<p>相关性和线的角度没有关系，和离散程度有关系</p>
+<p>概念定义：</p>
+<p>所有概念都是人想象出来的，抽象的</p>
+<p>概念的定义主要分为以下几类：</p>
+<p>日常生活的定义；</p>
+<p>字典定义；</p>
+<p>政治定义；</p>
+<p>哲学定义；</p>
+<p>学术定义</p>
+<p>……</p>
+<p>任何概念的内涵和外延都极其宽泛和丰富，无法用一个定义囊括，所有的定义都是相对的（相对于另一个概念、语境、文化、意义、符号、意识形态等）</p>
+<p>因为概念是人造的，所以概念的定义是随时代的变化而变化的，所以我们永远无法定义单一概念</p>
+<p>两个抽象概念，一对关系 &#x3D; 理论</p>
+<p>概念定义是理论阐释的一部分</p>
+<p>时间维度、控制维度、知识维度、信息维度</p>
+<p>概念-维度-指标 concept-dimension-index CDI</p>
+<p>从抽象到具象</p>
+<p>概念单一，维度指标众多</p>
+<p>维度可有可无，指标不可或缺</p>
+<p>可有多层维度</p>
+<p>指标就是变量</p>
+<p>概念和变量的设定是人为的</p>
+<p>结构模型 横着的</p>
+<p>测量模型 竖着的</p>
+<p>信度指的是测同一个指标的</p>
+<p>效度指的是不同指标之间的</p>
+<p>有没有一个文化框架，每年做一次，测量文化迁移的趋势</p>
+<p>语境与概念：借尸还魂</p>
+<p>尸 是场景语境，魂 是概念</p>
+<p>关系的性质</p>
+<p>线性</p>
+<p>非线性</p>
+<p>弱关系</p>
+<p>强关系</p>
+<p>四种测量层次：</p>
+<p>定类（排他性&#x2F;完备性）</p>
+<p>新闻类别、媒体类别</p>
+<p>定序</p>
+<p>定距</p>
+<p>定比</p>
+<p>所有测量层次都是武断的，人为制定的</p>
+<p>除了定类，其它三个测量层次都具有连续性</p>
+<p>这样分层的目的：与社科对现实的分类相连；与不同的理论视角挂钩，与不同统计分析方法相匹配</p>
+<p>根据不同研究&#x2F;理论需要，同一变量可以划分为不同的测量层次</p>
+<p>同维度的指标相关系数越“高”越好，</p>
+<p>跨维度的指标相关系数越“低”越好，理想情况应该是0，但是取决于具体问题——效度</p>
+<p>内部效度越高，外部效度越低</p>
+<p>代表性：样本中的数值和规律同样存在于母本里</p>
+<p>确保样本代表性是抽样调查数据质量最最最最最重要的衡量标准</p>
+<p>统计针对的是样本，参数针对的是母本，我们用统计来计算母本的参数</p>
+<p>抽样框</p>
+<p>实证研究的结论基本上都是针对母本的，抽样框就是含该母本中全部个体要素的一个名单&#x2F;列表，每个要素只能出现一次。通常采用以下方法：</p>
+<p>1）依靠机构&#x2F;付费获取</p>
+<p>2）自己收集</p>
+<p>3）分层</p>
+<p>4）分成+整群</p>
+<p>样本越大抽样误差越小（1300的样本量，神奇的数字）</p>
+<p>用中位数回归去测量知识鸿沟？？？</p>
+<p>所有的抽样分布都是正态分布</p>
+<p>抽样分布的均值就是母体均值，它符合正态分布的一切特征与属性</p>
+<p>在样本分布里，1，2，3叫作标准差 deviation</p>
+<p>在抽样分布里，1，2，3叫作标准误 error</p>
+<p>相关分析，分析的是标准差</p>
+<p>问卷设计：</p>
+<p>抽样调查和控制实验方法</p>
+<p>1、问卷具有双重主观问题：研究者的主观和受访者的主观</p>
+<p>2、大部分学术问卷背后有机构研究经费支撑</p>
+<p>3、研究者和受访者对问题的兴趣差异巨大</p>
+<p>4、敏感度、社会期望值——系统误差</p>
+<p>5、受访人的言行（无论是什么）均不应该受到研究人员的指责</p>
+<p>几个错误的假设前提：</p>
+<p>1、每个社会成员都具有同等的生产和表达意见的能力。❌</p>
+<p>2、受访者表达出来的意见是真实的。❌</p>
+<p>3、每个表达出来的意见具有同等价值。❌</p>
+<p>4、问卷中的问题是值得问的。❌</p>
+<p>5、拒答不一定是随机误差（有可能是对问题的抵触。❌</p>
+<p>问卷中的每一个问题必须有其理论地位！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io">Jun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io/2020/11/18/2020-2021/20-11-18%20%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%83%AD%E4%B8%AD%E5%AE%9E/">http://shijun0210.github.io/2020/11/18/2020-2021/20-11-18%20%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%83%AD%E4%B8%AD%E5%AE%9E/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/uic/">uic</a><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a><a class="post-meta__tags" href="/tags/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/">研究方法</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2020/10/30/2020-2021/20-10-30%20%E4%BA%92%E8%81%94%E7%BD%91%E4%BD%BF%E7%94%A8%E4%B8%8E%E4%B8%BB%E8%A7%82%E5%85%AC%E5%B9%B3%E6%84%9F%E7%9A%84%E5%85%B3%E7%B3%BB%E7%A0%94%E7%A9%B6/" title="互联网使用与主观公平感的关系研究——基于CGSS2017的实证分析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">互联网使用与主观公平感的关系研究——基于CGSS2017的实证分析</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2020/11/20/2020-2021/20-11%20%E4%BB%8E%E2%80%9C%E7%89%B9%E6%9C%97%E6%99%AE%E7%8E%B0%E8%B1%A1%E2%80%9D%E7%9C%8B%E5%BD%93%E4%BB%A3%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E6%96%B0%E5%8F%98%E5%8C%96/" title="从“特朗普现象”看当代资本主义新变化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">从“特朗普现象”看当代资本主义新变化</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2020/10/29/2020-2021/20-10-29%20citespace/" title="citespace"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-29</div><div class="info-item-2">citespace</div></div><div class="info-2"><div class="info-item-1">共词分析法 抽取同一或若干文献中共同出现的词或词语，并对其出现次数进行统计。 共同出现的次数越多，则表示两个主题词或其他名词性术语在主题内容上关系越紧密，并由此形成共词关系网络。 关键词共现分析 对数据集中作者提供的关键词的分析。 节点大小反映关键词出现频次。节点之间的连线表示共现关系，其粗细表示共现强度。颜色对应节点第一次共现时间。 聚类视图体现聚类间的结构特征。聚类的区块颜色表示该聚类中共词关系第一次发生的年限。 聚类视图突出关键节点和重要连接。位于不同聚类之间的高中介中心性的节点，可能会导致新兴趋势的出现。 术语的共现分析 term term的共现分析提取自：标题TI；关键词DE；补充关键词ID；摘要AB 使用term分析比使用keyword分析更深入到文本内容，反映出来的信息也更全面。 论文的共被引分析 针对被引文献...</div></div></div></a><a class="pagination-related" href="/2021/06/30/2020-2021/21%20Malaya%20RP/" title="Malaya RP"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-30</div><div class="info-item-2">Malaya RP</div></div><div class="info-2"><div class="info-item-1"> The purpose of Internet usage as a moderator in the relationship between Internet usage and social justice perceptions: a comparative study of China and Malaysia BackgroundIn the age of post-pandemic Covid-19, people are spending more and more time on the Internet. The number of Chinese Internet users has reached 989 million (70.6% of the total population), and the average daily time of Internet usage has reached 3.7 hours. In Malaysia, there are about 28.7 million Internet users (88.7% of...</div></div></div></a><a class="pagination-related" href="/2020/10/20/2020-2021/20-10-20%20RP%20%E9%97%AE%E9%A2%98%E7%9A%84%E6%8F%90%E5%87%BA/" title="RP 问题的提出"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-20</div><div class="info-item-2">RP 问题的提出</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2020/10/30/2020-2021/20-10-30%20%E4%BA%92%E8%81%94%E7%BD%91%E4%BD%BF%E7%94%A8%E4%B8%8E%E4%B8%BB%E8%A7%82%E5%85%AC%E5%B9%B3%E6%84%9F%E7%9A%84%E5%85%B3%E7%B3%BB%E7%A0%94%E7%A9%B6/" title="互联网使用与主观公平感的关系研究——基于CGSS2017的实证分析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-30</div><div class="info-item-2">互联网使用与主观公平感的关系研究——基于CGSS2017的实证分析</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2020/11/20/2020-2021/20-11%20%E4%BB%8E%E2%80%9C%E7%89%B9%E6%9C%97%E6%99%AE%E7%8E%B0%E8%B1%A1%E2%80%9D%E7%9C%8B%E5%BD%93%E4%BB%A3%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E6%96%B0%E5%8F%98%E5%8C%96/" title="从“特朗普现象”看当代资本主义新变化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-20</div><div class="info-item-2">从“特朗普现象”看当代资本主义新变化</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2020/11/21/2020-2021/20-11-21%20%E5%93%81%E7%89%8C%E7%A0%94%E7%A9%B6co-citation%E6%96%87%E7%8C%AE%E7%B2%BE%E8%AF%BB/" title="品牌研究co-citation文献精读"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-21</div><div class="info-item-2">品牌研究co-citation文献精读</div></div><div class="info-2"><div class="info-item-1">The author presents a conceptual model of brand equity from the perspective of the individual consumer. Customer-based brand equity is defined as the differential effect of brand knowledge on consumer response to the marketing of the brand. A brand is said to have positive (negative) customer-based brand equity when consumers react more (less) favorably to an element of the marketing mix for the brand than they do to the same marketing mix element when it is attributed to a fictitiously...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="Created 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/2023-2025/25-8/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="25-8-3">25-8-3</a><time datetime="2025-08-03T13:18:39.000Z" title="Created 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/2023-2025/25-7/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="25-7-28">25-7-28</a><time datetime="2025-07-28T02:25:16.000Z" title="Created 2025-07-28 10:25:16">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/12/2023-2025/25-5/25-5-12%20%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%80%9D%E8%80%83/" title="25-5-12">25-5-12</a><time datetime="2025-05-12T03:22:56.000Z" title="Created 2025-05-12 11:22:56">2025-05-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/11/2023-2025/25-5/25-5-11%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B19/" title="《模型思维：数学模型结构大模型黑箱》19">《模型思维：数学模型结构大模型黑箱》19</a><time datetime="2025-05-11T03:30:32.000Z" title="Created 2025-05-11 11:30:32">2025-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

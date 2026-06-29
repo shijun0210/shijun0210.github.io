@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>财务报表分析框架 | shijun0210</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="财务比率分析的逻辑起点 以资产负债表和利润表为基础的财务比率分析： 资产负债表反应的是存量比率——利润表和现金流量表反应的是流量比率 注：资产负债表中的各项目是一个时点指标，不能准确地反映这个变量在一定时期的流量变化情况，因此采用资产负债表期初、期末余额的平均值作为某一比率的分母，可以更好地反映公司的整体情况。 从价值创造的角度出发，财务比率分析的逻辑起点是公司的盈利能力和可持续增长能力。 见附录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="财务报表分析框架">
+<meta property="og:url" content="http://shijun0210.github.io/2020/01/05/2020-2021/20-1-5%20%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:description" content="财务比率分析的逻辑起点 以资产负债表和利润表为基础的财务比率分析： 资产负债表反应的是存量比率——利润表和现金流量表反应的是流量比率 注：资产负债表中的各项目是一个时点指标，不能准确地反映这个变量在一定时期的流量变化情况，因此采用资产负债表期初、期末余额的平均值作为某一比率的分母，可以更好地反映公司的整体情况。 从价值创造的角度出发，财务比率分析的逻辑起点是公司的盈利能力和可持续增长能力。 见附录">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2020-01-05T14:31:00.000Z">
+<meta property="article:modified_time" content="2026-05-03T10:25:16.547Z">
+<meta property="article:author" content="Jun">
+<meta property="article:tag" content="财务报表">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shijun0210.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "财务报表分析框架",
+  "url": "http://shijun0210.github.io/2020/01/05/2020-2021/20-1-5%20%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6/",
+  "image": "http://shijun0210.github.io/img/avatar.jpg",
+  "datePublished": "2020-01-05T14:31:00.000Z",
+  "dateModified": "2026-05-03T10:25:16.547Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun",
+      "url": "http://shijun0210.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://shijun0210.github.io/2020/01/05/2020-2021/20-1-5%20%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '财务报表分析框架',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a><a class="nav-page-title" href="/"><span class="site-name">财务报表分析框架</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">财务报表分析框架</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-01-05T14:31:00.000Z" title="Created 2020-01-05 22:31:00">2020-01-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-03T10:25:16.547Z" title="Updated 2026-05-03 18:25:16">2026-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/2020-2021/">2020-2021</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>财务比率分析的逻辑起点</p>
+<p>以资产负债表和利润表为基础的财务比率分析：</p>
+<p>资产负债表反应的是存量比率——利润表和现金流量表反应的是流量比率</p>
+<p>注：资产负债表中的各项目是一个时点指标，不能准确地反映这个变量在一定时期的流量变化情况，因此采用资产负债表期初、期末余额的平均值作为某一比率的分母，可以更好地反映公司的整体情况。</p>
+<p>从价值创造的角度出发，财务比率分析的逻辑起点是公司的盈利能力和可持续增长能力。</p>
+<p>见附录1</p>
+<p>一、短期偿债能力分析</p>
+<p>• 绝对数：营运资本&#x3D;流动资产-流动负债&#x3D;长期资本-长期资产</p>
+<p>• 流动比率：公司流动资产“包含”流动负债的倍数，用以衡量公司的短期偿债能力。</p>
+<p>计算公式：流动比率&#x3D;流动资产&#x2F;流动负债</p>
+<p>通常，从债权人的角度看，流动比率越高，企业短期偿债能力越强，债券人的权益越有保障；但从公司经营角度看，过高的流动比率通常意味着公司流动资产占用资金较多，会造成公司机会成本的增加和获利能力的降低。</p>
+<p>注意：不存在统一的，标准的流动比率数值。不同行业的流动比率，通常有明显差别。营业周期越短的行业，合理的流动比率越低。此外，还需要考虑影响可信性的因素，如存货周转率和应收账款周转率。</p>
+<p>一般，生产制造型企业该项指标为2:1</p>
+<p>• 速动比率：速冻资产与流动负债的比率，能够更加精确、可靠地评价公司资产的流动性及偿还短期负债的能力。</p>
+<p>计算公式&#x3D;速动资产&#x2F;流动负债</p>
+<p>其中，速动资产&#x3D;货币资金+交易性金融资产+应收账款+应收票据+其他应收款&#x3D;流动资产-存货-预付款项-其他流动资产-一年内到期的非流动资产</p>
+<p>速动比率越高，表面公司偿还债务的能力越强。</p>
+<p>一般，速动比率保持在1:1的水平</p>
+<p>• 现金比率分析</p>
+<p>现金资产包括货币资金和交易性金融资产</p>
+<p>计算公式&#x3D;（货币资金+交易性金融资产）&#x2F;流动负债</p>
+<p>• 现金流量比率&#x3D;经营现金流量&#x2F;流动负债</p>
+<p>• 影响短期偿债能力的其他因素（表外因素）</p>
+<table>
+<thead>
+<tr>
+<th>1.增强短期偿债能力的因素</th>
+<th>1）可动用的银行贷款指标<br><br>2）准备很快变现的非流动性资产<br><br>3）偿债能力的声誉</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2.降低短期偿债能力的因素</td>
+<td>1）与担保相关的或有负债，如果它的数额较大并且可能发生就应在评价偿债能力时给予关注<br><br>2）经营租赁合同中承诺的付款，很有可能是需要偿付的义务<br><br>3）建造合同、长期资产购置合同中的分阶段付款，也是一种承诺，应视为需用偿还的债务</td>
+</tr>
+</tbody></table>
+<p>二、长期偿债能力分析</p>
+<p>• 总债务存量比率</p>
+<p>资产负债率&#x3D;负债&#x2F;资产，衡量企业清算时对债权人利益的保护程度。</p>
+<p>产权比率&#x3D;负债&#x2F;股东权益，表明每一元股东权益借入的债务额。</p>
+<p>权益乘数&#x3D;总资产&#x2F;股东权益&#x3D;1&#x2F;(1-资产负债率)&#x3D;1+产权比率，表明每一元股东权益拥有的资产额。</p>
+<p>长期资本负债率&#x3D;非流动负债&#x2F;(非流动负债+股东权益)，反映企业资本结构具体情况。</p>
+<p>• 付息能力比率</p>
+<p>利息保障倍数&#x3D;息税前利润&#x2F;利息费用&#x3D;(净利润+利息费用+所得税费用)&#x2F;利息费用。（以利润为基础）<br>PS：此处的利息费用为 “进入利润表&amp;资产负债表的总利息费用”</p>
+<p>数值越高，偿债能力越强。</p>
+<p>现金流量利息保障倍数&#x3D;经营活动现金流量净额&#x2F;利息费用。（以现金为基础）</p>
+<p>经营现金流量债务比&#x3D;经营活动现金流量净额&#x2F;债务总额</p>
+<p>影响长期还债能力的表外因素：</p>
+<p>1）长期租赁：当企业的经营租赁量比较大，期限比较长或具有经常性时，就形成了一种长期性筹资</p>
+<p>2）债务担保：在分析企业长期偿债能力时，应根据有关资料判断担保责任带来的潜在长期负债问题</p>
+<p>3）未决诉讼：未决诉讼一旦判决败诉，便会影响企业的偿债能力，因此在评价企业长期偿债能力时也要考虑其潜在影响</p>
+<p>三、营运能力分析（周转率分析）</p>
+<p>反映企业资产管理效率的指标：</p>
+<p>应收账款周转率</p>
+<p>存货周转率</p>
+<p>流动资产周转率</p>
+<p>营运资本周转率</p>
+<p>非流动资产周转率</p>
+<p>总资产周转率</p>
+<p>对应公式：</p>
+<p>xx资产周转次数&#x3D;周转额&#x2F;xx资产</p>
+<p>xx资产周转天数&#x3D;365&#x2F;xx资产周转次数</p>
+<p>xx资产与收入比&#x3D;xx资产&#x2F;销售收入</p>
+<ol>
+<li>应收账款周转率</li>
+</ol>
+<p>应收账款周转次数&#x3D;销售收入➗应收账款</p>
+<p>应收转款周转天数&#x3D;365➗（销售收入&#x2F;应收账款）</p>
+<p>应收账款与收入比&#x3D;应收账款➗销售收入</p>
+<p>注意：</p>
+<p>1）销售收入的赊销比例问题（理论上是赊销收入&#x2F;应收账款平均余额）</p>
+<p>2）应收账款年末余额的可靠性问题</p>
+<p>3）应收账款的减值准备问题</p>
+<p>4）应收账款周转天数是否越少越好</p>
+<p>5）应收账款分析与销售额分析、现金分析联系起来</p>
+<ol start="2">
+<li>存货周转率</li>
+</ol>
+<p>存货周转次数&#x3D;销售收入➗存货</p>
+<p>存货周转天数&#x3D;365➗（销售收入➗存货）</p>
+<p>存货与收入比&#x3D;存货➗销售收入</p>
+<p>注意：<br>1）计算存货周转率时，使用“销售收入”还是“销售成本”作为周转额，要看分析的目的。在短期偿债能力分析中，在分解总资产周转率时，应统一使用“销售收入”计算周转率。如果是为了评估存货管理的业绩，应当使用“销售成本”计算存货周转率。</p>
+<p>2）存货周转天数不是越短越好。存货过多会浪费资金，存货过少不能满足流转需要，在特定的生产经营条件下存在一个最佳的存货水平，所以存货不是越少越好。</p>
+<p>3）应注意应付款项，存货和应收账款（或销售）之间的关系。</p>
+<p>4）应关注构成存货的产成品、自制半成品、原材料、在产品和低值易耗品之间的比例关系。</p>
+<ol start="3">
+<li>流动资产周转率</li>
+</ol>
+<p>流动资产周转次数&#x3D;销售收入➗流动资产</p>
+<p>流动资产周转天数&#x3D;365➗（销售收入&#x2F;流动资产）&#x3D;365➗流动资产周转次数</p>
+<p>流动资产与收入比&#x3D;流动资产➗销售收入</p>
+<p>通常，流动资产中应收账款和存货占绝大部分，因此它们的周转状况对流动资产周转具有决定性影响。</p>
+<ol start="4">
+<li>营运资本周转率</li>
+</ol>
+<p>营运资本周转次数&#x3D;销售收入➗营运资本</p>
+<p>营运资本周转天数&#x3D;365➗（销售收入&#x2F;净营运资本）&#x3D;365➗营运资本周转次数</p>
+<p>营运资本与收入比&#x3D;营运资本➗销售收入</p>
+<ol start="5">
+<li>非流动资产周转率</li>
+</ol>
+<p>非流动资产周转次数&#x3D;销售收入➗非流动资产</p>
+<p>非流动资产周转天数&#x3D;365➗（销售收入&#x2F;非流动资产）&#x3D;365➗非流动资产周转次数</p>
+<p>非流动资产与收入比&#x3D;非流动资产➗销售收入</p>
+<p>注意：分析时主要是针对投资预算和项目管理，分析投资是否与其竞争战略一致，收购和剥离政策是否合理等。</p>
+<ol start="6">
+<li>总资产周转率</li>
+</ol>
+<p>总资产周转次数&#x3D;销售收入➗总资产</p>
+<p>总资产周转天数&#x3D;365➗（销售收入&#x2F;总资产）&#x3D;365➗资产周转次数</p>
+<p>资产与收入比&#x3D;总资产➗销售收入&#x3D;1&#x2F;资产周转次数</p>
+<p>注意：总资产周转天数表示资产周转一次所需要的时间。时间越短，资产的使用效率越高，盈利性越好。</p>
+<p>如何提高企业的总资产周转率？</p>
+<p>1）在企业盈利能力较高的前提下，通过适当降低产品售价，提高销售量，加快资金的周转速度，从而提高企业总资产周转率，提高企业盈利能力。（降低销售净利率，提高了企业的权益净利率）</p>
+<p>2）在企业资产规模不变，生产效率不变的情况下，通过提高产品销售价格，增加销售收入，可以提高企业总资产周转率。</p>
+<p>3）企业通过处置闲置的固定资产，减小资产规模，也会提高企业的总资产周转率。</p>
+<p>4）在企业资产规模不变时，通过提高生产效率，提高产能利用率，从而达到提高企业总资产周转率的目的。</p>
+<p>四、盈利能力分析</p>
+<ol>
+<li>销售净利率&#x3D;净利润➗销售收入</li>
+</ol>
+<p>销售净利率越大，说明企业的盈利能力越强。销售净利率的变动，是由利润表的各个项目金额变动引起的。可以进行金额变动分析、结构比率分析。（结构分析法）</p>
+<ol start="2">
+<li><p>资产净利率&#x3D;净利润➗总资产&#x3D;销售净利率✖️总资产周转次数（因素分析法）</p>
+</li>
+<li><p>权益净利率&#x3D;净利润➗股东权益（杜邦分析法）</p>
+</li>
+</ol>
+<p>五、市场价值比率分析</p>
+<ol>
+<li>每股收益：税后收益扣除优先股股息后的余额与发行外的普通股股数的比率，反映普通股的获利水平。它是衡量上市公司盈利能力最常用的财务分析指标。</li>
+</ol>
+<p>每股收益&#x3D;（净利润-优先股股利）➗流通在外普通股加权平均股数</p>
+<p>每股收益越高对投资者越有吸引力，公司的财务形象越好。</p>
+<ol start="2">
+<li>市盈率：上市公司普通股每股市价相当于每股收益的倍数，反映投资者对上市公司每股净收益愿意支付的价格。（牛市行情）</li>
+</ol>
+<p>市盈率&#x3D;普通股每股市价➗普通股每股收益</p>
+<p>一般来说，经营前景良好，很有发展前途的公司的股票市盈率会趋于上升，该比率越高说明公司未来的成长潜能高。</p>
+<p>如果公司未来各年的收益不变，市盈率也可作为回收最初投资所需要的时间（年数）</p>
+<ol start="3">
+<li>市净率：上市公司普通股每股市价与每股净资产（每股账面价值）的比率。（熊市行情）</li>
+</ol>
+<p>市净率&#x3D;每股市价➗每股净资产</p>
+<p>该比率是衡量公司经营情况的一种非常粗略的指标。这个比率越高，市场价值相对账面价值就越大。</p>
+<p>财务比率分析的局限性：</p>
+<p>1）比率的变动可能仅仅被解释为两个相关因素之间的变动；</p>
+<p>2）很难综合反映比率与计算它的会计报表的联系；</p>
+<p>3）比率不能给人们会计报表关系的综合观点。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io">Jun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://shijun0210.github.io/2020/01/05/2020-2021/20-1-5%20%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6/">http://shijun0210.github.io/2020/01/05/2020-2021/20-1-5%20%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8/">财务报表</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2020/01/05/2020-2021/20-1-5%20%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7%E5%88%86%E6%9E%90/" title="流动资产分析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">流动资产分析</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2020/05/24/2020-2021/20-5-24%20%E6%88%98%E7%95%A5%E7%90%86%E8%AE%BA%E5%8F%91%E5%B1%95/" title="战略理论发展"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">战略理论发展</div></div><div class="info-2"><div class="info-item-1">“一个人对过去和当下知道得越少，他对未来的判断就越没有保障。” 战略的目标是确定方向 判断：是否推动了企业or时代的进步，衡量方式：社会总生产力？ 工业革命的时代背景经纪人假设1911年，弗雷德里克·泰勒《科学管理原理》（定量研究） 1）作业管理：确定一天的最佳工作量 2）工作研究：将熟练的工作经验传授给非熟练工 3）标准化制度：将使用的工具和工作时间与流程标准化、规范化 4）阶段性工资制度：为了提高工人们的工作积极性，当工人每天的工作量超出了一天最佳工作量时，工资就会相应提高 5）区分工作职能：根据计划功能和执行功能将在组织中设置专门的部门 经典案例：福特汽车 问题：社会意识的觉醒——经济动机的极限 任何专业知识都应该有对普遍共向和普遍道德的追求 Ps：熊彼得，1912年，《经济发展理论》企业家们的革新（技术革新）才是经济发展的原动力。 社会人假设埃尔顿·梅奥 人际关系学说...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2020/01/05/2020-2021/20-1-5%20%E9%9D%9E%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7%E5%88%86%E6%9E%90/" title="非流动资产分析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-01-05</div><div class="info-item-2">非流动资产分析</div></div><div class="info-2"><div class="info-item-1">一、长期股权投资 概念：长期股权投资，是指投资方对被投资单位实施控制、重大影响的权益性投资，以及对其合营企业的权益性投资。 控制——一般情况下，投资方持有被投资方50%以上表决权的，可判定为控制。 重大影响——一般情况下，投资方持有被投资方 [20%，50%)...</div></div></div></a><a class="pagination-related" href="/2020/01/05/2020-2021/20-1-5%20%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7%E5%88%86%E6%9E%90/" title="流动资产分析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-01-05</div><div class="info-item-2">流动资产分析</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">80</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">167</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="Created 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/2023-2025/25-8/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="25-8-3">25-8-3</a><time datetime="2025-08-03T13:18:39.000Z" title="Created 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/2023-2025/25-7/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="25-7-28">25-7-28</a><time datetime="2025-07-28T02:25:16.000Z" title="Created 2025-07-28 10:25:16">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/12/2023-2025/25-5/25-5-12%20%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%80%9D%E8%80%83/" title="25-5-12">25-5-12</a><time datetime="2025-05-12T03:22:56.000Z" title="Created 2025-05-12 11:22:56">2025-05-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/11/2023-2025/25-5/25-5-11%E3%80%8A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%EF%BC%9A%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%BB%91%E7%AE%B1%E3%80%8B19/" title="《模型思维：数学模型结构大模型黑箱》19">《模型思维：数学模型结构大模型黑箱》19</a><time datetime="2025-05-11T03:30:32.000Z" title="Created 2025-05-11 11:30:32">2025-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
