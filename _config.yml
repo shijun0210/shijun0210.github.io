@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Jasper1910
+title: Jason1910
 subtitle: Jun's Blog
 description:
 keywords:
@@ -24,7 +24,7 @@ encrypt:
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://shijun0210.top
+url: http://shijun0210.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -120,7 +120,7 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'
-  repo: 'https://github.com/Jasper1910/Jasper1910.github.io.git'
+  repo: 'https://github.com/shijun0210/shijun0210.github.io.git'
   branch: 'master'
 
 # Search
