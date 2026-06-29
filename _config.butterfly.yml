@@ -293,7 +293,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/Jasper1910
+      link: https://github.com/shijun0210
   card_announcement:
     enable: true
     content: Welcome to my blog!
