@@ -1,0 +1,15 @@
+{
+  "newFileLocation": "folder",
+  "newFileFolderPath": "source/_posts",
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "userIgnoreFilters": [
+    "node_modules/",
+    "scaffolds/",
+    "public/",
+    "themes/"
+  ],
+  "attachmentFolderPath": "source/img",
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true
+}
