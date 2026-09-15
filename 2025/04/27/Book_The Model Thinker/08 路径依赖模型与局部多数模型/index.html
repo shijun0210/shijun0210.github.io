@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>路径依赖模型与局部多数模型 | shijun0210</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="路径依赖模型波利亚过程(Polya process)一只瓮里面装着一个白球和一个灰球。每一周期，都随机抽取出一个球并将这个球与和它颜色相同的另一个球一起放回到瓮中。抽取出来的球的颜色表示结果。 波利亚过程利用伯努利瓮模型的扩展来刻画正反馈效应。在波利亚过程中，我们会往瓮中加入与抽取出来的球相匹配的球，这个过程会产生结果路径依赖(outcome path dependence)。 结果路径依赖是指每">
+<meta property="og:type" content="article">
+<meta property="og:title" content="路径依赖模型与局部多数模型">
+<meta property="og:url" content="https://shijun0210.github.io/2025/04/27/Book_The%20Model%20Thinker/08%20%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B1%80%E9%83%A8%E5%A4%9A%E6%95%B0%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:description" content="路径依赖模型波利亚过程(Polya process)一只瓮里面装着一个白球和一个灰球。每一周期，都随机抽取出一个球并将这个球与和它颜色相同的另一个球一起放回到瓮中。抽取出来的球的颜色表示结果。 波利亚过程利用伯努利瓮模型的扩展来刻画正反馈效应。在波利亚过程中，我们会往瓮中加入与抽取出来的球相匹配的球，这个过程会产生结果路径依赖(outcome path dependence)。 结果路径依赖是指每">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2025-04-27T02:03:58.000Z">
+<meta property="article:modified_time" content="2026-08-12T01:49:00.031Z">
+<meta property="article:author" content="Jun">
+<meta property="article:tag" content="局部多数模型">
+<meta property="article:tag" content="生命游戏">
+<meta property="article:tag" content="路径依赖">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shijun0210.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "路径依赖模型与局部多数模型",
+  "url": "https://shijun0210.github.io/2025/04/27/Book_The%20Model%20Thinker/08%20%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B1%80%E9%83%A8%E5%A4%9A%E6%95%B0%E6%A8%A1%E5%9E%8B/",
+  "image": "https://shijun0210.github.io/img/avatar.jpg",
+  "datePublished": "2025-04-27T02:03:58.000Z",
+  "dateModified": "2026-08-12T01:49:00.031Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun",
+      "url": "https://shijun0210.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://shijun0210.github.io/2025/04/27/Book_The%20Model%20Thinker/08%20%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B1%80%E9%83%A8%E5%A4%9A%E6%95%B0%E6%A8%A1%E5%9E%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '路径依赖模型与局部多数模型',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a><a class="nav-page-title" href="/"><span class="site-name">路径依赖模型与局部多数模型</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">路径依赖模型与局部多数模型</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-27T02:03:58.000Z" title="发表于 2025-04-27 10:03:58">2025-04-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-12T01:49:00.031Z" title="更新于 2026-08-12 09:49:00">2026-08-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="路径依赖模型"><a href="#路径依赖模型" class="headerlink" title="路径依赖模型"></a>路径依赖模型</h1><h2 id="波利亚过程-Polya-process"><a href="#波利亚过程-Polya-process" class="headerlink" title="波利亚过程(Polya process)"></a>波利亚过程(Polya process)</h2><p>一只瓮里面装着一个白球和一个灰球。每一周期，都随机抽取出一个球并将这个球与和它颜色相同的另一个球一起放回到瓮中。抽取出来的球的颜色表示结果。</p>
+<p>波利亚过程利用伯努利瓮模型的扩展来刻画正反馈效应。在波利亚过程中，我们会往瓮中加入与抽取出来的球相匹配的球，这个过程会产生结果路径依赖(outcome path dependence)。</p>
+<p>结果路径依赖是指每一周期的结果都取决于先前的结果。</p>
+<p>说结果的长期分布，也就是均衡路径依赖(equilibrium path dependence)也取决于结果，也是对的。</p>
+<p>一个均衡路径依赖的过程，必定是结果路径依赖的。如果长期的结果取决于路径，那么这个路径“沿途”的结果也必定如此。不过，一个过程是结果路径依赖的，并不意味着它一定是均衡路径依赖的。<em>现在发生的事情可能取决于过去，但是长期均衡却可能在一开始就确定下来了</em>。</p>
+<p>波利亚过程可以用来刻画多种多样的社会和经济现象。这个模型通过改变球的分布来刻画这些社会影响。</p>
+<p>我们可以从波利亚过程中推导出两个令人意想不到的性质。首先，具有相同数量的白色结果的任何序列都会以相同的概率发生。其次，白球和灰球的每个分布都以相同的概率发生。第二个性质意味着极端的路径依赖。任何事情都可能发生，一切皆有可能。在1000个周期之后，瓮中包含了40%的白球的概率等于包含了2%的白球的概率。</p>
+<p>如果我们将波利亚过程加以扩展，也就是进一步加入其他颜色的球，这两个性质仍然成立。各种颜色的任何比例都会出现而且概率相同。</p>
+<h2 id="均衡过程"><a href="#均衡过程" class="headerlink" title="均衡过程"></a>均衡过程</h2><p>一个瓮包含一个白球和一个灰球。每一周期都随机抽取出一个球，并将与抽取出来的球颜色相反的球与抽取出来的那个球一起放回到瓮中。球的颜色表示结果。</p>
+<p>该模型的假设与波利亚过程相反。</p>
+<p>均衡过程可以用来刻画有趋向平等分配压力的决策或行动序列。平衡过程甚至可以用来对努力实现公平的组织行为建模。</p>
+<h2 id="路径依赖or临界点"><a href="#路径依赖or临界点" class="headerlink" title="路径依赖or临界点"></a>路径依赖or临界点</h2><p>路径依赖是对结果的逐渐影响，临界点则意味着结果的突然变化。</p>
+<p>我们可以利用可能结果的概率变化来度量路径依赖和临界点。</p>
+<p>对于波利亚过程，初始概率在瓮中的所有分布上都是均匀的，这是一个最大熵分布。随着事件的展开，分布逐渐变窄，标志着路径依赖的形成：当结果出现后，可能发生的事情也会变化。这种熵的减少是渐进的。</p>
+<p>而对于临界点，概率分布是突然改变的，熵可能会迅速下降。</p>
+<p>具有临界点的过程出现大幅度的转折，而路径依赖的过程则变化缓慢。</p>
+<h2 id="路径依赖模型的应用"><a href="#路径依赖模型的应用" class="headerlink" title="路径依赖模型的应用"></a>路径依赖模型的应用</h2><p>在现实世界中，路径依赖可能不会像波利亚过程那样极端。然而，我们还是可以从模型中推断出当行为具有很大的社会性成分时，几乎任何事情都有可能发生。</p>
+<p>模型思维告诉我们，行为差异既可能是社会影响的结果，也可能是不同的内在偏好所致。在任何时候，只要人们在一组固定的备选项中进行选择，而且他们的选择依赖于其他人先前做出的选择时，就会出现这种情况。</p>
+<p>模型还可以扩展到允许社会影响因所选方案的不同而变化。反馈的变化越少，选择这种结果的可能性就越大。</p>
+<p>模型也可以改变，使人们对社会影响的敏感性不同，也就是说，人们对加入瓮中的球赋予不同的权度。</p>
+<p>在模型的任何变体中，我们都可以测量（或估计）路径依赖的程度并将之与其他模型的变体进行比较。</p>
+<p>最后，波利亚过程表明，正反馈是怎样生成结果路径依赖和均衡路径依赖。路径依赖现象会出现在各种各样的情况下。只要一个行动会与未来行动“相遇”或与未来行动相互作用，就会出现某种程度的路径依赖（如果不是均衡路径依赖，也会是结果路径依赖）​。</p>
+<h2 id="风险价值与波动性"><a href="#风险价值与波动性" class="headerlink" title="风险价值与波动性"></a>风险价值与波动性</h2><p>我们可以将时间序列数据中的标准差解释为波动性。</p>
+<p>风险价值(value at risk,VaR)衡量的是在某个特定时间段内损失特定金额的概率。银行使用风险价值法来确定为了避免破产手头必须持有的资产数量。如果投资遵循简单随机游走，且每一周期投资规模的增大量或减少量为M，那么<br>$$<br>风险价值为N期2.5%的2M\sqrt{N}<br>$$<br>例如，考虑到风险价值在步骤大小上是线性增长的，但它会像周期数的平方根一样增长，我们可以使用风险价值来解释为什么美国联邦存款保险公司(Federal Deposit Insurance Corporation)只要求银行保留相当于资产总额的2%隔夜现金，而银行则要求消费者支付房子总价的20%。这种差异是由于贷款期限不同所致。隔夜贷款的期限是一天，住房贷款可能持续数十年。3065天的平方根约为60。</p>
+<p>这里，我们假设了一个正态随机游走，计算风险价值的分析师通常考虑过去的经验收益分布。如果经验分布有一个较长的尾部，也就是说，如果它包含更多的大事件，那么风险价值会随着大事件的发生而增加。</p>
+<hr>
+<h1 id="局部互动模型"><a href="#局部互动模型" class="headerlink" title="局部互动模型"></a>局部互动模型</h1><h2 id="局部多数模型"><a href="#局部多数模型" class="headerlink" title="局部多数模型"></a>局部多数模型</h2><p>局部多数模型假设 <strong>元胞(Cellular)</strong> 是排列在棋盘上的。每个元胞处于两种状态中的一种：开或关。初始时，我们随机地给元胞分配状态，此后，元胞的状态取决于它“邻居”的状态。邻居可以通过多种方式加以定义。我们将元胞C的邻居定义为位于它东、南、西、北的4个元胞以及4个对角上的相邻元胞，因此它的领域大小为8。</p>
+<p>在每个周期中，随机选择一个元胞。当且仅当其中它的5个或更多邻居处于另一个状态时，这个元胞才会改变自己的状态。</p>
+<p>局部多数模型中的局部互动包括正反馈：元胞要与其他元胞的状态相匹配。</p>
+<p>该模型对初始条件没有表现出极高的敏感性。改变一个元胞的状态最多只会导致最终配置出现很小的变化。最终的模式还取决于元胞被激活的顺序。因此，这个模型也表现出了路径依赖。它的均衡数量非常巨大。</p>
+<p>如果在计算机上对这个模型进行模拟，就会发现它总是能实现斑块状的均衡配置。在局部多数模型的物理解释中，斑块状均衡模式对应于受挫状态(frustrated state)。许多元胞在开的状态下有一些邻居，在关的状态下也有一些邻居。</p>
+<p>如果我们通过社会视角解释模型，就可以把这种受挫状态理解为次优均衡(suboptimal equilibrium)。如果开对应于以握手的方式表示欢迎、关对应于以鞠躬的方式表示欢迎，那么位于“斑块”边界上的人在与他们的邻居互动时可能会碰到一些尴尬的情况：当其他人准备握手时他们却准备鞠躬，或者当其他人准备鞠躬时他们却准备握手。如果每个人都选择了相同的动作，也就是说，如果他们解决了协调博弈问题，那么从整体上看，所有人都会更加开心。</p>
+<p>由于这种互动只作用于局部，因此出现了次优均衡，即受挫状态。如果元胞是根据全局多数原则来匹配的，那么很快所有元胞都会处于相同的状态。</p>
+<h3 id="纯粹协调博弈-pure-coordination-games"><a href="#纯粹协调博弈-pure-coordination-games" class="headerlink" title="纯粹协调博弈(pure coordination games)"></a>纯粹协调博弈(pure coordination games)</h3><p>每个博弈参与者都要在两个行动A或B中选择一个。如果两个博弈参与者都选择了相同的行动，那么每个博弈参与者的收益为1。如果两个人各自选择了不同的行动，那么每个人的收益都为零。</p>
+<p>一个纯粹协调博弈有两个有效的均衡：两个博弈参与者选择A或者两个博弈参与者选择B。它还有一个无效的均衡，也就是每个博弈参与者都在A和B之间进行随机选择。</p>
+<p>我们可以从纯粹协调博弈的角度重新解释局部多数模型：在这个博弈中，每个元胞都是一个博弈参与者，它必须选择一个共同行动来对抗它的8个邻居。如果博弈参与者只有在随机激活时才能改变行动，那么某个博弈参与者就可以通过选择与它的大多数邻居所选择的行动相匹配的行动来增加自己的收益。这种策略被称为短视最优响应(myopic best response)，因为它没有考虑到邻居可能的未来行为。</p>
+<p>协调的悖论(paradox of coordination)<br>如果人们是在局部进行协调的，那么从全局的角度来看，整体配置将会是斑块状的、多样性的。<br>该悖论将不同群体之间的差异，解释为一种特异性的分歧。</p>
+<h2 id="生命游戏"><a href="#生命游戏" class="headerlink" title="生命游戏"></a>生命游戏</h2><p>方格上的每个元胞都或者是活的（开的）或者是死的（关的）​。每个元胞的邻居由网格上的8个相邻元胞组成。元胞根据如下两个规则同步更新自己的状态：</p>
+<p>**活的规则：**对于一个死元胞，当恰好有三个活的邻居时，这个死元胞就会变活。</p>
+<p>**死的规则：**对一个活元胞，当活的邻居小于两个时或当有三个以上的活邻居死去时，这个活元胞就会死去。</p>
+<blockquote>
+<p>[!NOTE] 小结<br>局部多数模型总是收敛到均衡，生命游戏则取决于其初始条件，可能会产生任何类型的结果：均衡、周期性、复杂性或随机性。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://shijun0210.github.io">Jun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://shijun0210.github.io/2025/04/27/Book_The%20Model%20Thinker/08%20%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B1%80%E9%83%A8%E5%A4%9A%E6%95%B0%E6%A8%A1%E5%9E%8B/">https://shijun0210.github.io/2025/04/27/Book_The%20Model%20Thinker/08%20%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B1%80%E9%83%A8%E5%A4%9A%E6%95%B0%E6%A8%A1%E5%9E%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://shijun0210.github.io" target="_blank">shijun0210</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96/">路径依赖</a><a class="post-meta__tags" href="/tags/%E5%B1%80%E9%83%A8%E5%A4%9A%E6%95%B0%E6%A8%A1%E5%9E%8B/">局部多数模型</a><a class="post-meta__tags" href="/tags/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/">生命游戏</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/04/26/Book_The%20Model%20Thinker/07%20%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0/" title="随机游走"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">随机游走</div></div><div class="info-2"><div class="info-item-1">随机游走伯努利瓮模型 (Bernoulli urn model)每一次，从一个装了G个灰球和W个白球的瓮中随机抽取一个球，结果等于抽取出来的球的颜色。在下一次抽取之前，球要先放回瓮中。$$令P&#x3D;\frac{G}{(G+W)}表示灰球的比例。在抽取N次的情况下，灰球的期望数量N_{G}，及其标准差\sigma_{N_{G}}:$$$$N_{G}&#x3D;N\times P,\sigma_{N_{G}}&#x3D;\sqrt{N\times...</div></div></div></a><a class="pagination-related" href="/2025/04/27/%E9%9A%8F%E8%AE%B0/25-4-27%20%E7%99%BE%E5%88%86%E4%B9%8B%E4%B8%80%E6%B3%95%E5%88%99/" title="1% Rule"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">1% Rule</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">路径依赖模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E5%88%A9%E4%BA%9A%E8%BF%87%E7%A8%8B-Polya-process"><span class="toc-number">1.1.</span> <span class="toc-text">波利亚过程(Polya process)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%87%E8%A1%A1%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">均衡过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96or%E4%B8%B4%E7%95%8C%E7%82%B9"><span class="toc-number">1.3.</span> <span class="toc-text">路径依赖or临界点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">路径依赖模型的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E4%BB%B7%E5%80%BC%E4%B8%8E%E6%B3%A2%E5%8A%A8%E6%80%A7"><span class="toc-number">1.5.</span> <span class="toc-text">风险价值与波动性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E4%BA%92%E5%8A%A8%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">局部互动模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%A4%9A%E6%95%B0%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">局部多数模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%AF%E7%B2%B9%E5%8D%8F%E8%B0%83%E5%8D%9A%E5%BC%88-pure-coordination-games"><span class="toc-number">2.1.1.</span> <span class="toc-text">纯粹协调博弈(pure coordination games)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F"><span class="toc-number">2.2.</span> <span class="toc-text">生命游戏</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC1%E6%9C%9F/" title="MISQ 26年 第1期">MISQ 26年 第1期</a><time datetime="2026-07-31T09:10:52.000Z" title="发表于 2026-07-31 17:10:52">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC2%E6%9C%9F/" title="MISQ 26年 第2期">MISQ 26年 第2期</a><time datetime="2026-07-31T09:05:53.000Z" title="发表于 2026-07-31 17:05:53">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="发表于 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="R 数据分析常用工具">R 数据分析常用工具</a><time datetime="2025-08-03T13:18:39.000Z" title="发表于 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/%E9%9A%8F%E8%AE%B0/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="RAG简介">RAG简介</a><time datetime="2025-07-28T02:25:16.000Z" title="发表于 2025-07-28 10:25:16">2025-07-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

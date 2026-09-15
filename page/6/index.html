@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>shijun0210 - Jun's blogs</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="shijun0210">
+<meta property="og:url" content="https://shijun0210.github.io/page/6/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:author" content="Jun">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shijun0210.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://shijun0210.github.io/page/6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'shijun0210',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">shijun0210</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/10/02/%E4%BC%A0%E6%92%AD%E5%AD%A6/20-10-2%20%E7%AC%A6%E5%8F%B7%E4%BA%92%E5%8A%A8%E7%90%86%E8%AE%BA/" title="符号互动理论">符号互动理论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-01T18:45:00.000Z" title="发表于 2020-10-02 02:45:00">2020-10-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BC%A0%E6%92%AD%E5%AD%A6/">传播学</a></span></div><div class="content">米德 (G. Mead) 通常被认为是符号互动论 (Symbolic Interactionism) 的开创者。他提出了人类社会组织基础的原则，是包括他人参与在内的交流原则。这一原则要求他人在自我中出现，他人参与自我，通过他人而达到自我意识。[1] 其中，交流的核心元素在于符号。米德认为自我是结合“主我”与“客我”的一个持续过程，由此而引申出的是“镜中自我”的概念——通过扮演他人的角色而产生的精神形象，以及“概化他人”的概念——一个人基于社群预期和反应形成的关于他（她）的自我的混合意象。[2] 1937年，布鲁默（H....</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/10/02/%E4%BC%A0%E6%92%AD%E5%AD%A6/20-10-2%20Agenda-Setting%20Theory%20%E8%AE%AE%E7%A8%8B%E8%AE%BE%E7%BD%AE%E7%90%86%E8%AE%BA/" title="Agenda-Setting Theory 议程设置理论">Agenda-Setting Theory 议程设置理论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-01T18:45:00.000Z" title="发表于 2020-10-02 02:45:00">2020-10-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BC%A0%E6%92%AD%E5%AD%A6/">传播学</a></span></div><div class="content">Agenda-Setting Theory 议程设置理论 (Maxwell McCombs &amp; Donald Shaw, 1972) Definition:The mass media have the ability to transfer the salience of issues on their news agenda to the public agenda.大众传媒有能力将新闻议程中项目的显著性向公众议程转移。 Compare: Select-Exposure Theory: people would attend only to news and views that didn’t threaten their established beliefs.人们只会对他们认可的消息和观点感兴趣。 Concepts: Media agenda: The pattern of news coverage across major print and broadcast media as measured by prominence and length of...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/10/02/%E4%BC%A0%E6%92%AD%E5%AD%A6/20-10-2%20%E7%AC%A6%E5%8F%B7%E5%AD%A6%20Semiotics%20(Semiology)/" title="符号学 Semiotics (Semiology)">符号学 Semiotics (Semiology)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-01T18:45:00.000Z" title="发表于 2020-10-02 02:45:00">2020-10-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BC%A0%E6%92%AD%E5%AD%A6/">传播学</a></span></div><div class="content">符号学 Semiotics (Semiology) Semiotics is “the study of the social production of meaning from sign systems; the analysis of anything that can stand for something else”. (Griffin 2011)  A sign is the combination of its signifier and signified符号是能指和所指的组合  Signifier: The physical form of the sign as we perceive it through our senses; an image.  人们通过感官可以感知的符号的物理形式；一幅图画  Signified: The meaning we associate with the sign.   人们附着在符号上的意义  Is there any logical connection between the image of the...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/10/%E9%9A%8F%E8%AE%B0/20-9-10%20%E9%9A%8F%E8%AE%B0/" title="随记">随记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-10T08:55:19.000Z" title="发表于 2020-09-10 16:55:19">2020-09-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a></span></div><div class="content">假设社会是一个孤立系统，S&#x3D;K* ln 微观个态不断增多，熵不断增加 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/01/%E4%BC%A0%E6%92%AD%E5%AD%A6/20-9%20%E5%A4%A7%E4%BC%97%E4%BC%A0%E6%92%AD-%E4%BC%A0%E5%AA%92%E6%95%88%E6%9E%9C%E7%90%86%E8%AE%BA/" title="大众传播-传媒效果理论">大众传播-传媒效果理论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-31T16:00:00.000Z" title="发表于 2020-09-01 00:00:00">2020-09-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BC%A0%E6%92%AD%E5%AD%A6/">传播学</a></span></div><div class="content">涵化理论 George...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/01/%E9%9A%8F%E8%AE%B0/20-9%20%E9%9A%8F%E8%AE%B0/" title="随记">随记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-31T16:00:00.000Z" title="发表于 2020-09-01 00:00:00">2020-09-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a></span></div><div class="content">可视化的意义 任何图表与可视化的首要和最终目的是作为协助我们的眼睛和大脑发掘现象背后的隐藏信息的一种工具。 TOPIC 1大脑不仅仅处理眼睛获得的信息，也产生心理视觉图像，通过这些图像我们进行推断并采取正确的行动。 TOPIC 2信息图表与可视化的统一共存。 TOPIC 3图表、图解和地图不仅仅是用于欣赏的工具，更是用于解读和详细分析的工具。 TOPIC 4可视化与艺术的关系 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/01/%E9%9A%8F%E8%AE%B0/20-9%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6%E5%8E%9F%E7%90%86/" title="马克思主义哲学原理">马克思主义哲学原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-31T16:00:00.000Z" title="发表于 2020-09-01 00:00:00">2020-09-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a></span></div><div class="content">什么地方普遍被认作无所不包的存在或什么地方存在着在普遍的方式下被把我或思想之思想出现时，则哲学便从那里开始。[1] 关于哲学的定义有很多，那么从这儿开始涉及到第一个问题什么是哲学？哲学在本质上是通过对思维和存在的关系的“反思”而建构起来的理论体系。[2] 同时，给出一个马克思主义哲学中较为普遍的定义——哲学，是系统化、理论化的世界观与方法论的统一，是自然知识、社会知识与思维知识的概括和总结。 要理解这个定义，得先理解何谓“系统化、理论化的世界观与方法论的统一”。作为“世界观”的哲学理论，是人对自己与世界的关系的理解和解释的学说，是一种“自为”的世界图景。[3]...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/01/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/20-9%20%E6%96%87%E5%8C%96%E7%A0%94%E7%A9%B6/" title="文化研究">文化研究</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-31T16:00:00.000Z" title="发表于 2020-09-01 00:00:00">2020-09-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/">研究方法</a></span></div><div class="content">文化研究 罗兰·巴特提供了一种从静态的传媒画面着手、系统化地解构符号意义转换的方法，即神话符号强化文化中的主流价值观。符号学提供了一个明确的渠道，足以说明社会权力如何借助日常生活的事物和符号而得以存在和传播。但是，符号学的问题之一在于它无法区分意识形态（神话符号）与非意识形态（对立的符号），即符号学无法充分解释为什么某种意义在某个历史时刻会附着在某些特定的符号上。 Em Griffin, A First Look at Communication Theory, 7e., by ZhanJiang, Beijing: Beijing United Publishing Co, Ltd., 2016,...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/08/26/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/20-8-26%20%E6%89%8E%E6%A0%B9%E7%90%86%E8%AE%BA/" title="扎根理论">扎根理论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-25T16:40:19.000Z" title="发表于 2020-08-26 00:40:19">2020-08-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/">研究方法</a></span></div><div class="content">解释范式的矩阵： （从）视角 （属于）维度-属性 （在…中）情境（在…下）条件 （具有）结果的行动&#x2F;过程 维度：概念属性中的变化形式，它们赋予概念以特殊性及变化范围 属性：界定和描述概念的特征 哲学基础为实用主义哲学和互动主义哲学，相关假设有兴趣可以看书。（详见P8）   STP1 选择一个研究问题 问题的来源主要有四个领域：  导师建议或指定的问题 来自技术文献和非技术文献的问题 来自个人和专业经验的问题 研究本身出现的问题  质性研究通常是探索性的，它更多的是提出假设而不是验证假设。运用质性研究方法的背后还包含这样的假设，即某个给定现象所有有关的概念还没有被识别，或没有得到充分发展，或理解不充分，因此需要进一步的研究以增进理解。在质性研究中对于一个问题获得尽可能多的视角是非常重要的，但需要保持焦点。 我提出的问题：整合营销传播如何影响企业的品牌资产？（中层理论） STP2 资料收集纯粹技术文献资料收集，包括相关论文、期刊文章、专著等（不知是否可行） STP3...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/21/%E5%BF%83%E7%90%86%E5%AD%A6/20-7-21%20%E4%B8%AA%E6%80%A7%E7%9A%84%E6%9C%AC%E8%B4%A8/" title="个性的本质">个性的本质</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-07-21T13:33:19.000Z" title="发表于 2020-07-21 21:33:19">2020-07-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a></span></div><div class="content">个性的本质及理论 个性 personality 是决定或反映一个人对自己周围环境如何思考和反应的内在心理特征。定义强调的是内在特征——将人与人相区别的具体特质、属性、特征、因素和态度。  个性反映了个体差异 个性具有稳定性和一致性 个性是可以改变的  三种个性理论 弗洛伊德理论 Freudian theory，基于如下假设：潜意识的需要或动机，尤其是性和其他生理动机，是人类动机和个性的核心。弗洛伊德认为，人的个性是由三个互相转换的系统组成的：本我、超我和自我。 本我 id 可以理解为充满原始和不可遏制动机（基本生理需要如口渴、饥饿和性欲）的“仓库”，为满足这些欲望而不计较方式。 超我 supergo 是人类内在社会道德和行为准则的集合。超我的存在是为了使个人行为符合社会要求，因而超我是约束或抑制本我冲动力量的“闸”。 自我 ego...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/5/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#content-inner">7</a><a class="page-number" href="/page/8/#content-inner">8</a><a class="extend next" rel="next" href="/page/7/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC1%E6%9C%9F/" title="MISQ 26年 第1期">MISQ 26年 第1期</a><time datetime="2026-07-31T09:10:52.000Z" title="发表于 2026-07-31 17:10:52">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC2%E6%9C%9F/" title="MISQ 26年 第2期">MISQ 26年 第2期</a><time datetime="2026-07-31T09:05:53.000Z" title="发表于 2026-07-31 17:05:53">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="发表于 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="R 数据分析常用工具">R 数据分析常用工具</a><time datetime="2025-08-03T13:18:39.000Z" title="发表于 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/%E9%9A%8F%E8%AE%B0/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="RAG简介">RAG简介</a><time datetime="2025-07-28T02:25:16.000Z" title="发表于 2025-07-28 10:25:16">2025-07-28</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Book-The-Model-Thinker/"><span class="card-category-list-name">Book_The Model Thinker</span><span class="card-category-list-count">23</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Book-%E6%88%98%E7%95%A5%E7%AE%80%E5%8F%B2/"><span class="card-category-list-name">Book_战略简史</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Journal/"><span class="card-category-list-name">Journal</span><span class="card-category-list-count">3</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Journal/MISQ/"><span class="card-category-list-name">MISQ</span><span class="card-category-list-count">3</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/individual-products/"><span class="card-category-list-name">individual products</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BC%A0%E6%92%AD%E5%AD%A6/"><span class="card-category-list-name">传播学</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"><span class="card-category-list-name">心理学</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/"><span class="card-category-list-name">数字化转型</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/metaphysics/" style="font-size: 1.1em; color: #999">metaphysics</a> <a href="/tags/%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E5%87%BD%E6%95%B0/" style="font-size: 1.1em; color: #999">李雅普诺夫函数</a> <a href="/tags/logical-positvism/" style="font-size: 1.1em; color: #999">logical-positvism</a> <a href="/tags/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/" style="font-size: 1.1em; color: #999">不确定性</a> <a href="/tags/%E9%98%90%E9%87%8A/" style="font-size: 1.1em; color: #999">阐释</a> <a href="/tags/agent/" style="font-size: 1.1em; color: #999">agent</a> <a href="/tags/%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/" style="font-size: 1.1em; color: #999">公司金融</a> <a href="/tags/MIS/" style="font-size: 1.26em; color: #999fa8">MIS</a> <a href="/tags/%E6%80%9D%E8%80%83/" style="font-size: 1.18em; color: #999ca1">思考</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.1em; color: #999">互联网</a> <a href="/tags/Agenda-Setting/" style="font-size: 1.1em; color: #999">Agenda-Setting</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.42em; color: #99a6b7">笔记</a> <a href="/tags/Zipf/" style="font-size: 1.1em; color: #999">Zipf</a> <a href="/tags/%E6%B3%A2%E5%8A%A8/" style="font-size: 1.1em; color: #999">波动</a> <a href="/tags/R/" style="font-size: 1.1em; color: #999">R</a> <a href="/tags/goodnotes/" style="font-size: 1.1em; color: #999">goodnotes</a> <a href="/tags/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/" style="font-size: 1.1em; color: #999">生命游戏</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB/" style="font-size: 1.34em; color: #99a3b0">快速阅读</a> <a href="/tags/paradigm/" style="font-size: 1.1em; color: #999">paradigm</a> <a href="/tags/%E5%8D%A2%E5%8D%A1%E6%96%AF%E6%89%B9%E5%88%A4/" style="font-size: 1.1em; color: #999">卢卡斯批判</a> <a href="/tags/%E5%85%AC%E5%B9%B3/" style="font-size: 1.18em; color: #999ca1">公平</a> <a href="/tags/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">马尔可夫模型</a> <a href="/tags/%E7%B4%A2%E6%B4%9B%E5%A2%9E%E9%95%BF%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">索洛增长模型</a> <a href="/tags/RAG/" style="font-size: 1.1em; color: #999">RAG</a> <a href="/tags/TCCM/" style="font-size: 1.1em; color: #999">TCCM</a> <a href="/tags/%E5%B9%B3%E6%96%B9%E6%A0%B9%E6%B3%95%E5%88%99/" style="font-size: 1.1em; color: #999">平方根法则</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 1.1em; color: #999">统计</a> <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/" style="font-size: 1.1em; color: #999">马克思主义</a> <a href="/tags/%E7%81%B5%E6%84%9F/" style="font-size: 1.5em; color: #99a9bf">灵感</a> <a href="/tags/%E8%A1%80%E6%B8%85%E7%B4%A0/" style="font-size: 1.1em; color: #999">血清素</a> <a href="/tags/diary/" style="font-size: 1.26em; color: #999fa8">diary</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 1.1em; color: #999">数据</a> <a href="/tags/%E6%89%8E%E6%A0%B9%E7%90%86%E8%AE%BA/" style="font-size: 1.1em; color: #999">扎根理论</a> <a href="/tags/%E9%87%8D%E8%A6%81/" style="font-size: 1.18em; color: #999ca1">重要</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0/" style="font-size: 1.1em; color: #999">随机游走</a> <a href="/tags/%E5%88%9B%E6%96%B0%E4%B9%98%E6%95%B0/" style="font-size: 1.1em; color: #999">创新乘数</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 1.18em; color: #999ca1">心理学</a> <a href="/tags/%E4%BA%AB%E5%8F%97%E7%AB%9E%E4%BA%89%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">享受竞争模型</a> <a href="/tags/%E6%9F%AF%E5%B8%83-%E9%81%93%E6%A0%BC%E6%8B%89%E6%96%AF%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">柯布-道格拉斯模型</a> <a href="/tags/%E5%A4%8F%E6%99%AE%E5%88%A9%E5%80%BC/" style="font-size: 1.1em; color: #999">夏普利值</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/08/">
+            <span class="card-archive-list-date">
+              八月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/07/">
+            <span class="card-archive-list-date">
+              七月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">21</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/03/">
+            <span class="card-archive-list-date">
+              三月 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/01/">
+            <span class="card-archive-list-date">
+              一月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">77</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-09-15T07:39:24.185Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["Entities are not to be multiplied beyond necessity.","Sunk costs should not affect major decisions.","The best way to predict the future is to create it."].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["Entities are not to be multiplied beyond necessity.","Sunk costs should not affect major decisions.","The best way to predict the future is to create it."])
+}
+typedJSFn.run(subtitleType)</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>模型基础知识 | shijun0210</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="模型是客观世界的表示“Essentially, all models are wrong, but some are useful.” - An Accidental Statistician, George Box  六类人工智能领域的常见问题这里引用龚才春博士对于模型的分类，我们依照模型用以解决问题的方向，将模型分为6大类，分别是权重问题、状态问题、序列问题、表示问题、相似问题以及分类问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模型基础知识">
+<meta property="og:url" content="https://shijun0210.github.io/2025/04/19/Book_The%20Model%20Thinker/00%20%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:description" content="模型是客观世界的表示“Essentially, all models are wrong, but some are useful.” - An Accidental Statistician, George Box  六类人工智能领域的常见问题这里引用龚才春博士对于模型的分类，我们依照模型用以解决问题的方向，将模型分为6大类，分别是权重问题、状态问题、序列问题、表示问题、相似问题以及分类问题。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2025-04-19T01:49:26.000Z">
+<meta property="article:modified_time" content="2026-08-12T01:49:00.031Z">
+<meta property="article:author" content="Jun">
+<meta property="article:tag" content="分类">
+<meta property="article:tag" content="序列">
+<meta property="article:tag" content="权重">
+<meta property="article:tag" content="模型">
+<meta property="article:tag" content="状态">
+<meta property="article:tag" content="相似">
+<meta property="article:tag" content="表示">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shijun0210.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "模型基础知识",
+  "url": "https://shijun0210.github.io/2025/04/19/Book_The%20Model%20Thinker/00%20%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/",
+  "image": "https://shijun0210.github.io/img/avatar.jpg",
+  "datePublished": "2025-04-19T01:49:26.000Z",
+  "dateModified": "2026-08-12T01:49:00.031Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun",
+      "url": "https://shijun0210.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://shijun0210.github.io/2025/04/19/Book_The%20Model%20Thinker/00%20%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '模型基础知识',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a><a class="nav-page-title" href="/"><span class="site-name">模型基础知识</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">模型基础知识</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-19T01:49:26.000Z" title="发表于 2025-04-19 09:49:26">2025-04-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-12T01:49:00.031Z" title="更新于 2026-08-12 09:49:00">2026-08-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>模型是客观世界的表示<br>“Essentially, all models are wrong, but some are useful.” - <em>An Accidental Statistician</em>, George Box</p>
+<hr>
+<h1 id="六类人工智能领域的常见问题"><a href="#六类人工智能领域的常见问题" class="headerlink" title="六类人工智能领域的常见问题"></a>六类人工智能领域的常见问题</h1><p>这里引用龚才春博士对于模型的分类，我们依照模型用以解决问题的方向，将模型分为6大类，分别是权重问题、状态问题、序列问题、表示问题、相似问题以及分类问题。</p>
+<ol>
+<li><p>权重问题：<br> TF-IDF模型（Term Frequency - Inverse Document Frequency，词频率-逆文档频率）：单一维度<br> 线性回归模型：多维度<br> PageRank模型：结构权重模型，而非统计权重模型，如网站的链接关系</p>
+</li>
+<li><p>状态问题：<br> 词法分析模型<br> 字符串匹配模型</p>
+</li>
+<li><p>序列问题：<br> 隐马尔可夫模型<br> 最大熵模型</p>
+</li>
+<li><p>表示问题：<br> 向量空间模型<br> 潜在语义分析（LSA）模型</p>
+</li>
+</ol>
+<blockquote>
+<p>[!NOTE]<br>如何定义问题的实体？有多少类实体？实体有哪些属性？每一个属性用什么数据类型表示？实体之间又是什么关系？这些就是表示问题要解决的。</p>
+</blockquote>
+<ol start="5">
+<li>相似问题（和我在SNA课程中学到的edge的概念有很多相似处）<br> 欧几里得距离：两点之间的直线距离。<br> 曼哈顿距离：城市街区或建筑物之间的行车距离。<br> 切比雪夫距离：际象棋中的距离计算。<br> 闵可夫斯基距离：欧几里得距离、曼哈顿距离、切比雪夫距离的统一。<br> 马哈拉诺比斯距离P：与量纲无关的防维度相关性干扰的距离。<br> 皮尔逊相关系数：两个变量的相关度计算模型。<br> 杰卡德相似系数：两个集合的相似度计算模型。<br> 余弦相似度：两个向量的相似度计算模型。<br> 汉明距离：数据传输错误率的度量模型。<br> KL散度：两个概率分布的相似性度量模型。<br> 海林格距离：两个概率分布的相似性度量的另一种模型。<br> 编辑距离：一个字符串转换为另一个字符串需要的编辑操作数。</li>
+</ol>
+<blockquote>
+<p>[!NOTE]<br>各相似模型一般都是由计算相似关系的两个实体的类型来区别的。</p>
+</blockquote>
+<ol start="6">
+<li>分类问题：<br> 感知机模型：介绍神经元的概念、感知机的原理、代价函数、梯度下降法、计算示例等。<br> 逻辑回归模型：介绍逻辑回归的应用场景、代价函数、梯度下降法等。<br> 决策树模型：介绍信息熵、ID3算法、C4.5算法、回归树等。<br> 朴素贝叶斯模型：介绍先验概率、后验概率、全概率公式、贝叶斯公式、文本分类示例、拉普拉斯平滑等。<br> 支持向量机模型：介绍肿瘤分类示例、最佳分类面、SVM问题定义、拉格朗日乘子法、数值计算算法等。</li>
+</ol>
+<blockquote>
+<p>[!NOTE]<br>分类问题是相似问题的应用延展，分类模型一般都基于某一种相似模型。分类的目的都是使类内距离尽量小，类间距离尽量大。</p>
+</blockquote>
+<hr>
+<h1 id="模型之间的关系"><a href="#模型之间的关系" class="headerlink" title="模型之间的关系"></a>模型之间的关系</h1><p><img src="http://picbed.shijun0210.site/img/25-4-19%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%85%B3%E7%B3%BB.png"></p>
+<p>书中 2.9 的部分</p>
+<hr>
+<h1 id="如何评价模型的好坏？"><a href="#如何评价模型的好坏？" class="headerlink" title="如何评价模型的好坏？"></a>如何评价模型的好坏？</h1><ol>
+<li>方法一：<br> 模型的<strong>准确率</strong>（Precision）​，表示搜索结果中有多大比例的结果是对的<br> 模型的<strong>召回率</strong>（Recall）​，表示正确的结果有多大比例被搜索到了<br> 令一个搜索引擎系统为SE，准确率为P(SE)，召回率为R(SE)，则有：<br>$$<br>F1 &#x3D; \frac{2\times  P(SE) \times R(SE)}{P(SE)+R(SE)}<br>$$</li>
+<li>方法二：<br> 模型的<strong>表示能力</strong>R(m)<br> 模型的<strong>简单性</strong>S(m)<br> 令衡量这个模型的优劣G(m)，则有：<br>$$<br> G(m) &#x3D; \frac{R(m) \times S(m)}{R(m)+S(m)}<br>$$</li>
+</ol>
+<hr>
+<h1 id="模型的运用——知识图谱"><a href="#模型的运用——知识图谱" class="headerlink" title="模型的运用——知识图谱"></a>模型的运用——知识图谱</h1><p>整体来说，知识图谱是一个“知识”的网状结构<br>知识图谱主要包含3个术语：实体（Entity）​、属性（Attribute）和关系（Relation）​</p>
+<p>关系（Relation）在知识图谱中一般用一个三元组（X,R,Y）表示，其中X和Y是两个实体，R是关系<br>	实际实现时，R可以是布尔型，例如夫妻关系可以用是和否的一个布尔型表示；<br>	可以是枚举型，例如用户对书籍的喜爱程度可以用1星、2星、3星、4星、5星等枚举值表示；<br>	还可以是实型，例如用户A和用户B的相似度；也可以是其他可能的类型。</p>
+<p>建立知识图谱的流程，以文献计量分析为例：<br>确定实体的类型：articles, authors, keywords, etc.<br>确定实体的属性：cited&#x2F;citing numbers, date, countries, etc.<br>确定属性的数据类型：number, date, bull, etc.<br>确定实体间的关系：cited, citing, time series, etc.</p>
+<p><img src="http://picbed.shijun0210.site/img/25-4-19KIDW%E6%A8%A1%E5%9E%8B.png"></p>
+<hr>
+<h1 id="构建模型的方法与模型的用途"><a href="#构建模型的方法与模型的用途" class="headerlink" title="构建模型的方法与模型的用途"></a>构建模型的方法与模型的用途</h1><p>对世界进行简化的模型<br>用数学概率类比的模型<br>人工构造的探索性模型</p>
+<p>在这种传统的方法中，目标是确定一个适当的模型并正确应用这个模型。而多模型思维所要挑战的，恰恰正是这种传统方法。多模型方法主张尝试多个模型。</p>
+<p>与昨天的书相呼应，该作者也提出，所有模型都有三个共同特征：简化、形式化、错误的。</p>
+<p>知识就是对相对关系、因果关系、逻辑关系等的理解。<br>	知识组织了信息，呈现为模型的形式。市场竞争的经济学模型、网络的社会学模型、地震的地质学模型、生态位形成的生态学模型以及学习的心理学模型都体现了知识。这些模型能够解释和预测。</p>
+<p>层次结构的基础就是智慧。智慧就是指识别和应用相关知识的能力。智慧需要多模型思维。</p>
+<p>“唯有通过收集多样化且往往相互矛盾的解释，我们才能最终实现对危机更完整的理解” - 罗闻，2012</p>
+<p>“了解现实就意味着构建转换系统，这些转换系统或多或少都必须与现实相对应” - Jean Piaget</p>
+<h2 id="构建模型的3种方法"><a href="#构建模型的3种方法" class="headerlink" title="构建模型的3种方法"></a>构建模型的3种方法</h2><ol>
+<li>具身法(embodiment approach)，包括重要部分，对不必要的维度和属性剥离和整合。</li>
+<li>类比法(analogy approach)，对现实进行类比与抽象，例如将网络信息传播类比为传染病模型。</li>
+<li>另类现实法(alternative reality approach)，思想实验</li>
+</ol>
+<p>Plurality must never be posited without necessity.<br>如无必要，勿增实体。</p>
+<h2 id="模型的7大用途"><a href="#模型的7大用途" class="headerlink" title="模型的7大用途"></a>模型的7大用途</h2><ol>
+<li>推理：识别条件并推断逻辑含义</li>
+<li>解释：为经验现象提供（可检验的）解释</li>
+<li>设计：选择制度、政策和规则的特征</li>
+<li>沟通：将知识与理解联系起来</li>
+<li>行动：指导政策选择和战略行动</li>
+<li>预测：对未来和未知现象进行数值和分类预测</li>
+<li>探索：分析探索可能性和假说</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://shijun0210.github.io">Jun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://shijun0210.github.io/2025/04/19/Book_The%20Model%20Thinker/00%20%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">https://shijun0210.github.io/2025/04/19/Book_The%20Model%20Thinker/00%20%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://shijun0210.github.io" target="_blank">shijun0210</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%A8%A1%E5%9E%8B/">模型</a><a class="post-meta__tags" href="/tags/%E6%9D%83%E9%87%8D/">权重</a><a class="post-meta__tags" href="/tags/%E7%8A%B6%E6%80%81/">状态</a><a class="post-meta__tags" href="/tags/%E5%BA%8F%E5%88%97/">序列</a><a class="post-meta__tags" href="/tags/%E8%A1%A8%E7%A4%BA/">表示</a><a class="post-meta__tags" href="/tags/%E7%9B%B8%E4%BC%BC/">相似</a><a class="post-meta__tags" href="/tags/%E5%88%86%E7%B1%BB/">分类</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/04/16/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/25-4-16%20TCCM%E8%AE%BA%E6%96%87%E9%80%9F%E8%AF%BB/" title="学习方法：TCCM论文速读"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">学习方法：TCCM论文速读</div></div><div class="info-2"><div class="info-item-1">Theory-Context-Characteristics-Methods 直接带着目的速读：  论文的理论基础是什么？假设or隐藏假设有哪些？ 论文研究的背景是什么？或者说“实验条件“是什么？ 论文的变量&#x2F;特征量有哪些？ 论文的研究方法是什么？  举例：DOI：10.3390&#x2F;info12050192TITLE：Understanding the Effects of eWOM Antecedents on Online Purchase Intention in China THEORY：social identity theory CONTEXT：China Fashion-oriented CHARACTERISTICS：IV: Five antecedents of eWOM, such as fashion involvement, sense of belonging, trust, tie strength, and informational influenceDV: online purchase intentionModerator:...</div></div></div></a><a class="pagination-related" href="/2025/04/21/Book_The%20Model%20Thinker/00%20REDCAPE%E4%B8%8E%E5%A4%9A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4/" title="REDCAPE与多模型思维"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">REDCAPE与多模型思维</div></div><div class="info-2"><div class="info-item-1">REDCAPE 模型功能 推理：reasoning 从模型中得出的推论总是采用条件判断形式：如果条件A成立，那么可以得出结果B。 当我们将模型中推导出来的主张与叙述性主张进行比较时，这种“条件性”的威力将会变得更加明显，即便后者有经验证据支持时也是如此。 通过利用模型，我们可以划出一条界线：什么时候应该采用、什么时候不能采用。  解释：explanation 模型为经验现象提供了清晰的逻辑解释。 模型可以解释点值(point values)和点值的变化。 最有效的模型既能解释简单的现象，也能解决令人费解的问题。 基于模型的解释必须包括正式的假设和明确的因果链条，而且这些假设和因果链条都要面对数据。  设计：design 模型还可以通过提供框架来帮助设计，因为只有在适当的框架内我们才可以考虑不同选择的含义。工程师使用模型设计供应链；计算机科学家使用模型设计Web协议；社会科学家使用模型设计制度。  交流 communication 由于创造了一种共同的表示方法，模型能够有效地改进交流。模型要求对相关特征及其关系给出正式的定义，这使我们能够精确地进行交流。可复制、可度量等。  行动...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/04/21/Book_The%20Model%20Thinker/00%20REDCAPE%E4%B8%8E%E5%A4%9A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4/" title="REDCAPE与多模型思维"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-21</div><div class="info-item-2">REDCAPE与多模型思维</div></div><div class="info-2"><div class="info-item-1">REDCAPE 模型功能 推理：reasoning 从模型中得出的推论总是采用条件判断形式：如果条件A成立，那么可以得出结果B。 当我们将模型中推导出来的主张与叙述性主张进行比较时，这种“条件性”的威力将会变得更加明显，即便后者有经验证据支持时也是如此。 通过利用模型，我们可以划出一条界线：什么时候应该采用、什么时候不能采用。  解释：explanation 模型为经验现象提供了清晰的逻辑解释。 模型可以解释点值(point values)和点值的变化。 最有效的模型既能解释简单的现象，也能解决令人费解的问题。 基于模型的解释必须包括正式的假设和明确的因果链条，而且这些假设和因果链条都要面对数据。  设计：design 模型还可以通过提供框架来帮助设计，因为只有在适当的框架内我们才可以考虑不同选择的含义。工程师使用模型设计供应链；计算机科学家使用模型设计Web协议；社会科学家使用模型设计制度。  交流 communication 由于创造了一种共同的表示方法，模型能够有效地改进交流。模型要求对相关特征及其关系给出正式的定义，这使我们能够精确地进行交流。可复制、可度量等。  行动...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E7%B1%BB%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E9%A2%86%E5%9F%9F%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">六类人工智能领域的常见问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.</span> <span class="toc-text">模型之间的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AF%84%E4%BB%B7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%A5%BD%E5%9D%8F%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">如何评价模型的好坏？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%BF%90%E7%94%A8%E2%80%94%E2%80%94%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1"><span class="toc-number">4.</span> <span class="toc-text">模型的运用——知识图谱</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%94%A8%E9%80%94"><span class="toc-number">5.</span> <span class="toc-text">构建模型的方法与模型的用途</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9E%8B%E7%9A%843%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">5.1.</span> <span class="toc-text">构建模型的3种方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E7%9A%847%E5%A4%A7%E7%94%A8%E9%80%94"><span class="toc-number">5.2.</span> <span class="toc-text">模型的7大用途</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC1%E6%9C%9F/" title="MISQ 26年 第1期">MISQ 26年 第1期</a><time datetime="2026-07-31T09:10:52.000Z" title="发表于 2026-07-31 17:10:52">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC2%E6%9C%9F/" title="MISQ 26年 第2期">MISQ 26年 第2期</a><time datetime="2026-07-31T09:05:53.000Z" title="发表于 2026-07-31 17:05:53">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="发表于 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="R 数据分析常用工具">R 数据分析常用工具</a><time datetime="2025-08-03T13:18:39.000Z" title="发表于 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/%E9%9A%8F%E8%AE%B0/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="RAG简介">RAG简介</a><time datetime="2025-07-28T02:25:16.000Z" title="发表于 2025-07-28 10:25:16">2025-07-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

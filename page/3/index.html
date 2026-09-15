@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>shijun0210 - Jun's blogs</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="shijun0210">
+<meta property="og:url" content="https://shijun0210.github.io/page/3/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:author" content="Jun">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shijun0210.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://shijun0210.github.io/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'shijun0210',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">shijun0210</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/26/Book_The%20Model%20Thinker/07%20%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0/" title="随机游走">随机游走</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-26T01:29:42.000Z" title="发表于 2025-04-26 09:29:42">2025-04-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">随机游走伯努利瓮模型 (Bernoulli urn model)每一次，从一个装了G个灰球和W个白球的瓮中随机抽取一个球，结果等于抽取出来的球的颜色。在下一次抽取之前，球要先放回瓮中。$$令P&#x3D;\frac{G}{(G+W)}表示灰球的比例。在抽取N次的情况下，灰球的期望数量N_{G}，及其标准差\sigma_{N_{G}}:$$$$N_{G}&#x3D;N\times P,\sigma_{N_{G}}&#x3D;\sqrt{N\times...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/25/Book_The%20Model%20Thinker/05%20%E4%BC%A0%E6%92%AD%E6%A8%A1%E5%9E%8B%E3%80%81%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B%E5%92%8C%E4%BC%A0%E6%9F%93%E6%A8%A1%E5%9E%8B/" title="传播模型、扩散模型和传染模型">传播模型、扩散模型和传染模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-25T01:10:12.000Z" title="发表于 2025-04-25 09:10:12">2025-04-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">传播模型前提假设：$$假设存在一个相关人群，用N_{POP}表示。感染者或知情者用I_{t}表示,其余成员(易感者)用S_{t}表示。$$$$相关人群的总人数等于感染者或知情者人数加上易感者人数的总和：N_{POP}&#x3D;I_{t}+S_{t}$$ 广播模型 - R形$$I_{t+1}&#x3D;I_{t}+P_{broad}\times S_{t}$$$$其中，P_{broad}表示广播概率，I_{t}和S_{t}分别等于时间t上的知情者和易感者的数字。$$$$初始状态为I_{0}&#x3D;0，且S_{0}&#x3D;N_{POP}$$这个模型的目标是描述一个信息源传播信息的过程，可以是政府、企业或报纸。但是，这个模型不适用于在人与人之间传播的传染病或思想。由于广播模型更适合描述思想和信息的传播（而不是传染病的传播）​，所以我们在这里说知情者的人数，而不说感染者的人数。 扩散模型 -...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/25/Book_The%20Model%20Thinker/06%20%E7%86%B5%E4%B8%8E%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/" title="熵与不确定性">熵与不确定性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-25T01:10:12.000Z" title="发表于 2025-04-25 09:10:12">2025-04-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">熵：对不确定性建模信息熵熵是用来度量与结果的概率分布相关的不确定性的。因此，它也可以衡量意外。 熵与方差不同，方差度量一个数值集合或数值分布的离散程度。不确定性与离散程度有关，但是两者并不是一回事。 通过比较具有最大熵的分布与具有最大方差的分布，可以将这种区别鲜明地呈现出来。 N个二元随机事件会产生2N个可能的结果序列，并且，与之等价，我们可以通过提出N个“是或否”问题知悉结果序列。这也意味着，信息熵将不确定性水平（和信息内容）N分配给了2N个结果上的一个等可能分布。 熵在数学上等于概率与它们的对数之和的相反数。$$给定一个概率分布(p_{1},p_{2},\dots,p_{n})，信息熵，H_{2}等于：$$$$H_{2}(p_{1},p_{2},\dots,p_{n})&#x3D;-\sum_{i&#x3D;1}^np_{i}log_{2}(p_{i})$$ 公理基础上述的熵测度是唯一满足以下四个公理的测度：  对称性$$对于任何转置概率，都有连续函数，H(\sigma(\vec p))&#x3D;H(\vec p)$$ 最大化$$对于所有N，H(\vec...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/24/Book_The%20Model%20Thinker/04%20%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/" title="网络模型">网络模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-24T01:13:23.000Z" title="发表于 2025-04-24 09:13:23">2025-04-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">网络模型结构网络由节点以及连接节点(node)的边(edge)组成。由边连接起来的节点互为邻居。 网络中的边可以是定向的，也可以是非定向的。在非定向网络中，一个节点的度(degree)等于连接到它的边的数量。 网络以一组网络统计数据为特征。对于每个统计量，我们可以计算网络平均值和所有节点的分布。度分布(degree distribution)告诉我们某些节点是否比其他节点连接得更多。 路径长度(length)，指两个节点之间的最小距离，与度成反比。当增加边时，就缩短了节点之间的平均距离。 最短路径上的节点在网络中起着关键作用。如果信息是通过最短路径传递的，那么就必定会经过最短路径上的节点。 节点的介数得分(betweenness...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/23/Book_The%20Model%20Thinker/02%20%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B%E4%B8%8E%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" title="线性模型与非线性模型">线性模型与非线性模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-23T00:47:22.000Z" title="发表于 2025-04-23 08:47:22">2025-04-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">线性模型线性回归模型的目标是找到能够最小化到各数据点的直线。回归线越靠近数据，模型解释的数据越多，R2就越大（得到解释的百分比越大）​。如果数据全部都恰好位于回归线上，R2就等于100%。 统计学家使用p值来表示系数的显著性，p值等于基于回归的系数不为零的概率。p值为5%意味着数据由一个系数等于零的过程生成的概率为1&#x2F;20。显著性的标准阈值是5%和1%​。但是，显著性并不是我们唯一关心的东西。一个系数可能是显著的，但是却很小。如果真的是这样，就可以对相关关系很有信心，但是变量的影响其实不大。又或者，也可能系数虽然不显著但却很大，这通常发生在有噪声数据或数据带有许多遗漏变量的情况下。 回归所揭示的是变量之间的相关关系，而不是因果关系。PS：在我们能够用回归发现显著的相关性之前，有一种方法远比回归方法好，这种方法就是通常所称的“数据挖掘”(data mining)。但是，数据挖掘存在识别与其他因果变量相关的某个变量的风险。数据挖掘还可能导致虚假的相关关系，即两个变量只是偶然相关。我们可以通过创建训练集(training set)和检验集(testing...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/23/Book_The%20Model%20Thinker/03%20%E4%B8%8E%E4%BB%B7%E5%80%BC%E5%92%8C%E6%9D%83%E5%8A%9B%E6%9C%89%E5%85%B3%E7%9A%84%E6%A8%A1%E5%9E%8B/" title="与价值和权力有关的模型">与价值和权力有关的模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-23T00:47:22.000Z" title="发表于 2025-04-23 08:47:22">2025-04-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">与价值和权力有关的模型两个标准：  “最后上车者价值”​（last-on-the-bus value，简称LOTB），它等于一位行动者在团队已经形成的情况下加入团队时的边际贡献。 夏普利值(Shapley value)，它等于行动者遍历所有可能的加入团队的序列，加入团队时的边际贡献平均值。⚠️：我们是在合作博弈模型的框架下定义这些度量标准的。合作博弈模型由一组博弈参与者和一个价值函数组成。这个价值函数为每个可能的博弈参与者子集分配一个集体收益。  合作博弈...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/22/Book_The%20Model%20Thinker/01%20%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E4%B8%8E%E5%B9%82%E5%BE%8B%E5%88%86%E5%B8%83/" title="正态分布与幂律分布">正态分布与幂律分布</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-22T00:39:32.000Z" title="发表于 2025-04-22 08:39:32">2025-04-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content"> 分布为事件或价值分配概率。 各种统计量将分布中包含的信息压缩为单个数值，例如均值，分布的平均值。 均值之外的第二个重要统计量是方差，可以衡量一个分布的离散程度，也就是数据与均值之间距离的平方的平均值  正态分布分布以数学的方式刻画变量的变差（在某个类型内部的差异）和多样性（不同类型之间的差异）​，将变量表示为在数值上或类别上定义的概率分布。 我们可以通过中心极限定理(Central Limit...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/21/Book_The%20Model%20Thinker/00%20REDCAPE%E4%B8%8E%E5%A4%9A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4/" title="REDCAPE与多模型思维">REDCAPE与多模型思维</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-21T01:14:42.000Z" title="发表于 2025-04-21 09:14:42">2025-04-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">REDCAPE 模型功能 推理：reasoning 从模型中得出的推论总是采用条件判断形式：如果条件A成立，那么可以得出结果B。 当我们将模型中推导出来的主张与叙述性主张进行比较时，这种“条件性”的威力将会变得更加明显，即便后者有经验证据支持时也是如此。 通过利用模型，我们可以划出一条界线：什么时候应该采用、什么时候不能采用。  解释：explanation 模型为经验现象提供了清晰的逻辑解释。 模型可以解释点值(point values)和点值的变化。 最有效的模型既能解释简单的现象，也能解决令人费解的问题。 基于模型的解释必须包括正式的假设和明确的因果链条，而且这些假设和因果链条都要面对数据。  设计：design 模型还可以通过提供框架来帮助设计，因为只有在适当的框架内我们才可以考虑不同选择的含义。工程师使用模型设计供应链；计算机科学家使用模型设计Web协议；社会科学家使用模型设计制度。  交流 communication 由于创造了一种共同的表示方法，模型能够有效地改进交流。模型要求对相关特征及其关系给出正式的定义，这使我们能够精确地进行交流。可复制、可度量等。  行动...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/19/Book_The%20Model%20Thinker/00%20%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="模型基础知识">模型基础知识</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-19T01:49:26.000Z" title="发表于 2025-04-19 09:49:26">2025-04-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">模型是客观世界的表示“Essentially, all models are wrong, but some are useful.” - An Accidental Statistician, George Box  六类人工智能领域的常见问题这里引用龚才春博士对于模型的分类，我们依照模型用以解决问题的方向，将模型分为6大类，分别是权重问题、状态问题、序列问题、表示问题、相似问题以及分类问题。  权重问题： TF-IDF模型（Term Frequency - Inverse Document Frequency，词频率-逆文档频率）：单一维度 线性回归模型：多维度 PageRank模型：结构权重模型，而非统计权重模型，如网站的链接关系  状态问题： 词法分析模型 字符串匹配模型  序列问题： 隐马尔可夫模型 最大熵模型  表示问题： 向量空间模型...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/16/%E9%9A%8F%E8%AE%B0/25-4-16%20%E9%9A%8F%E8%AE%B0%202/" title="随记">随记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-16T07:57:00.000Z" title="发表于 2025-04-16 15:57:00">2025-04-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a></span></div><div class="content">Source: KY. Goh., CS. Heng., &amp; ZJ. Lin. (2013). Social Media Brand Community and Consumer Behavior: Quantifying the Relative Impact of User- and Marketer-Generated Content. Information Systems Research 24(1), 88-107. DOI: 10.1287&#x2F;isre.1120.0469. Dimensions: content information richness, content valence, directed communication versus undirected communication Hypotheses: H1A: UGC information richness has a smaller impact than MGC information richness on consumers’ purchase...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#content-inner">8</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC1%E6%9C%9F/" title="MISQ 26年 第1期">MISQ 26年 第1期</a><time datetime="2026-07-31T09:10:52.000Z" title="发表于 2026-07-31 17:10:52">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC2%E6%9C%9F/" title="MISQ 26年 第2期">MISQ 26年 第2期</a><time datetime="2026-07-31T09:05:53.000Z" title="发表于 2026-07-31 17:05:53">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="发表于 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="R 数据分析常用工具">R 数据分析常用工具</a><time datetime="2025-08-03T13:18:39.000Z" title="发表于 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/%E9%9A%8F%E8%AE%B0/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="RAG简介">RAG简介</a><time datetime="2025-07-28T02:25:16.000Z" title="发表于 2025-07-28 10:25:16">2025-07-28</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Book-The-Model-Thinker/"><span class="card-category-list-name">Book_The Model Thinker</span><span class="card-category-list-count">23</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Book-%E6%88%98%E7%95%A5%E7%AE%80%E5%8F%B2/"><span class="card-category-list-name">Book_战略简史</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Journal/"><span class="card-category-list-name">Journal</span><span class="card-category-list-count">3</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Journal/MISQ/"><span class="card-category-list-name">MISQ</span><span class="card-category-list-count">3</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/individual-products/"><span class="card-category-list-name">individual products</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BC%A0%E6%92%AD%E5%AD%A6/"><span class="card-category-list-name">传播学</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"><span class="card-category-list-name">心理学</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/"><span class="card-category-list-name">数字化转型</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/metaphysics/" style="font-size: 1.1em; color: #999">metaphysics</a> <a href="/tags/%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E5%87%BD%E6%95%B0/" style="font-size: 1.1em; color: #999">李雅普诺夫函数</a> <a href="/tags/logical-positvism/" style="font-size: 1.1em; color: #999">logical-positvism</a> <a href="/tags/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/" style="font-size: 1.1em; color: #999">不确定性</a> <a href="/tags/%E9%98%90%E9%87%8A/" style="font-size: 1.1em; color: #999">阐释</a> <a href="/tags/agent/" style="font-size: 1.1em; color: #999">agent</a> <a href="/tags/%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/" style="font-size: 1.1em; color: #999">公司金融</a> <a href="/tags/MIS/" style="font-size: 1.26em; color: #999fa8">MIS</a> <a href="/tags/%E6%80%9D%E8%80%83/" style="font-size: 1.18em; color: #999ca1">思考</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.1em; color: #999">互联网</a> <a href="/tags/Agenda-Setting/" style="font-size: 1.1em; color: #999">Agenda-Setting</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.42em; color: #99a6b7">笔记</a> <a href="/tags/Zipf/" style="font-size: 1.1em; color: #999">Zipf</a> <a href="/tags/%E6%B3%A2%E5%8A%A8/" style="font-size: 1.1em; color: #999">波动</a> <a href="/tags/R/" style="font-size: 1.1em; color: #999">R</a> <a href="/tags/goodnotes/" style="font-size: 1.1em; color: #999">goodnotes</a> <a href="/tags/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/" style="font-size: 1.1em; color: #999">生命游戏</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB/" style="font-size: 1.34em; color: #99a3b0">快速阅读</a> <a href="/tags/paradigm/" style="font-size: 1.1em; color: #999">paradigm</a> <a href="/tags/%E5%8D%A2%E5%8D%A1%E6%96%AF%E6%89%B9%E5%88%A4/" style="font-size: 1.1em; color: #999">卢卡斯批判</a> <a href="/tags/%E5%85%AC%E5%B9%B3/" style="font-size: 1.18em; color: #999ca1">公平</a> <a href="/tags/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">马尔可夫模型</a> <a href="/tags/%E7%B4%A2%E6%B4%9B%E5%A2%9E%E9%95%BF%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">索洛增长模型</a> <a href="/tags/RAG/" style="font-size: 1.1em; color: #999">RAG</a> <a href="/tags/TCCM/" style="font-size: 1.1em; color: #999">TCCM</a> <a href="/tags/%E5%B9%B3%E6%96%B9%E6%A0%B9%E6%B3%95%E5%88%99/" style="font-size: 1.1em; color: #999">平方根法则</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 1.1em; color: #999">统计</a> <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/" style="font-size: 1.1em; color: #999">马克思主义</a> <a href="/tags/%E7%81%B5%E6%84%9F/" style="font-size: 1.5em; color: #99a9bf">灵感</a> <a href="/tags/%E8%A1%80%E6%B8%85%E7%B4%A0/" style="font-size: 1.1em; color: #999">血清素</a> <a href="/tags/diary/" style="font-size: 1.26em; color: #999fa8">diary</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 1.1em; color: #999">数据</a> <a href="/tags/%E6%89%8E%E6%A0%B9%E7%90%86%E8%AE%BA/" style="font-size: 1.1em; color: #999">扎根理论</a> <a href="/tags/%E9%87%8D%E8%A6%81/" style="font-size: 1.18em; color: #999ca1">重要</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0/" style="font-size: 1.1em; color: #999">随机游走</a> <a href="/tags/%E5%88%9B%E6%96%B0%E4%B9%98%E6%95%B0/" style="font-size: 1.1em; color: #999">创新乘数</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 1.18em; color: #999ca1">心理学</a> <a href="/tags/%E4%BA%AB%E5%8F%97%E7%AB%9E%E4%BA%89%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">享受竞争模型</a> <a href="/tags/%E6%9F%AF%E5%B8%83-%E9%81%93%E6%A0%BC%E6%8B%89%E6%96%AF%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">柯布-道格拉斯模型</a> <a href="/tags/%E5%A4%8F%E6%99%AE%E5%88%A9%E5%80%BC/" style="font-size: 1.1em; color: #999">夏普利值</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/08/">
+            <span class="card-archive-list-date">
+              八月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/07/">
+            <span class="card-archive-list-date">
+              七月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">21</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/03/">
+            <span class="card-archive-list-date">
+              三月 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/01/">
+            <span class="card-archive-list-date">
+              一月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">77</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-09-15T07:39:24.185Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["Entities are not to be multiplied beyond necessity.","Sunk costs should not affect major decisions.","The best way to predict the future is to create it."].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["Entities are not to be multiplied beyond necessity.","Sunk costs should not affect major decisions.","The best way to predict the future is to create it."])
+}
+typedJSFn.run(subtitleType)</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

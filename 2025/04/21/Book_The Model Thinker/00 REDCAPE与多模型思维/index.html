@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>REDCAPE与多模型思维 | shijun0210</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="REDCAPE 模型功能 推理：reasoning 从模型中得出的推论总是采用条件判断形式：如果条件A成立，那么可以得出结果B。 当我们将模型中推导出来的主张与叙述性主张进行比较时，这种“条件性”的威力将会变得更加明显，即便后者有经验证据支持时也是如此。 通过利用模型，我们可以划出一条界线：什么时候应该采用、什么时候不能采用。  解释：explanation 模型为经验现象提供了清晰的逻辑解释。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="REDCAPE与多模型思维">
+<meta property="og:url" content="https://shijun0210.github.io/2025/04/21/Book_The%20Model%20Thinker/00%20REDCAPE%E4%B8%8E%E5%A4%9A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:description" content="REDCAPE 模型功能 推理：reasoning 从模型中得出的推论总是采用条件判断形式：如果条件A成立，那么可以得出结果B。 当我们将模型中推导出来的主张与叙述性主张进行比较时，这种“条件性”的威力将会变得更加明显，即便后者有经验证据支持时也是如此。 通过利用模型，我们可以划出一条界线：什么时候应该采用、什么时候不能采用。  解释：explanation 模型为经验现象提供了清晰的逻辑解释。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2025-04-21T01:14:42.000Z">
+<meta property="article:modified_time" content="2026-08-12T01:49:00.031Z">
+<meta property="article:author" content="Jun">
+<meta property="article:tag" content="REDCAPE">
+<meta property="article:tag" content="估值误差">
+<meta property="article:tag" content="分类误差">
+<meta property="article:tag" content="卢卡斯批判">
+<meta property="article:tag" content="双曲贴现">
+<meta property="article:tag" content="损失厌恶">
+<meta property="article:tag" content="模型">
+<meta property="article:tag" content="模型偏差">
+<meta property="article:tag" content="模型误差分解定理">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shijun0210.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "REDCAPE与多模型思维",
+  "url": "https://shijun0210.github.io/2025/04/21/Book_The%20Model%20Thinker/00%20REDCAPE%E4%B8%8E%E5%A4%9A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4/",
+  "image": "https://shijun0210.github.io/img/avatar.jpg",
+  "datePublished": "2025-04-21T01:14:42.000Z",
+  "dateModified": "2026-08-12T01:49:00.031Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jun",
+      "url": "https://shijun0210.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://shijun0210.github.io/2025/04/21/Book_The%20Model%20Thinker/00%20REDCAPE%E4%B8%8E%E5%A4%9A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'REDCAPE与多模型思维',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a><a class="nav-page-title" href="/"><span class="site-name">REDCAPE与多模型思维</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">REDCAPE与多模型思维</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-21T01:14:42.000Z" title="发表于 2025-04-21 09:14:42">2025-04-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-12T01:49:00.031Z" title="更新于 2026-08-12 09:49:00">2026-08-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h4 id="REDCAPE-模型功能"><a href="#REDCAPE-模型功能" class="headerlink" title="REDCAPE 模型功能"></a>REDCAPE 模型功能</h4><ol>
+<li><p>推理：reasoning<br> 从模型中得出的推论总是采用条件判断形式：如果条件A成立，那么可以得出结果B。<br> 当我们将模型中推导出来的主张与叙述性主张进行比较时，这种“条件性”的威力将会变得更加明显，即便后者有经验证据支持时也是如此。<br> 通过利用模型，我们可以划出一条界线：什么时候应该采用、什么时候不能采用。</p>
+</li>
+<li><p>解释：explanation<br> 模型为经验现象提供了清晰的逻辑解释。<br> 模型可以解释点值(point values)和点值的变化。<br> 最有效的模型既能解释简单的现象，也能解决令人费解的问题。<br> 基于模型的解释必须包括正式的假设和明确的因果链条，而且这些假设和因果链条都要面对数据。</p>
+</li>
+<li><p>设计：design<br> 模型还可以通过提供框架来帮助设计，因为只有在适当的框架内我们才可以考虑不同选择的含义。工程师使用模型设计供应链；计算机科学家使用模型设计Web协议；社会科学家使用模型设计制度。</p>
+</li>
+<li><p>交流 communication<br> 由于创造了一种共同的表示方法，模型能够有效地改进交流。模型要求对相关特征及其关系给出正式的定义，这使我们能够精确地进行交流。可复制、可度量等。</p>
+</li>
+<li><p>行动 action<br> 在最重要的行动中，决策者要使用多个复杂的模型，模型与数据紧密相关。<br> 指导行动的模型通常依赖于数据，但并不是全部模型都依赖于数据。</p>
+</li>
+<li><p>预测 prediction<br> 过去，解释和预测往往是齐头并进的。<br> 现在，有的模型可以用来预测，但是却不一定能解释什么。深度学习算法可以预测产品的销售情况、明天的天气变化、价格演变趋势和身体健康状况，但是它们几乎没有提供什么解释。<br> 有些模型有很强的解释力，但是在预测上却没有什么价值。</p>
+</li>
+<li><p>探索 exploration<br> 暂且将现实世界的约束丢到一边，可以极大地激发我们的创造力。</p>
+</li>
+</ol>
+<hr>
+<h4 id="多模型思维"><a href="#多模型思维" class="headerlink" title="多模型思维"></a>多模型思维</h4><blockquote>
+<p>[!BIAS]<br>孔多塞陪审团定理意味着，如果有足够多的模型，我们几乎永远不会犯错。多样性预测定理则意味着，如果能够构建一组多样的中等准确性的预测模型，我们就可以将多模型误差减少为接近于零。然而，分类模型告诉我们，构建多个独立模型是困难的。<br>虽然增加模型可以提高准确性（根据多样性预测定理，必定会是这样）​，但是在已经拥有了一定数量的模型之后再继续增加模型，每个模型的边际贡献就会下降。</p>
+</blockquote>
+<h5 id="孔多塞陪审团定理："><a href="#孔多塞陪审团定理：" class="headerlink" title="孔多塞陪审团定理："></a>孔多塞陪审团定理：</h5><p>多数投票正确的概率比任何人（模型）都更高；当人数（模型数）变得足够大时，多数投票的准确率将接近100%。<br>例如，我们尝试用几个不同的模型来处理同一个问题，这些模型的简化方法各不相同，但都有一个共同的生物学假设。如果这些模型（尽管它们有不同的假设）都导致相似的结果，那我们就得到了一个强有力的定理，它基本上不受模型细节的影响。</p>
+<p>我们的真理就是若干独立的谎言的交集。——Richard Levins</p>
+<h5 id="多样性预测定理"><a href="#多样性预测定理" class="headerlink" title="多样性预测定理"></a>多样性预测定理</h5><p>多模型误差&#x3D;平均模型误差-模型预测的多样性，即：<br>$$<br>(\bar M-V)^2 &#x3D; \sum_{i&#x3D;1}^N \frac{(M_{i}-V)^2}{N} - \sum_{i&#x3D;1}^N \frac{(M- \bar M)^2}{N}<br>$$<br>$$<br>M_{i}表示模型i的预测，\bar{M}等于模型的平均值，V等于真值<br>$$<br>这个定理的原理在于，相反类型的误差（正负）会相互抵消。如果一个模型的预测值太高，同时另一个模型的预测值太低，那么这些模型就会表现出预测多样性。两个模型的误差相互抵消，模型的平均值将比任何一个模型更加准确。即便两个模型的预测值都太高，这些预测值的平均误差仍然不会比两个高预测值的平均误差更糟。</p>
+<p>这个定理确实意味着，任何多样性的模型（或人）的集合将比其普通成员的预测更加准确，这种现象就是通常所说的“群体的智慧”(wisdomof crowds)<br>PS：有点像集成学习的方法，比如我的研究计划里，使用集成学习的方法来预测主观幸福感。</p>
+<p>“任何一种看待世界的单一方式都会遗漏掉某些细节，使我们更容易产生盲点。”</p>
+<h5 id="分类模型"><a href="#分类模型" class="headerlink" title="分类模型"></a>分类模型</h5><p>我们在构建多模型思维的时候，并非增加越多的模型，效果越好。第二个和第三个模型不一定比第一个模型更好，它们也许会更糟。但是，即使它们的准确性稍差，但只要分类（字面意义）有所不同，就应该把它们加入进来。</p>
+<h5 id="适当的模型粒度"><a href="#适当的模型粒度" class="headerlink" title="适当的模型粒度"></a>适当的模型粒度</h5><p>“不要迷失在细节的丛林中”</p>
+<p>统计学家把一个模型中能够解释的variation的比例称为该模型的R^2<br>$$<br> R^2 &#x3D; \frac {\begin{matrix} \sum_{x \in X} (V(x)-\bar V)^2\end{matrix}-\begin{matrix} \sum_{x \in X} (M(x)- V(x))^2\end{matrix}}{\begin{matrix} \sum_{x \in X} (V(x)-\bar V)^2\end{matrix}}<br>$$<br>$$<br>其中，V(x)等于X中的x的值，\bar V等于平均值，M(x)等于模型的估值<br>$$<br>创建分类模型的目的是根据属性构建类别，使同一类别中的单位具有类似的均值。当然，没有任何一种分类方法是完美的。在每个类别中，单位的均值可能会略有不同，我们称这种情况称为<strong>分类误差</strong>(categorization error)。</p>
+<p>构建的类别越大，分类误差就越大，因为类别越大，我们就越可能将具有不同均值的单位集中到同一个类别中。但是，更大的类别依赖更多的数据，又可以使我们对每个类别均值的估计更加准确（参见平方根规则）​。因估计均值错误而出现的误差称为<strong>估值误差</strong>(valuation error)。估值误差随类别数量的增加而减少。</p>
+<p>增加类别的数量能够通过将具有不同均值的单位归入同一个类别减少分类误差。统计学家将这种情况称为模型偏差(model bias)。但是同时，构建更多类别则会增加对每个类别均值估计的误差，统计学家将这种情况称为均值方差的增加。</p>
+<p>同时，创造过多的类别会导致对数据的过度拟合，而过度拟合会破坏对未来事件的预测。</p>
+<p>因此，我们在决定要构建许多个类别时就面临着一个权衡。对于这种权衡，我们将它总结为<strong>模型误差分解定理</strong>(model error decomposition theorem)，统计学家则将这个结果称为<strong>偏差-方差权衡</strong>(bias-variance trade-off)。</p>
+<p>模型误差 &#x3D; 分类误差+估值误差<br>$$<br>\begin{matrix} \sum_{x \in X} (M(x)- V(x))^2\end{matrix} &#x3D; \sum_{i&#x3D;1}^n \begin{matrix} \sum_{x \in S_{i}} (V(x)-V_{i})^2\end{matrix} + \sum_{i&#x3D;1}^n(M_{i}-V_{i})^2<br>$$</p>
+<p>$$<br>其中，M(x)和M_{i}分别表示数据点x和类别S_{i}和V(x)的模型值，V_{i}表示它们的实际值。<br>$$</p>
+<p>高阶项的存在会带来大误差的风险，因为高阶项有很强的放大效应。为了避免过度拟合，可以避免使用高阶项。不过，一种更巧妙的解决方法是，可以采取自举聚合法(bootstrap aggregating)或装袋法(bagging)来构建模型。</p>
+<hr>
+<h4 id="对人类建模的挑战"><a href="#对人类建模的挑战" class="headerlink" title="对人类建模的挑战"></a>对人类建模的挑战</h4><ol>
+<li>多样性：人们的偏好、行动能力不同，形成的社交网络、利他主义倾向以及分配给不同行动的认知资源（注意力）也有所不同。</li>
+<li>易受社会影响的：例如极端行为带来的溢出效应(spillovers)。</li>
+<li>容易出错的：认知依恋(cognitiveattachment)缺失导致的误差就可能是随机且独立的，认知偏差导致的误差可能是系统性的、相关的。人们对最近发生的事件往往更加重视，并且更容易回忆起故事性的情节而不是统计数字。这类共同偏差不会被消除。</li>
+<li>渴望（目的性）：有些人渴望财富和名声，有些人渴望改变世界</li>
+<li>人的主体性：人类有采取行动的能力，改变行为的能力以及学习的能力。</li>
+</ol>
+<p>人类总是下意识的追求认知范围内的“最优化”。</p>
+<p><strong>损失厌恶</strong>是指面对收益时，人们表现为风险厌恶，面对损失时，人们却表现为风险偏好。损失厌恶初看上去似乎并不是非理性的，但是它意味着对于一个相同的情景，在呈现为潜在损失与潜在收益时，人们会选择不同的行为。</p>
+<p><strong>双曲贴现</strong>意味着，人们对近期的贴现更强。双曲贴现可以解释人们为什么会欠下巨额信用卡债务、吃不健康的食品、做出无保护措施的性行为，也可以解释许多人不能为退休进行储蓄的原因。</p>
+<p>人类行为发生在零智能与完全理性这两种极端情况之间，因此构建行为个体利用适应性规则的模型是有意义的。</p>
+<p>基于最优化的模型假设人们最大化的效用函数或收益函数，而基于规则的模型则假设特定的行为。<br>许多人将基于最优化的模型等同于数学（模型）​，而将基于规则的模型等同于计算（模型）​。<br>在基于最优化的模型中，对偏好或收益的假设是最基本的；而在基于规则的模型中，对行为的假设才是最基本的。<br>正如理性选择模型可以作为人类认知能力的上限，固定规则模型则可以作为人类认知能力的下限。</p>
+<p>模型会产生什么样的结果？均衡、周期、随机性、复杂性<br>周期与均衡的模型可以创造一个相对稳定的环境，在此环境中，人类可以进行学习。<br>如果模型产生了均衡（或简单的周期）​，并且均衡与优化行为不一致，那就意味着我们的模型存在逻辑缺陷。<br>如果可以采取任何行动的适应性规则产生了均衡，那么这种均衡必定与致力于最优化的行为主体的行为一致。如果同样这些适应性规则产生了复杂性，那么行为主体的行为就不一定是最优的。</p>
+<h5 id="卢卡斯批判"><a href="#卢卡斯批判" class="headerlink" title="卢卡斯批判"></a>卢卡斯批判</h5><p>政策或环境的变化可能引起受影响者的行为反应。因此，使用过去的行为数据估计的模型将不准确。模型必须考虑到人们对政策和环境变化做出反应这一事实。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://shijun0210.github.io">Jun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://shijun0210.github.io/2025/04/21/Book_The%20Model%20Thinker/00%20REDCAPE%E4%B8%8E%E5%A4%9A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4/">https://shijun0210.github.io/2025/04/21/Book_The%20Model%20Thinker/00%20REDCAPE%E4%B8%8E%E5%A4%9A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://shijun0210.github.io" target="_blank">shijun0210</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%A8%A1%E5%9E%8B/">模型</a><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a><a class="post-meta__tags" href="/tags/REDCAPE/">REDCAPE</a><a class="post-meta__tags" href="/tags/%E5%88%86%E7%B1%BB%E8%AF%AF%E5%B7%AE/">分类误差</a><a class="post-meta__tags" href="/tags/%E4%BC%B0%E5%80%BC%E8%AF%AF%E5%B7%AE/">估值误差</a><a class="post-meta__tags" href="/tags/%E6%A8%A1%E5%9E%8B%E5%81%8F%E5%B7%AE/">模型偏差</a><a class="post-meta__tags" href="/tags/%E6%A8%A1%E5%9E%8B%E8%AF%AF%E5%B7%AE%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/">模型误差分解定理</a><a class="post-meta__tags" href="/tags/%E6%8D%9F%E5%A4%B1%E5%8E%8C%E6%81%B6/">损失厌恶</a><a class="post-meta__tags" href="/tags/%E5%8F%8C%E6%9B%B2%E8%B4%B4%E7%8E%B0/">双曲贴现</a><a class="post-meta__tags" href="/tags/%E5%8D%A2%E5%8D%A1%E6%96%AF%E6%89%B9%E5%88%A4/">卢卡斯批判</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/04/19/Book_The%20Model%20Thinker/00%20%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="模型基础知识"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">模型基础知识</div></div><div class="info-2"><div class="info-item-1">模型是客观世界的表示“Essentially, all models are wrong, but some are useful.” - An Accidental Statistician, George Box  六类人工智能领域的常见问题这里引用龚才春博士对于模型的分类，我们依照模型用以解决问题的方向，将模型分为6大类，分别是权重问题、状态问题、序列问题、表示问题、相似问题以及分类问题。  权重问题： TF-IDF模型（Term Frequency - Inverse Document Frequency，词频率-逆文档频率）：单一维度 线性回归模型：多维度 PageRank模型：结构权重模型，而非统计权重模型，如网站的链接关系  状态问题： 词法分析模型 字符串匹配模型  序列问题： 隐马尔可夫模型 最大熵模型  表示问题： 向量空间模型...</div></div></div></a><a class="pagination-related" href="/2025/04/22/Book_The%20Model%20Thinker/01%20%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E4%B8%8E%E5%B9%82%E5%BE%8B%E5%88%86%E5%B8%83/" title="正态分布与幂律分布"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">正态分布与幂律分布</div></div><div class="info-2"><div class="info-item-1"> 分布为事件或价值分配概率。 各种统计量将分布中包含的信息压缩为单个数值，例如均值，分布的平均值。 均值之外的第二个重要统计量是方差，可以衡量一个分布的离散程度，也就是数据与均值之间距离的平方的平均值  正态分布分布以数学的方式刻画变量的变差（在某个类型内部的差异）和多样性（不同类型之间的差异）​，将变量表示为在数值上或类别上定义的概率分布。 我们可以通过中心极限定理(Central Limit...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/04/19/Book_The%20Model%20Thinker/00%20%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="模型基础知识"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-19</div><div class="info-item-2">模型基础知识</div></div><div class="info-2"><div class="info-item-1">模型是客观世界的表示“Essentially, all models are wrong, but some are useful.” - An Accidental Statistician, George Box  六类人工智能领域的常见问题这里引用龚才春博士对于模型的分类，我们依照模型用以解决问题的方向，将模型分为6大类，分别是权重问题、状态问题、序列问题、表示问题、相似问题以及分类问题。  权重问题： TF-IDF模型（Term Frequency - Inverse Document Frequency，词频率-逆文档频率）：单一维度 线性回归模型：多维度 PageRank模型：结构权重模型，而非统计权重模型，如网站的链接关系  状态问题： 词法分析模型 字符串匹配模型  序列问题： 隐马尔可夫模型 最大熵模型  表示问题： 向量空间模型...</div></div></div></a><a class="pagination-related" href="/2017/01/01/%E5%BF%83%E7%90%86%E5%AD%A6/17%20%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6-%E7%AC%94%E8%AE%B0-%E6%84%9F%E8%A7%89%E4%B8%8E%E8%A7%86%E8%A7%89/" title="感觉与视觉"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2017-01-01</div><div class="info-item-2">感觉与视觉</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2017/01/01/%E5%BF%83%E7%90%86%E5%AD%A6/17%20%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6-%E7%AC%94%E8%AE%B0-%E6%84%8F%E8%AF%86%E4%B8%8E%E6%B3%A8%E6%84%8F/" title="意识与注意"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2017-01-01</div><div class="info-item-2">意识与注意</div></div><div class="info-2"><div class="info-item-1">第三章 意识与注意 一、意识与无意识（一）意识的含义  意识是一种觉知：它意味着“观察者”觉察到了某种“现象”或“事物”。 意识是一种高级的心理官能：它对个体的身心系统起统合、管理和调控的作用。 意识是一种心理状态：它可以分为不同的层次水平，如从无意识到意识到注意，是一个连续体。  （二）意识的种类  非意识过程 前意识记忆：只有在个体注意被吸引过去以后才能到达意识的记忆称为前意识记忆。 无意识：无意识是相对意识而言的，它指的是个体没有察觉到的心理活动和心理过程。  1）无意识行为；  2）对刺激的无意识 ...</div></div></div></a><a class="pagination-related" href="/2018/03/01/%E8%90%A5%E9%94%80/18-3%20%E7%89%B9%E5%8A%B3%E7%89%B9%E8%90%A5%E9%94%80%E5%8D%81%E8%A6%81-%E7%AC%94%E8%AE%B0/" title="特劳特营销十要-笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2018-03-01</div><div class="info-item-2">特劳特营销十要-笔记</div></div><div class="info-2"><div class="info-item-1">一、营销的本质 1. 营销的本质是什么？ 营销就是对思想、产品及劳务进行设计、定价、促销及分销的计划和实施的过程，从而产生满足个人和组织目标的交换。换句话说，营销就是要确定为了销售产品和提供服务以获得利润都需要做哪些事情。 营销工作的职责是发现新理念并将其用语言描述出来，同时将其融入完善的营销战略中，然后释放出它的能量。 2. 预算的基本原则 第一步，根据每种产品的营销生命周期制定市场营销计划。 第二步，评估产品机会。 第三步，安排广告工作——花足够的钱把你的故事讲给目标市场听。 第四步，资金不足时应该立刻停止。将各个项目按照获利可能性和工作有效性排出优先次序，从高往低开始分配㔍。当资金达到极限时，就必须将多余的项目舍弃。 实施好的概念胜过拥有好的概念。——罗伯特...</div></div></div></a><a class="pagination-related" href="/2021/06/30/%E8%90%A5%E9%94%80/21-6-30%20%E9%AB%98%E6%95%88%E5%9C%B0%E5%88%86%E9%94%80%E4%BA%A7%E5%93%81/" title="高效地分销产品 认识商业-笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-30</div><div class="info-item-2">高效地分销产品 认识商业-笔记</div></div><div class="info-2"><div class="info-item-1">高效地分销产品 1. 营销中介的兴起 营销中介 marketing intermediaries指辅助生产者将产品和服务运送给企业和消费者使用的组织。之所以被称作中介，是因为他们处在于将产品由生产者送到消费者的供应链的中间。 分销渠道channel of...</div></div></div></a><a class="pagination-related" href="/2020/10/29/%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95/20-10-29%20citespace/" title="citespace"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-29</div><div class="info-item-2">citespace</div></div><div class="info-2"><div class="info-item-1">共词分析法抽取同一或若干文献中共同出现的词或词语，并对其出现次数进行统计。 共同出现的次数越多，则表示两个主题词或其他名词性术语在主题内容上关系越紧密，并由此形成共词关系网络。 关键词共现分析对数据集中作者提供的关键词的分析。 节点大小反映关键词出现频次。节点之间的连线表示共现关系，其粗细表示共现强度。颜色对应节点第一次共现时间。 聚类视图体现聚类间的结构特征。聚类的区块颜色表示该聚类中共词关系第一次发生的年限。 聚类视图突出关键节点和重要连接。位于不同聚类之间的高中介中心性的节点，可能会导致新兴趋势的出现。 术语的共现分析 termterm的共现分析提取自：标题TI；关键词DE；补充关键词ID；摘要AB 使用term分析比使用keyword分析更深入到文本内容，反映出来的信息也更全面。 论文的共被引分析针对被引文献...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#REDCAPE-%E6%A8%A1%E5%9E%8B%E5%8A%9F%E8%83%BD"><span class="toc-number">1.</span> <span class="toc-text">REDCAPE 模型功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4"><span class="toc-number">2.</span> <span class="toc-text">多模型思维</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%94%E5%A4%9A%E5%A1%9E%E9%99%AA%E5%AE%A1%E5%9B%A2%E5%AE%9A%E7%90%86%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">孔多塞陪审团定理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E6%A0%B7%E6%80%A7%E9%A2%84%E6%B5%8B%E5%AE%9A%E7%90%86"><span class="toc-number">2.2.</span> <span class="toc-text">多样性预测定理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">分类模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%82%E5%BD%93%E7%9A%84%E6%A8%A1%E5%9E%8B%E7%B2%92%E5%BA%A6"><span class="toc-number">2.4.</span> <span class="toc-text">适当的模型粒度</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E4%BA%BA%E7%B1%BB%E5%BB%BA%E6%A8%A1%E7%9A%84%E6%8C%91%E6%88%98"><span class="toc-number">3.</span> <span class="toc-text">对人类建模的挑战</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%A2%E5%8D%A1%E6%96%AF%E6%89%B9%E5%88%A4"><span class="toc-number">3.1.</span> <span class="toc-text">卢卡斯批判</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC1%E6%9C%9F/" title="MISQ 26年 第1期">MISQ 26年 第1期</a><time datetime="2026-07-31T09:10:52.000Z" title="发表于 2026-07-31 17:10:52">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC2%E6%9C%9F/" title="MISQ 26年 第2期">MISQ 26年 第2期</a><time datetime="2026-07-31T09:05:53.000Z" title="发表于 2026-07-31 17:05:53">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="发表于 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="R 数据分析常用工具">R 数据分析常用工具</a><time datetime="2025-08-03T13:18:39.000Z" title="发表于 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/%E9%9A%8F%E8%AE%B0/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="RAG简介">RAG简介</a><time datetime="2025-07-28T02:25:16.000Z" title="发表于 2025-07-28 10:25:16">2025-07-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

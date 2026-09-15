@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>shijun0210 - Jun's blogs</title><meta name="author" content="Jun"><meta name="copyright" content="Jun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="shijun0210">
+<meta property="og:url" content="https://shijun0210.github.io/page/2/index.html">
+<meta property="og:site_name" content="shijun0210">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shijun0210.github.io/img/avatar.jpg">
+<meta property="article:author" content="Jun">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shijun0210.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://shijun0210.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'shijun0210',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/bluesky2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">shijun0210</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-th"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fas fa-file-alt"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">shijun0210</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/05/Book_The%20Model%20Thinker/16%20%E4%B8%8E%E6%9C%BA%E5%88%B6%E8%AE%BE%E8%AE%A1%E6%9C%89%E5%85%B3%E7%9A%84%E6%A8%A1%E5%9E%8B/" title="与机制设计有关的模型">与机制设计有关的模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-05T03:13:04.000Z" title="发表于 2025-05-05 11:13:04">2025-05-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">与机制设计有关的模型机制设计 mechanism design 的基本框架-四个方面：  信息，指参与者知道些什么及应该向他们揭示什么； 激励，即采取特定行动的利益和成本； 集结，个人行为如何转化为集体结果； 计算量，这是对参与者认知能力的要求。  芒特-赖特尔图(Mount-Reiter diagram)一种机制由六个部分组成  一个环境（世界的相关特征）​ 一个结果集 一个行动集（也称为消息空间） 一个行为规则（人们根据这个规则来做出行动）​ 将行动映射到结果的结果函数 将环境映射到一组希望得到的结果的社会选择对应(social choice correspondence)  社会选择对应通常包括能够最大化参与者效用的结果或帕累托有效(pareto efficiency)配置的集合，当且仅当不存在每个人都喜欢的其他结果，某个结果是帕累托有效的。帕累托效率是下限标准。 ⚠：帕累托有效...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/04/Book_The%20Model%20Thinker/15%20%E4%B8%8E%E9%9B%86%E4%BD%93%E8%A1%8C%E5%8A%A8%E6%9C%89%E5%85%B3%E7%9A%84%E9%97%AE%E9%A2%98/" title="与集体行动有关的问题">与集体行动有关的问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-04T11:53:10.000Z" title="发表于 2025-05-04 19:53:10">2025-05-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/05/02/Book_The%20Model%20Thinker/14%20%E5%8D%9A%E5%BC%88%E8%AE%BA%E6%A8%A1%E5%9E%8B/" title="博弈论模型">博弈论模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-02T06:40:10.000Z" title="发表于 2025-05-02 14:40:10">2025-05-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">博弈论模型双人标准式零和博弈 (two-player normal-form zero-sum games)在这种博弈中，每个博弈参与者选择一个行动，并根据博弈参与者自己的行动和另一个博弈参与者的行动获得一定收益。此外，博弈参与者双方的收益总和为零。 博弈的纳什均衡(Nash equilibrium)是指这样一种策略，它们能够使每个博弈参与者的策略在给定其他博弈参与者策略的情况下是最优的。 在硬币配对博弈中，存在一个唯一的均衡策略，那就是，两个博弈参与者都以相同的概率在两个行动之间进行随机化。为了证明随机化是一种均衡，只需要证明，如果某个博弈参与者随机化，那么另一个博弈参与者选择任何行动都不可能比随机化更好。 随机化策略的最优性，对策略互动环境中的行为有很大的意义。例如，任何非随机性都可能会被对手利用，扑克等纸牌游戏就是如此。一个优秀的扑克玩家会随机地虚张声势。如果他一直虚张声势，对手就会了解这种策略，他就会落败。当然，对手的最优策略也是随机地虚张声势，这样就同样有可能赢或输。 最小化风险博弈(minimize risk...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/30/Book_The%20Model%20Thinker/13%20%E7%A9%BA%E9%97%B4%E7%AB%9E%E4%BA%89%E6%A8%A1%E5%9E%8B%E4%B8%8E%E4%BA%AB%E5%8F%97%E7%AB%9E%E4%BA%89%E6%A8%A1%E5%9E%8B/" title="空间竞争模型与享受竞争模型">空间竞争模型与享受竞争模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-30T01:38:38.000Z" title="发表于 2025-04-30 09:38:38">2025-04-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">空间竞争模型与享受竞争模型空间竞争模型 (spatial competition model)$$备选项包括N个空间属性：\vec a&#x3D;(a_{1},a_{2},\dots,a_{N})$$$$做出选择的个体的理想点：\vec x&#x3D;(x_{1},x_{2},\dots,x_{N})$$个体选择了备选项后得到的收益（效用）等于：$$\pi(\vec x,\vec...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/29/Book_The%20Model%20Thinker/12%20%E5%9F%BA%E4%BA%8E%E9%98%88%E5%80%BC%E7%9A%84%E6%A8%A1%E5%9E%8B/" title="基于阈值的模型">基于阈值的模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-29T00:49:59.000Z" title="发表于 2025-04-29 08:49:59">2025-04-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">基于阈值的模型当外部变量超过或低于特定的阈值时，人们的行为所发生的变化，就是基于阈值的行为（变化）​。 Riot Model - Granovetter$$假设有N个人（用i来索引）​，每一个人都有一个 riot \ threshold，记为T(i)\in...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/29/Book_The%20Model%20Thinker/11%20%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E5%9E%8B/" title="系统动力学模型">系统动力学模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-29T00:49:59.000Z" title="发表于 2025-04-29 08:49:59">2025-04-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">系统动力学模型任何一个系统动力学模型都由源、汇、存量和流量组成。源 source 产生存量；存量 stock 是某个变量的数量或水平；流量描述了存量水平的变化；汇 sink 能够捕获来自存量的流量输出；汇和源是不包含在模型中的过程的“占位符”​；存量水平会根据源和流量随时间推移而变化。 例如，在一个关于游乐园的系统动力学模型中，公园中的人（一个存量）的人数会随着人们的到来（一个源）而增加，而增加的速度可能又取决于其他参数，例如天气状况、广告投入和门票价格等。 使用系统动力学模型，我们通常可以确定复杂性的原因。当系统既包括正反馈又包括负反馈时，就会产生复杂性。 这些模型可以将流量和存量水平表示为数学函数。我们可以校准这些定量模型，以便解释过去的存量值、预测未来值，同时估计干预措施的影响。然后，我们就可以利用这些模型解释、预测和指导行动。这些模型也可以是定性的，可以用加号或减号标记每个箭头以表明内在逻辑。 捕食者-猎物模型洛特卡-沃尔泰拉方程 (Lotka-Volterra...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/28/Book_The%20Model%20Thinker/10%20%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B/" title="马尔可夫模型">马尔可夫模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-28T01:15:52.000Z" title="发表于 2025-04-28 09:15:52">2025-04-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">马尔可夫模型马尔可夫模型用来刻画以一定概率在一组有限的状态之间不断转换的系统。在马尔可夫模型中，状态之间转移发生的概率是固定的。如果系统可以通过一系列过渡从任何一个状态转换为任何其他状态，并且不存在简单的循环，那么马尔可夫模型就可以达到唯一的统计均衡(statistical equilibrium)。在统计均衡中，单个实体可以继续在各种状态之间移动，但是各种状态之间的概率分布仍然是固定的。 任何一个马尔可夫模型，只要状态集是有限的、不同状态之间的转移概率是固定的、在一系列转移后能够从任何一个状态变换为任何其他状态，而且状态之间不存在固定的循环，就必定会收敛到唯一的统计均衡。 这个定理意味着，如果满足这四个假设，那么改变初始状态、历史和干预措施，都不能改变长期中的均衡。 ⚠️ 如果主流的政治意识形态的变动满足上述四个假设，那么历史也不能影响意识形态的长期分布。 佩龙-弗罗宾尼斯定理 (Perron-Frobenius Theorem)一个马尔可夫模型必定收敛于一个唯一的统计均衡，只要它满足如下四个条件：  状态集有限：S&#x3D;{1, 2, …,...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/28/Book_The%20Model%20Thinker/09%20%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E5%87%BD%E6%95%B0%E4%B8%8E%E5%9D%87%E8%A1%A1/" title="李雅普诺夫函数与均衡">李雅普诺夫函数与均衡</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-28T01:15:52.000Z" title="发表于 2025-04-28 09:15:52">2025-04-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">李雅普诺夫函数与均衡核心观念：如果能够为模型构建一个李雅普诺夫函数，那么模型必定会达到均衡。 $$给定一个离散时间动态系统，它的转移规则由x_{t+1}&#x3D;G(x_{t})组成。$$$$对于实值函数F(x_{t})，如果对于所有的x_{t}，都有F(x_{t})≥M，而且存在一个A&gt;0，那么$$$$有F(x_{t+1})\leq F(x_{t})-A，如果G(x_{t})\ne x_{t}，如果对于G,F是一个李雅普诺夫函数，$$$$那么从任何x0开始，必定存在一个t^，使G(x_{t^})&#x3D;x_{t^*}，即该系统会在有限时间内达到均衡$$ 逐底竞争博弈 (Race to the Bottom Game)有N个博弈参与者，每个博弈参与者在每个时期都要提出一个支持水平，其取值范围为{0,1, …， 100}。提出了最接近平均支持水平2&#x2F;3的博弈参与者可以获得那个期间的奖励。 局部多数模型我们将局部多数模型中的李雅普诺夫函数定义为总体中的总不一致性(total...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/27/%E9%9A%8F%E8%AE%B0/25-4-27%20%E7%99%BE%E5%88%86%E4%B9%8B%E4%B8%80%E6%B3%95%E5%88%99/" title="1% Rule">1% Rule</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-27T02:33:43.000Z" title="发表于 2025-04-27 10:33:43">2025-04-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a></span></div><div class="content">...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/27/Book_The%20Model%20Thinker/08%20%E8%B7%AF%E5%BE%84%E4%BE%9D%E8%B5%96%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B1%80%E9%83%A8%E5%A4%9A%E6%95%B0%E6%A8%A1%E5%9E%8B/" title="路径依赖模型与局部多数模型">路径依赖模型与局部多数模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-27T02:03:58.000Z" title="发表于 2025-04-27 10:03:58">2025-04-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Book-The-Model-Thinker/">Book_The Model Thinker</a></span></div><div class="content">路径依赖模型波利亚过程(Polya process)一只瓮里面装着一个白球和一个灰球。每一周期，都随机抽取出一个球并将这个球与和它颜色相同的另一个球一起放回到瓮中。抽取出来的球的颜色表示结果。 波利亚过程利用伯努利瓮模型的扩展来刻画正反馈效应。在波利亚过程中，我们会往瓮中加入与抽取出来的球相匹配的球，这个过程会产生结果路径依赖(outcome path dependence)。 结果路径依赖是指每一周期的结果都取决于先前的结果。 说结果的长期分布，也就是均衡路径依赖(equilibrium path...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#content-inner">8</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jun</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">77</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">163</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jasper1910"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC1%E6%9C%9F/" title="MISQ 26年 第1期">MISQ 26年 第1期</a><time datetime="2026-07-31T09:10:52.000Z" title="发表于 2026-07-31 17:10:52">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/31/Journal/MISQ/MISQ-26%E5%B9%B4-%E7%AC%AC2%E6%9C%9F/" title="MISQ 26年 第2期">MISQ 26年 第2期</a><time datetime="2026-07-31T09:05:53.000Z" title="发表于 2026-07-31 17:05:53">2026-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/20/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E6%A6%82%E8%BF%B0/" title="数据治理概述">数据治理概述</a><time datetime="2026-05-20T11:04:00.000Z" title="发表于 2026-05-20 19:04:00">2026-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/25-8-3%20R%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" title="R 数据分析常用工具">R 数据分析常用工具</a><time datetime="2025-08-03T13:18:39.000Z" title="发表于 2025-08-03 21:18:39">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/28/%E9%9A%8F%E8%AE%B0/25-7-28%20RAG%E7%AE%80%E4%BB%8B/" title="RAG简介">RAG简介</a><time datetime="2025-07-28T02:25:16.000Z" title="发表于 2025-07-28 10:25:16">2025-07-28</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Book-The-Model-Thinker/"><span class="card-category-list-name">Book_The Model Thinker</span><span class="card-category-list-count">23</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Book-%E6%88%98%E7%95%A5%E7%AE%80%E5%8F%B2/"><span class="card-category-list-name">Book_战略简史</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Journal/"><span class="card-category-list-name">Journal</span><span class="card-category-list-count">3</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Journal/MISQ/"><span class="card-category-list-name">MISQ</span><span class="card-category-list-count">3</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/individual-products/"><span class="card-category-list-name">individual products</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BC%A0%E6%92%AD%E5%AD%A6/"><span class="card-category-list-name">传播学</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"><span class="card-category-list-name">心理学</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/"><span class="card-category-list-name">数字化转型</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/metaphysics/" style="font-size: 1.1em; color: #999">metaphysics</a> <a href="/tags/%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E5%87%BD%E6%95%B0/" style="font-size: 1.1em; color: #999">李雅普诺夫函数</a> <a href="/tags/logical-positvism/" style="font-size: 1.1em; color: #999">logical-positvism</a> <a href="/tags/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7/" style="font-size: 1.1em; color: #999">不确定性</a> <a href="/tags/%E9%98%90%E9%87%8A/" style="font-size: 1.1em; color: #999">阐释</a> <a href="/tags/agent/" style="font-size: 1.1em; color: #999">agent</a> <a href="/tags/%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/" style="font-size: 1.1em; color: #999">公司金融</a> <a href="/tags/MIS/" style="font-size: 1.26em; color: #999fa8">MIS</a> <a href="/tags/%E6%80%9D%E8%80%83/" style="font-size: 1.18em; color: #999ca1">思考</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 1.1em; color: #999">互联网</a> <a href="/tags/Agenda-Setting/" style="font-size: 1.1em; color: #999">Agenda-Setting</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.42em; color: #99a6b7">笔记</a> <a href="/tags/Zipf/" style="font-size: 1.1em; color: #999">Zipf</a> <a href="/tags/%E6%B3%A2%E5%8A%A8/" style="font-size: 1.1em; color: #999">波动</a> <a href="/tags/R/" style="font-size: 1.1em; color: #999">R</a> <a href="/tags/goodnotes/" style="font-size: 1.1em; color: #999">goodnotes</a> <a href="/tags/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/" style="font-size: 1.1em; color: #999">生命游戏</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB/" style="font-size: 1.34em; color: #99a3b0">快速阅读</a> <a href="/tags/paradigm/" style="font-size: 1.1em; color: #999">paradigm</a> <a href="/tags/%E5%8D%A2%E5%8D%A1%E6%96%AF%E6%89%B9%E5%88%A4/" style="font-size: 1.1em; color: #999">卢卡斯批判</a> <a href="/tags/%E5%85%AC%E5%B9%B3/" style="font-size: 1.18em; color: #999ca1">公平</a> <a href="/tags/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">马尔可夫模型</a> <a href="/tags/%E7%B4%A2%E6%B4%9B%E5%A2%9E%E9%95%BF%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">索洛增长模型</a> <a href="/tags/RAG/" style="font-size: 1.1em; color: #999">RAG</a> <a href="/tags/TCCM/" style="font-size: 1.1em; color: #999">TCCM</a> <a href="/tags/%E5%B9%B3%E6%96%B9%E6%A0%B9%E6%B3%95%E5%88%99/" style="font-size: 1.1em; color: #999">平方根法则</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 1.1em; color: #999">统计</a> <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/" style="font-size: 1.1em; color: #999">马克思主义</a> <a href="/tags/%E7%81%B5%E6%84%9F/" style="font-size: 1.5em; color: #99a9bf">灵感</a> <a href="/tags/%E8%A1%80%E6%B8%85%E7%B4%A0/" style="font-size: 1.1em; color: #999">血清素</a> <a href="/tags/diary/" style="font-size: 1.26em; color: #999fa8">diary</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 1.1em; color: #999">数据</a> <a href="/tags/%E6%89%8E%E6%A0%B9%E7%90%86%E8%AE%BA/" style="font-size: 1.1em; color: #999">扎根理论</a> <a href="/tags/%E9%87%8D%E8%A6%81/" style="font-size: 1.18em; color: #999ca1">重要</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0/" style="font-size: 1.1em; color: #999">随机游走</a> <a href="/tags/%E5%88%9B%E6%96%B0%E4%B9%98%E6%95%B0/" style="font-size: 1.1em; color: #999">创新乘数</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 1.18em; color: #999ca1">心理学</a> <a href="/tags/%E4%BA%AB%E5%8F%97%E7%AB%9E%E4%BA%89%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">享受竞争模型</a> <a href="/tags/%E6%9F%AF%E5%B8%83-%E9%81%93%E6%A0%BC%E6%8B%89%E6%96%AF%E6%A8%A1%E5%9E%8B/" style="font-size: 1.1em; color: #999">柯布-道格拉斯模型</a> <a href="/tags/%E5%A4%8F%E6%99%AE%E5%88%A9%E5%80%BC/" style="font-size: 1.1em; color: #999">夏普利值</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/08/">
+            <span class="card-archive-list-date">
+              八月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/07/">
+            <span class="card-archive-list-date">
+              七月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">21</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/03/">
+            <span class="card-archive-list-date">
+              三月 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/01/">
+            <span class="card-archive-list-date">
+              一月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">77</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-09-15T07:39:24.185Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Jun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["Entities are not to be multiplied beyond necessity.","Sunk costs should not affect major decisions.","The best way to predict the future is to create it."].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["Entities are not to be multiplied beyond necessity.","Sunk costs should not affect major decisions.","The best way to predict the future is to create it."])
+}
+typedJSFn.run(subtitleType)</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
